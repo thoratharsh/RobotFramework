@@ -1,4 +1,4 @@
 *** Variables ***
-${d_username}     saksham.sahani@kone.com.full    # this is username of CRM user
-${d_password}     saksham@94    # this is passsword of CRM user
-${url}            https://kone--full.cs87.my.salesforce.com    # url of application
+${d_username}     test    # this is username of CRM user
+${d_password}     test    # this is passsword of CRM user
+${url}            test    # url of application

@@ -23,7 +23,6 @@ Resource          Business_Functions/Outlook.txt
 *** Test Cases ***
 TC061_1_Add_FL_Sales_Documents_To_Opportunity
     [Documentation]    Verify User can add FL Sales Documents to Opportunity:
-    ...    Profile: CRM Key User
     [Tags]    tc061
     [Setup]    Login to Salesforce
     Login to Salesforce with user
@@ -34,7 +33,6 @@ TC061_1_Add_FL_Sales_Documents_To_Opportunity
 
 TC062_1_Add_Opportunity_Team_on_Opportunity
     [Documentation]    Verify User can add opportunity team to an existing opportunity
-    ...    *Profile:* _CRM key User_
     [Tags]    tc062
     [Setup]    Login to Salesforce
     Login to Salesforce with user
@@ -45,7 +43,6 @@ TC062_1_Add_Opportunity_Team_on_Opportunity
 
 TC062_2_Add_Opportunity_Team_on_Opportunity
     [Documentation]    Verify User can add opportunity team to an existing opportunity
-    ...    *Profile:* _KONE: Account Planning_
     [Tags]    tc062
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Duncan Anthony
@@ -56,7 +53,6 @@ TC062_2_Add_Opportunity_Team_on_Opportunity
 
 TC062_3_Add_Opportunity_Team_on_Opportunity
     [Documentation]    Verify User can add opportunity team to an existing opportunity
-    ...    *Profile:* _KONE: Standard User_
     [Tags]    tc062
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Chris Amistadi
@@ -67,7 +63,6 @@ TC062_3_Add_Opportunity_Team_on_Opportunity
 
 TC063_1_Create_New_FL_Order_On Opportunity
     [Documentation]    Verify User Can add FL Order to Existing Opportunity
-    ...    *Profile:* _Kone:CRM Key User_
     [Tags]    tc063
     [Setup]    Login to Salesforce
     Add Create FL Order permission set to user and Login
@@ -79,7 +74,6 @@ TC063_1_Create_New_FL_Order_On Opportunity
 
 TC063_2_Create_New_FL_Order_On Opportunity
     [Documentation]    Verify User Can add FL Order to Existing Opportunity
-    ...    *Profile:* _KONE: Account Planning_
     [Tags]    tc063
     [Setup]    Login to Salesforce
     Add Create FL Order permission set to user and Login    Duncan Anthony
@@ -91,7 +85,6 @@ TC063_2_Create_New_FL_Order_On Opportunity
 
 TC063_3_Create_New_FL_Order_On Opportunity
     [Documentation]    Verify User Can add FL Order to Existing Opportunity
-    ...    *Profile:* _KONE: Standard User_
     [Tags]    tc063
     [Setup]    Login to Salesforce
     Add Create FL Order permission set to user and Login    Chris Amistadi
@@ -103,7 +96,6 @@ TC063_3_Create_New_FL_Order_On Opportunity
 
 TC064_1_Add_New_Note_to_Opportunity
     [Documentation]    Verify User can add New Note to Opportunity
-    ...    *Profile:* _CRM Key User_
     [Tags]
     [Setup]    Login to Salesforce
     Login to Salesforce with user
@@ -114,7 +106,6 @@ TC064_1_Add_New_Note_to_Opportunity
 
 TC064_2_Add_New_Note_to_Opportunity
     [Documentation]    Verify User can add New Note to Opportunity
-    ...    *Profile:* _KONE: Account Planning_
     [Tags]
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Duncan Anthony
@@ -125,7 +116,6 @@ TC064_2_Add_New_Note_to_Opportunity
 
 TC064_3_Add_New_Note_to_Opportunity
     [Documentation]    Verify User can add New Note to Opportunity
-    ...    *Profile:* _KONE: Standard User_
     [Tags]
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Chris Amistadi
@@ -136,7 +126,6 @@ TC064_3_Add_New_Note_to_Opportunity
 
 TC065_1_Verify_User_can_Attach_file_to_opportunity
     [Documentation]    To Attach File To an Opportunity
-    ...    *Profile:* _KONE: Account Planning_
     [Tags]    tc065
     [Setup]    Login to Salesforce
     Login to Salesforce with user
@@ -157,7 +146,6 @@ TC065_2_Verify_User_can_Attach_file_to_opportunity
 
 TC065_3_Verify_User_can_Attach_file_to_opportunity
     [Documentation]    To Attach File To an Opportunity
-    ...    *Profile:* _KONE: Standard User_
     [Tags]    tc065
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Chris Amistadi
@@ -168,8 +156,6 @@ TC065_3_Verify_User_can_Attach_file_to_opportunity
 
 TC066_1_Edit_The_Lead_Information
     [Documentation]    Verify User can edit the Information in Lead
-    ...
-    ...    *Profile:* _CRM Key User_
     [Tags]    tc066
     [Setup]    Login to Salesforce
     Login to Salesforce with user
@@ -180,7 +166,6 @@ TC066_1_Edit_The_Lead_Information
 
 TC066_2_Edit_The_Lead_Information
     [Documentation]    Verify User can edit the Information in Lead
-    ...    *Profile:* _KONE: Account Planning_
     [Tags]    tc066    fail
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Duncan Anthony
@@ -191,8 +176,6 @@ TC066_2_Edit_The_Lead_Information
 
 TC066_3_Edit_The_Lead_Information
     [Documentation]    Verify User can edit the Information in Lead
-    ...
-    ...    *Profile:* _KONE: Standard User_
     [Tags]    tc066
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Chris Amistadi
@@ -203,9 +186,9 @@ TC066_3_Edit_The_Lead_Information
 
 TC067_1_Add_Lead_to_Campaign
     [Documentation]    Verify User can add Lead to Campaign
-    ...    Profile: CRM Key User
     [Tags]    tc067
     [Setup]    Login to Salesforce
+    ..
     Login to Salesforce with user
     Click on Lead Tab
     Select or Create New Lead
@@ -214,7 +197,6 @@ TC067_1_Add_Lead_to_Campaign
 
 TC067_2_Add_Lead_to_Campaign
     [Documentation]    Verufy User can add Lead to Campaign Member
-    ...    *Profile:* _KONE: Account Planning_
     [Tags]    tc067    fail
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Duncan Anthony
@@ -225,7 +207,6 @@ TC067_2_Add_Lead_to_Campaign
 
 TC067_3_Add_Lead_to_Campaign
     [Documentation]    Verufy User can add Lead to Campaign Member
-    ...    *Profile:* _KONE: Standard User_
     [Tags]    tc067
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Chris Amistadi
@@ -244,8 +225,6 @@ TC068_Serach_Content_from_Leads
     [Teardown]    Login.Close Browser
 
 TC069_1_Create_New_Note_on_Leads
-    [Documentation]    Verifyv User can add New Note on Leads
-    ...    *Profile* : _CRM Key User_
     [Tags]    tc069
     [Setup]    Login to Salesforce
     Login to Salesforce with user
@@ -255,7 +234,6 @@ TC069_1_Create_New_Note_on_Leads
     [Teardown]    Login.Close Browser
 
 TC069_2_Create_New_Note_on_Leads
-    [Documentation]    Verifyv User can add New Note on Leads
     [Tags]    tc069
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Duncan Anthony
@@ -265,8 +243,6 @@ TC069_2_Create_New_Note_on_Leads
     [Teardown]    Login.Close Browser
 
 TC069_3_Create_New_Note_on_Leads
-    [Documentation]    Verifyv User can add New Note on Leads
-    ...    *Profile:* _KONE: Standard User_
     [Tags]    tc069
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Chris Amistadi
@@ -276,8 +252,6 @@ TC069_3_Create_New_Note_on_Leads
     [Teardown]    Login.Close Browser
 
 TC070_1_Attach_File_In_Notes_and_attachment_on_Leads
-    [Documentation]    To Attach File To an Lead
-    ...    *Profile* : _CRM Key User_
     [Tags]    tc070
     [Setup]    Login to Salesforce
     Login to Salesforce with user
@@ -286,8 +260,6 @@ TC070_1_Attach_File_In_Notes_and_attachment_on_Leads
     Attach file on Lead
 
 TC070_2_Attach_File_In_Notes_and_attachment_on_Leads
-    [Documentation]    To Attach File To an Lead
-    ...    *Profile:* _KONE: Account Planning_
     [Tags]    tc070
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Duncan Anthony
@@ -296,8 +268,6 @@ TC070_2_Attach_File_In_Notes_and_attachment_on_Leads
     Attach file on Lead
 
 TC070_3_Attach_File_In_Notes_and_attachment_on_Leads
-    [Documentation]    To Attach File To an Lead
-    ...    *Profile:* _KONE: Standard User_
     [Tags]    tc070
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Chris Amistadi
@@ -306,8 +276,6 @@ TC070_3_Attach_File_In_Notes_and_attachment_on_Leads
     Attach file on Lead
 
 TC071_1_Send_An_Email_From_Lead
-    [Documentation]    To verify sending an email functionalty for lead object
-    ...    *Profile* : _CRM Key User_
     [Tags]    tc071
     [Setup]    Login to Salesforce
     Login to Salesforce with user
@@ -317,9 +285,6 @@ TC071_1_Send_An_Email_From_Lead
     [Teardown]    Login.Close Browser
 
 TC071_2_Send_An_Email_From_Lead
-    [Documentation]    To verify sending an email functionalty for lead object
-    ...
-    ...    *Profile:* _KONE: Account Planning_
     [Tags]    tc071
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Duncan Anthony
@@ -329,9 +294,6 @@ TC071_2_Send_An_Email_From_Lead
     [Teardown]    Login.Close Browser
 
 TC071_3_Send_An_Email_From_Lead
-    [Documentation]    To verify sending an email functionalty for lead object
-    ...
-    ...    *Profile:* _KONE: Standard User_
     [Tags]    tc071    fail
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Chris Amistadi
@@ -341,8 +303,6 @@ TC071_3_Send_An_Email_From_Lead
     [Teardown]    Login.Close Browser
 
 TC072_1_Add_Campaign_Members_Search
-    [Documentation]    To verify manage member functionality of campaign by Adding Members-Search
-    ...    *Profile* : _CRM Key User_
     [Tags]    tc072    fail
     [Setup]    Login to Salesforce
     Login to Salesforce with user
@@ -352,8 +312,6 @@ TC072_1_Add_Campaign_Members_Search
     [Teardown]    Login.Close Browser
 
 TC072_2_Add_Campaign_Members_Search
-    [Documentation]    To verify manage member functionality of campaign by Adding Members-Search
-    ...    *Profile:* _KONE: Account Planning_
     [Tags]    tc072
     [Setup]    Login to Salesforce
     Login to Salesforce with user    Duncan Anthony
@@ -361,880 +319,5 @@ TC072_2_Add_Campaign_Members_Search
     Select or create a Campaign Record
     Verify User does not able to add campaign member
     [Teardown]    Login.Close Browser
-
-TC072_3_Add_Campaign_Members_Search
-    [Documentation]    To verify manage member functionality of campaign by Adding Members-Search
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc072
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Click on Campaign Tab
-    Select or create a Campaign Record
-    Verify User does not able to add campaign member
-    [Teardown]    Login.Close Browser
-
-TC074_Edit_the_Campaign_Members_Edit_Campaign_Member_Search
-    [Documentation]    To verify manage member functionality of campaign by Edit Members-Search
-    [Tags]    tc074
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Campaign Tab
-    Select or create a Campaign Record
-    Edit the Campaign Members by edit Member-Search
-    [Teardown]    Login.Close Browser
-
-TC076_Change_FL_Tender_Version
-    [Documentation]    Verify User can chnage the Version of FL tender
-    ...
-    ...    *Profile*: _CRM Key User_
-    [Tags]    tc076
-    [Setup]    Login to Salesforce
-    Click on FL Tender Tab
-    Select or Create New FL Tender
-    Change FL Tender Version
-    [Teardown]    Login.Close Browser
-
-TC077_Edit_The_FL_Tender
-    [Documentation]    Verify User can edit teh FL Tender
-    [Tags]    tc077
-    [Setup]    Login to Salesforce
-    Click on FL Tender Tab
-    Select or Create New FL Tender
-    Edit FL Tender
-    [Teardown]    Login.Close Browser
-
-TC078_Delete Selected \ FL Tender
-    [Documentation]    Verify User can delete FL Tender
-    [Tags]    tc078
-    [Setup]    Login to Salesforce
-    Click on FL Tender Tab
-    Select or Create New FL Tender
-    Delete the FL Tender
-    [Teardown]    Login.Close Browser
-
-TC079_1_Edit_FL_Order
-    [Documentation]    Verify User Can add FL Order to Existing Opportunity
-    ...    *Profile:* _Kone:CRM Key User_
-    [Tags]    tc079_1
-    [Setup]    Login to Salesforce
-    Add Create FL Order permission set to user and Login
-    Click on FL Order Tab
-    Select or Create FL Order
-    Edit the FL Order Record
-    Log out and remove FL Order permission set
-    [Teardown]
-
-TC079_2_Edit_FL_Order
-    [Documentation]    Verify User Can add FL Order to Existing Opportunity
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]
-    [Setup]    Login to Salesforce
-    Add Create FL Order permission set to user and Login    Duncan Anthony
-    Click on FL Order Tab
-    Select or Create FL Order
-    Edit the FL Order Record
-    Log out and remove FL Order permission set
-    [Teardown]
-
-TC079_3_Edit_FL_Order
-    [Documentation]    Verify User Can add FL Order to Existing Opportunity
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    TC079
-    [Setup]    Login to Salesforce
-    Add Create FL Order permission set to user and Login    Chris Amistadi
-    Click on FL Order Tab
-    Select or Create FL Order
-    Edit the FL Order Record
-    Log out and remove FL Order permission set
-    [Teardown]
-
-TC080_1_Delete_FL _Order
-    [Tags]    tc080_1
-    [Setup]    Login to Salesforce
-    Add Create FL Order permission set to user and Login
-    Click on FL Order Tab
-    Select or Create FL Order
-    Delete FL Order
-    Log out and remove FL Order permission set
-    [Teardown]
-
-TC080_2_Delete_FL _Order
-    [Tags]    tc080
-    [Setup]    Login to Salesforce
-    Add Create FL Order permission set to user and Login    Duncan Anthony
-    Click on FL Order Tab
-    Select or Create FL Order
-    Verify User is not able to Delete the FL Tender
-    Log out and remove FL Order permission set
-    [Teardown]
-
-TC080_3_Delete_FL _Order
-    [Tags]    tc080
-    [Setup]    Login to Salesforce
-    Add Create FL Order permission set to user and Login    Chris Amistadi
-    Click on FL Order Tab
-    Select or Create FL Order
-    Verify User is not able to Delete the FL Tender
-    Log out and remove FL Order permission set
-    [Teardown]
-
-TC081_1_Create_Major_Project_Opportunity
-    [Documentation]    Verify user can create Major Project Opportunity in CRM
-    ...    *Profile* _CRM Key User_
-    [Tags]    tc081
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    [Teardown]    Login.Close Browser
-
-TC081_2_Create_Major_Project_Opportunity
-    [Documentation]    Verify user can create Major Project Opportunity in CRM
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]    tc081
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    [Teardown]    Login.Close Browser
-
-TC081_3_Create_Major_Project_Opportunity
-    [Documentation]    Verify user can create Major Project Opportunity in CRM
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc081
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    [Teardown]    Login.Close Browser
-
-TC082_1_Create_Major_Project_Oportunity_Chinese_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is Chinese
-    ...    *Profile* _CRM Key User_
-    [Tags]    tc082
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Change User Language to Chinese
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC082_2_Create_Major_Project_Oportunity_Chinese_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is Chinese
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]    tc082
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Change User Language to Chinese
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC082_3_Create_Major_Project_Oportunity_Chinese_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is Chinese
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc082
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Change User Language to Chinese
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC083_1_Create_Major_Project_Oportunity_German_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is German
-    ...    *Profile* _CRM Key User_
-    [Tags]    tc083
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Change User Language to German
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC083_2_Create_Major_Project_Oportunity_German_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is German
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]    tc083
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Change User Language to German
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC083_3_Create_Major_Project_Oportunity_German_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is German
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc083
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Change User Language to German
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC084_1_Create_Major_Project_Oportunity_Swedish_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is Swedish
-    ...    *Profile* _CRM Key User_
-    [Tags]    tc084
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Change User Language to Swedish
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC084_2_Create_Major_Project_Oportunity_Swedish_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is Swedish
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]    tc084
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Change User Language to Swedish
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC084_3_Create_Major_Project_Oportunity_Swedish_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is Swedish
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc084
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Change User Language to Swedish
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC085_1_Create_Major_Project_Oportunity_Spanish_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is Spanish
-    ...    *Profile* _CRM Key User_
-    [Tags]    tc085
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Change User Language to Swedish
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC085_2_Create_Major_Project_Oportunity_Spanish_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is Spanish
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]    tc085
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Change User Language to Swedish
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC085_3_Create_Major_Project_Oportunity_Spanish_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is Spanish
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc085
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Change User Language to Swedish
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC086_1_Create_Major_Project_Oportunity_Italian_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is Italian
-    ...    *Profile:* _KONE: Key User_
-    [Tags]    tc086
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Change User Language to Italian
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC086_2_Create_Major_Project_Oportunity_Italian_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is Italian
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]    tc086
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Change User Language to Italian
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC086_3_Create_Major_Project_Oportunity_Italian_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is Spanish
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc086
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Change User Language to Italian
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC087_1_Create_Major_Project_Oportunity_French_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is French
-    ...    *Profile:* _KONE: key User_
-    [Tags]    tc086
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Change User Language to French
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC087_2_Create_Major_Project_Oportunity_French_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is French
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]    tc086
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Change User Language to French
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC087_3_Create_Major_Project_Oportunity_French_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is French
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc086
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Change User Language to French
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC088_1_Create_Major_Project_Oportunity_Finnish_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is Finnish
-    ...    *Profile:* _KONE: KeyUser_
-    [Tags]    tc086
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Change User Language to Finnish
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC088_2_Create_Major_Project_Oportunity_Finnish_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is Finnish
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]    tc086
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Change User Language to Finnish
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC088_3_Create_Major_Project_Oportunity_Finnish_Language
-    [Documentation]    Verify user can create Major Project Opportunity in CRM when User Language is Finnish
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc086
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Change User Language to Finnish
-    Click on Opportunities Tab
-    Create Major Project Opportunity
-    Change User Language to English
-    [Teardown]    Login.Close Browser
-
-TC089_1_Check_Queue_for_cases
-    [Documentation]    To check Account and Assigned to have been added to the different defined Cases queues
-    ...    *Profile:* _KONE: KeyUser_
-    [Tags]    tc089    fail
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Cases Tab
-    Verify Account Name and Assigned to in Each List View
-    [Teardown]    Login.Close Browser
-
-TC089_2_Check_Queue_for_cases
-    [Documentation]    To check Account and Assigned to have been added to the different defined Cases queues
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]    tc089    fail
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Click on Cases Tab
-    Verify Account Name and Assigned to in Each List View
-    [Teardown]    Login.Close Browser
-
-TC089_3_Check_Queue_for_cases
-    [Documentation]    To check Account and Assigned to have been added to the different defined Cases queues
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc089    fail
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Click on Cases Tab
-    Verify Account Name and Assigned to in Each List View
-    [Teardown]    Login.Close Browser
-
-TC090_1_Create_Pospect_Account_with_New_Added_Fields
-    [Documentation]    To create account with the new fields added to the Account creation
-    ...    *Profile:* _KONE: KeyUser_
-    [Tags]    tc090
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Account Tab
-    Create New Prospect Account with New Added fields
-    [Teardown]    Login.Close Browser
-
-TC090_2_Create_Pospect_Account_with_New_Added_Fields
-    [Documentation]    To create account with the new fields added to the Account creation
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]    tc090
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Click on Account Tab
-    Create New Prospect Account with New Added fields
-    [Teardown]    Login.Close Browser
-
-TC090_3_Create_Pospect_Account_with_New_Added_Fields
-    [Documentation]    To create account with the new fields added to the Account creation
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc090
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Click on Account Tab
-    Create New Prospect Account with New Added fields
-    [Teardown]    Login.Close Browser
-
-TC091_Changes_to_Opportunity_Object
-    [Documentation]    To verify the changes made to the opportunities object Field names are reflecting Properly
-    [Tags]    TC091
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Opportunities Tab
-    Select or Create New Opportunity
-    Verify Newly Added Fields on Opportunity
-    [Teardown]    Login.Close Browser
-
-TC092_1_Create_New_Lead_with_Newly_Added_Fields
-    [Documentation]    To verify the changes made to the Leads object Field names are reflecting Properly
-    ...    *Profile:* _KONE: KeyUser_
-    [Tags]    tc092
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Lead Tab
-    Create New Lead with Newly Added Fields
-    [Teardown]    Login.Close Browser
-
-TC092_2_Create_New_Lead_with_Newly_Added_Fields
-    [Documentation]    To verify the changes made to the Leads object Field names are reflecting Properly
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]    tc092
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Click on Lead Tab
-    Create New Lead with Newly Added Fields
-    [Teardown]    Login.Close Browser
-
-TC092_3_Create_New_Lead_with_Newly_Added_Fields
-    [Documentation]    To verify the changes made to the Leads object Field names are reflecting Properly
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc092
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Click on Lead Tab
-    Create New Lead with Newly Added Fields
-    [Teardown]    Login.Close Browser
-
-TC093_Product_Group_field_on_Product_Detail_Page
-    [Documentation]    To verify the changes made to the Leads object Field names are reflecting Properly
-    [Tags]    tc093
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Products Tab
-    Search and Select a Product
-    Verify Product Group field is available on Products
-    [Teardown]    Login.Close Browser
-
-TC094_verify_Project_Complexity_Mandatory_to_Create_FL_Tender
-    [Documentation]    To verify that Project Complexity is a mandatory field while creating New FL Tender from Opportunity
-    [Tags]    tc094
-    [Setup]    Login to Salesforce
-    Click on Opportunities Tab
-    Select or Create New Opportunity
-    Verify Project Complexity is mandatory to create FL Tender
-
-TC095_1_Characteristic_button_Click_FSM_Servie_Contract_Cheracteristic_detail_Page
-    [Documentation]    To verify Characteristics button is present while user navigate to Contract line Items
-    ...    *Profile:* _KONE: KeyUser_
-    [Tags]    tc095
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Equipment Tab
-    Select a Equipment
-    Verify FSM Service Contract Characteristics Detail page
-    [Teardown]    Login.Close Browser
-
-TC095_2_Characteristic_button_Click_FSM_Servie_Contract_Cheracteristic_detail_Page
-    [Documentation]    To verify Characteristics button is present while user navigate to Contract line Items
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]    tc095
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Click on Equipment Tab
-    Select a Equipment
-    Verify FSM Service Contract Characteristics Detail page
-    [Teardown]    Login.Close Browser
-
-TC095_3_Characteristic_button_Click_FSM_Servie_Contract_Cheracteristic_detail_Page
-    [Documentation]    To verify Characteristics button is present while user navigate to Contract line Items
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc095
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Click on Equipment Tab
-    Select a Equipment
-    Verify FSM Service Contract Characteristics Detail page
-    [Teardown]    Login.Close Browser
-
-TC096_1_Verify_Detail_Of_Equipment
-    [Documentation]    To verify the Page layout and details of the Equipment page through different profiles
-    ...    *Profile:* _KONE: KeyUser_
-    [Tags]    tc096
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Equipment Tab
-    Select a Equipment
-    Verify All Detail of Equipment
-    [Teardown]    Login.Close Browser
-
-TC096_2_Verify_Detail_Of_Equipment
-    [Documentation]    To verify the Page layout and details of the Equipment page through different profiles
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]    tc096
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Click on Equipment Tab
-    Select a Equipment
-    Verify All Detail of Equipment
-    [Teardown]    Login.Close Browser
-
-TC096_3_Verify_Detail_Of_Equipment
-    [Documentation]    To verify the Page layout and details of the Equipment page through different profiles
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc096
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Click on Equipment Tab
-    Select a Equipment
-    Verify All Detail of Equipment
-    [Teardown]    Login.Close Browser
-
-TC097_1_Verify_List_View_Fields_ISR
-    [Documentation]    To verify New Leads added to the Lead views
-    ...    *Profile:* _KONE: KeyUser_
-    [Tags]    tc097    fail
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Lead Tab
-    Verify all ISR List views on leads
-    [Teardown]    Login.Close Browser
-
-TC097_2_Verify_List_View_Fields_ISR
-    [Documentation]    To verify New Leads added to the Lead views
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]    tc097
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Click on Lead Tab
-    Verify all ISR List views on leads
-    [Teardown]    Login.Close Browser
-
-TC097_3_Verify_List_View_Fields_ISR
-    [Documentation]    To verify New Leads added to the Lead views
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc097
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Click on Lead Tab
-    Verify all ISR List views on leads
-    [Teardown]    Login.Close Browser
-
-TC098_1_Verify_Opportunities_With_Account_and_Equipments_report_is_available
-    [Documentation]    To verify the availability of new custom report:-Account_opportunity_and_equipment
-    ...    *Profile:* _KONE: KeyUser_
-    [Tags]    tc098
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Reports Tab
-    Verify Report type Opportunities with Account and Equipment is avaialable
-    [Teardown]    Login.Close Browser
-
-TC098_2_Verify_Opportunities_With_Account_and_Equipments_report_is_available
-    [Documentation]    To verify the availability of new custom report:-Account_opportunity_and_equipment
-    ...    *Profile:* _KONE: Account Planning_
-    [Tags]    tc098
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Click on Reports Tab
-    Verify Report type Opportunities with Account and Equipment is avaialable
-    [Teardown]    Login.Close Browser
-
-TC098_3_Verify_Opportunities_With_Account_and_Equipments_report_is_available
-    [Documentation]    To verify the availability of new custom report:-Account_opportunity_and_equipment
-    ...    *Profile:* _KONE: Standard User_
-    [Tags]    tc098
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Click on Reports Tab
-    Verify Report type Opportunities with Account and Equipment is avaialable
-    [Teardown]    Login.Close Browser
-
-TC099_1_Verify_Report_type_Opportunity_with_or_without_Customer_Survey_record
-    [Documentation]    "To verify the availability of new custom report:-1) Opportunity with or without Customer Surveys
-    ...    2) Opportunity with or without NPX Survey Records
-    ...    "
-    [Tags]    tc099
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Reports Tab
-    Verify Report Opportunity with or without Survey is avaialable
-    [Teardown]    Login.Close Browser
-
-TC099_2_Verify_Report_type_Opportunity_with_or_without_Customer_Survey_record
-    [Documentation]    "To verify the availability of new custom report:-1) Opportunity with or without Customer Surveys
-    ...    2) Opportunity with or without NPX Survey Records
-    ...    "
-    [Tags]    tc099
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Click on Reports Tab
-    Verify Report Opportunity with or without Survey is avaialable
-    [Teardown]    Login.Close Browser
-
-TC099_3_Verify_Report_type_Opportunity_with_or_without_Customer_Survey_record
-    [Documentation]    "To verify the availability of new custom report:-1) Opportunity with or without Customer Surveys
-    ...    2) Opportunity with or without NPX Survey Records
-    ...    "
-    [Tags]    tc099
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Click on Reports Tab
-    Verify Report Opportunity with or without Survey is avaialable
-    [Teardown]    Login.Close Browser
-
-TC100_Verify_CRM_Key_User_is_able_to_delete_cases
-    [Tags]    TC100
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Cases Tab
-    Select or Create Case
-    Verify User is able to delete Cases
-    [Teardown]    Login.Close Browser
-
-TC101_1_Verify_CRM_Key_User_is_able_to_delete_cases
-    [Tags]    TC100
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Duncan Anthony
-    Click on Cases Tab
-    Select or Create Case
-    Verify user is not able to delete cases
-    [Teardown]    Login.Close Browser
-
-TC101_2_Verify_CRM_Key_User_is_able_to_delete_cases
-    [Tags]    TC100
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chris Amistadi
-    Click on Cases Tab
-    Select or Create Case
-    Verify user is not able to delete cases
-    [Teardown]    Login.Close Browser
-
-TC106_Anonymize_Field_Lead_Contact
-    [Documentation]    Service Resources (FSM Technicians), Contacts, Leads, Users need to have the option to be anonymized and right to be deleted in place
-    [Tags]    TC106
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Lead Tab
-    Select or Create New Lead
-    verify Anonymize field on lead and Contact detail page
-    Click on Contact Tab
-    Select or Create New Contact
-    verify Anonymize field on lead and Contact detail page
-    [Teardown]    Login.Close Browser
-
-TC107_Qlicksense_Permission_set
-    [Documentation]    Qlicksense integration needs to open inside Salesfore, not on new tab
-    [Tags]    TC107
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    verify Qlicksense Integration to Salesforce
-    [Teardown]    Login.Close Browser
-
-TC108_Public_Group_Account_View
-    [Documentation]    "To change the visibility of the following list view to “public group = Germany”:
-    ...    1)EGG: 10. Meine Kernkunden 1
-    ...    2)EGG: 12. Meine Kernkunden 2
-    ...    3)EGG: 14. Meine Kernkunden 2 - Proaktiv
-    ...    4)EGG: 16. Meine Kernkunden 2 - Vernünftig
-    ...    5)EGG: 18. Meine Kernkunden 2 - Abwarten
-    ...    "
-    [Tags]    TC108
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Chao Zou
-    Click on Account Tab
-    Verify View for Germany Public Group User
-    [Teardown]    Login.Close Browser
-
-TC112_verify_Sales_Person_China_Field_on_Major_Project_Opportunity
-    [Documentation]    To verify different User Profiles are able to edit Sales Person(China) Field with Major Project Opportunity Type
-    [Tags]    Opportunity    TC112
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Opportunities Tab
-    Verify Sales Person Chine field on Major Project opportunity
-    [Teardown]    Login.Close Browser
-
-TC113_verify_Error_message_While_creating_FL_tender
-    [Documentation]    To verify user recieves error message ‘Please define the Project Complexity before creating tenders.’ on creating FL Tender from Opportunity with Site Countr ='India'
-    [Tags]    TC113    FL tender
-    [Setup]    Login to Salesforce
-    Click on Opportunities Tab
-    Select or Create New Opportunity
-    Verify Error message while creating FL tender
-    [Teardown]    Login.Close Browser
-
-TC114_verify_Planning+_Services_Field_on_Major_Project_Opportunity
-    [Documentation]    As a KONE User, we should be able to see two new fields on Opportunity object, Modernization Planning Services and Planning Services Offer Price for record type ‘Major Project Opportunity’ and on layout ‘Kone MP Opportunity Layout’.
-    [Tags]    Opportunity    TC114
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user
-    Click on Opportunities Tab
-    Verify Modernization Planning Services field on Opportunity
-    [Teardown]    Login.Close Browser
-
-TC115_Create_Case_with_email_in_To_Field
-    [Tags]    outlook
-    Login to Outlook
-    Send new Email with Queue address in To field
-    Login.Close Browser
-    Login to Salesforce
-    Click on Reports Tab
-    Verify Case is created by Email
-    [Teardown]    Login.Close Browser
-
-TC116_Chine_KC3_Agent_able_to_see_Employee_Number_Field
-    [Documentation]    User with profile China KC3 Agent should see Employee Number field
-    [Tags]    TC116
-    [Setup]    Login to Salesforce
-    Login to Salesforce with user    Mohit China KC3 Agent
-    Verify China KC3 agent is able to see the Employee Number field    Saksham China KC3 Agent
-    [Teardown]    Login.Close Browser
-
-TC117_Kone_PRM_Distribution_Community_New_Account
-    [Documentation]    Verify New ACCount opeion is avaialable on Home page when user logs in as PRM Communit User
-    [Tags]    TC117
-    [Setup]    Login to Salesforce
-    Login to Salesforce as Community User    Larisa Vallee
-    Verify PRM Community user is able create New Account from Home page
-    [Teardown]    Login.Close Browser
-
-TC118_PRM_COmmunity_User_able_to_Create_Edit_Report
-    [Documentation]    KONE PRM User should be able to create and Edit Reports
-    [Tags]    TC118
-    [Setup]    Login to Salesforce
-    Login to Salesforce as Community User    Larisa Vallee
-    Click on Reports Tab
-    Verify PRM Community user is able to create and edit report
-    [Teardown]    Login.Close Browser
-
-TC119_for_PRM_Community_User_should_able_to_View_Dashboard
-    [Documentation]    verify PRM Community user is able to create new report and has access to below dashboards:
-    ...    i. Salesperson dashboard EUR
-    ...    ii. Salesperson dashboard AED
-    ...    iii. Salesperson dashboard USD
-    [Tags]    TC119
-    [Setup]    Login to Salesforce
-    Login to Salesforce as Community User    Larisa Vallee
-    Verify Reports and dashboards shown to PRM Community Users
-    [Teardown]    Login.Close Browser
-
-TC120_Tabs_Kone_PRM_Distributor_Community
-    [Documentation]    KONE PRM User should be able to view the tabs and could navigate through the functionality
-    [Tags]    TC120
-    [Setup]    Login to Salesforce
-    Login to Salesforce as Community User    Larisa Vallee
-    Verify Tabs shown for KONE PRM Distributor Community User
-    [Teardown]    Login.Close Browser
-
-TC121_Email_Alert_Should_not_Contain_Inactive_Users
-    [Tags]    TC121
-    [Setup]    Login to Salesforce
-    Verify Email Alerts does not contains inactive users
-    [Teardown]    Login.Close Browser
-
-TC123_Not_able_to_Convert_Lead_Payer_account_Type
-    [Tags]    TC123
-    [Setup]    Login to Salesforce
-    Click on Lead Tab
-    Select or Create New Lead
-    Verify user is not able to Convert Lead Linked to Payer Account
-    [Teardown]    Login.Close Browser
-
-TC124_Not_able_to_Convert_Lead_INvoicing_Address_account_Type
-    [Tags]    TC124
-    [Setup]    Login to Salesforce
-    Click on Lead Tab
-    Select or Create New Lead
-    Verify user is not able to Convert Lead Linked to Invoiving Address Account
-
-TC125_AMP_Functionality_Imporvement
-    [Tags]    TC125
-    [Setup]    Login to Salesforce
-    Click on Site Survey Tab
-    Select a Site Survey Record
-    Verify User can link multple New AMP to Site Survey
-    Click on Asset Management Plan
-    Select a AMP record
-    Verify Status and KEN Value in Related Oportunity
-
-TC126_Calculate_Total_price_with_various_Situations
-    [Tags]    TC126
-    [Setup]    Login to Salesforce
-    Click on Opportunities Tab
-    Verify Target Price in each scenarios
-    [Teardown]    Login.Close Browser
-
-TC127_Create_Case_with_email_in_CC_Field
-    [Tags]    outlook2
-    Login to Outlook
-    Send new Email with Queue address in CC field
-    Login.Close Browser
-    Login to Salesforce
-    Click on Reports Tab
-    Verify Case is created by Email
-    [Teardown]    Login.Close Browser
-
-TC129_Send_Email_Through_Lightning
-    [Documentation]    User able to send Email in Lightning Account
-    [Tags]    TC129
-    [Setup]    Login to Salesforce
-    Switch to Lightning UI
-    Go To    https://kone--full.lightning.force.com/lightning/r/Opportunity/0068E00000K69JKQAZ/view?0.source=alohaHeader
-    Verify User can send Email through Lightning
 
 *** Keywords ***
