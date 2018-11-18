@@ -1,0 +1,24 @@
+*** Variables ***
+${x_username}     //input[@name='username']
+${x_password}     //input[@id='password']
+${x_login_button}    //*[@id='Login']
+${x_search}       //*[@id='phSearchInput']
+${x_search_button}    //*[@id='phSearchButton']
+${x_username_link}    //div[@class='displayName']/a
+${x_arrow}        //*[@id='moderatorMutton']/b
+${x_user_detail_button}    //*[@id='USER_DETAIL']/span
+${x_login_button_user_detail}    //*[@name='login']
+${x_Permission_Edit_Assignments}    //*[contains(@id,'RelatedPermsetAssignmentList')]//input[@value='Edit Assignments']    # Edit permission set assignments
+${x_Permission_Available_permission_Set_Edit_FL_Order}    //table[@class='layout']/tbody/tr[1]/td[1]//option[@title='KTOC Create and Edit FL order']    # KTOC Create and Edit FL Order permsiion set in available permission set field
+${x_Permission_Enabled_Permission_Set_Edit FL Order}    //table[@class='layout']/tbody/tr[1]/td[3]//option[text()='KTOC Create and Edit FL order']    # Edit and Create FL Order Option in Enabled Permsission set
+${x_Permission_Add_Permission_set}    //table[@class='layout']//tr/td[2]/div[1]/a    # Add Permission set button
+${x_Permission_Remove_Permission_Set_button}    //table[@class='layout']//tr/td[2]/div[2]/a    # Remove Permission Set button
+${x_Permission_Save_Button}    //input[@value='Save']    # Save button on Permission set page
+${x_User_detail_Page}    //h1[@class='pageType'][text()='User']    # User detail page
+${x_Logout_button}    //*[@class='zen-options']/li/a[text()='Logout']    # Log out button
+${x_User_Menu}    //*[@id='globalHeaderNameMink']    # User Menu options
+${x_Login_Searched_Contact}    //*[@id="Contact_body"]/table/tbody/tr[2]/th[1]/a    # Searched Contact to login as Community User
+${x_Home_tab}     //*[@id="home_Tab"]    # Home Tab
+${x_Kone_Home_PRM_Loggo}    //*[@id='phHeaderLogoImage'][contains(@src,'00D8E0000000hWN')]    # Logo of Kone shown whe PRM Community user logs in
+${x_Login_Switch_To_Lightning}    //a[@class='switch-to-lightning']    # Switch To Lightning link on Home page
+${x_Login_Lighning_Logo}    //*[@class="slds-global-header__logo"]    # Kone logo shown when user log in Lighning UI

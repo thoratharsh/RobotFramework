@@ -1,0 +1,37 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../Page_Objects/x_Site_Survey.txt
+
+*** Keywords ***
+Click on Site Survey Tab
+    Wait Until Element Is Visible    ${x_All_tabs}    20 seconds
+    Click Element    ${x_All_tabs}
+    Wait Until Element Is Visible    ${x_Site_Survey_tab}    20 seconds
+    Click Element    ${x_Site_Survey_tab}
+    Capture Page Screenshot
+
+Select a Site Survey Record
+    Wait Until Element Is Visible    ${x_Site_Survey_First_Record}    20 seconds
+    Click Element    ${x_Site_Survey_First_Record}
+    Wait Until Element Is Visible    ${x_Site_Survey_New_Linked_AMP}    20 seconds
+    Capture Page Screenshot
+
+Verify User can link multple New AMP to Site Survey
+    Wait Until Element Is Visible    ${x_Site_Survey_New_Linked_AMP}    20 seconds
+    Click Element    ${x_Site_Survey_New_Linked_AMP}
+    Wait Until Element Is Visible    ${x_Linked_AMP_Name}    10 seconds
+    Input Text    ${x_Linked_AMP_Name}    Test AMP
+    Wait Until Element Is Visible    ${x_Linked_AMP_Asset_Management_Plan}    10 seconds
+    Input Text    ${x_Linked_AMP_Asset_Management_Plan}    ACCENT INNS 2018
+    Click Element    ${x_AMP_Save_button}
+    Wait Until Element Is Visible    ${x_Site_Survey_Added_AMP}    10 seconds
+    Capture Page Screenshot
+    Wait Until Element Is Visible    ${x_Site_Survey_New_Linked_AMP}    20 seconds
+    Click Element    ${x_Site_Survey_New_Linked_AMP}
+    Wait Until Element Is Visible    ${x_Linked_AMP_Name}    10 seconds
+    Input Text    ${x_Linked_AMP_Name}    Test AMP
+    Wait Until Element Is Visible    ${x_Linked_AMP_Asset_Management_Plan}    10 seconds
+    Input Text    ${x_Linked_AMP_Asset_Management_Plan}    ACCENT INNS 2018
+    Click Element    ${x_AMP_Save_button}
+    Wait Until Element Is Visible    ${x_Site_Survey_Added_AMP}    10 seconds
+    Capture Page Screenshot

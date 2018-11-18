@@ -1,0 +1,3 @@
+*** Variables ***
+${d_Event_Subject}    Meeting TC54
+${d_Event_Type}    Customer Visit    # Type field on Event edit page

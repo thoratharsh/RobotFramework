@@ -1,0 +1,51 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../Page_Objects/x_Account.txt
+Resource          ../Page_Objects/x_Campaign.txt
+Resource          ../Page_Objects/x_Cases.txt
+Resource          ../Page_Objects/x_Contact.txt
+Resource          ../Page_Objects/x_Opportunity.txt
+Resource          ../Page_Objects/x_Reports.txt
+Resource          ../Page_Objects/x_leads.txt
+Resource          ../Page_Objects/x_Dashboard.txt
+Resource          ../Page_Objects/x_Chatter.txt
+Resource          ../Page_Objects/x_login.txt
+Resource          ../Page_Objects/x_Home.txt
+
+*** Keywords ***
+Verify Tabs shown for KONE PRM Distributor Community User
+    Wait Until Element Is Visible    ${x_Kone_Home_PRM_Loggo}    20 seconds
+    Wait Until Element Is Visible    ${x_home_tab}    10 seconds
+    Wait Until Element Is Visible    ${x_Lead Tab}    10 seconds
+    Wait Until Element Is Visible    ${x_Account_Tab}    10 seconds
+    Wait Until Element Is Visible    ${x_Contact_Tab}    10 seconds
+    Wait Until Element Is Visible    ${x_Opportunity_tab}    10 seconds
+    Wait Until Element Is Visible    ${x_Cases_tab}    10 seconds
+    Wait Until Element Is Visible    ${x_Reports_Tab}    10 seconds
+    Wait Until Element Is Visible    ${x_Dashboard_tab}    10 seconds
+    Wait Until Element Is Visible    ${x_Chatter_tab}    10 seconds
+    Capture Page Screenshot
+
+Verify PRM Community user is able create New Account from Home page
+    Wait Until Element Is Visible    ${x_home_tab}    20 seconds
+    Wait Until Element Is Visible    ${x_Home_Create_New}    10 seconds
+    Click Element    ${x_Home_Create_New}
+    Wait Until Element Is Visible    ${x_Home_Create_New_Account}    10 seconds
+    Click Element    ${x_Home_Create_New_Account}
+    Wait Until Element Is Visible    ${x_Account_edit_page}    10 seconds
+    Capture Page Screenshot
+
+Verify Reports and dashboards shown to PRM Community Users
+    Wait Until Element Is Visible    ${x_Reports_Tab}    10 seconds
+    Click Element    ${x_Reports_Tab}
+    Wait Until Element Is Visible    ${x_Report_New_Reports}    10 seconds
+    Wait Until Element Is Visible    ${x_Report_Search_report}    10 seconds
+    Input Text    ${x_Report_Search_report}    Salesperson dashboard EUR
+    Wait Until Element Is Visible    ${x_Report_Salesperson_Dashboard_EUR}    10 seconds
+    Capture Page Screenshot
+    Input Text    ${x_Report_Search_report}    Salesperson dashboard AED
+    Wait Until Element Is Visible    ${x_Report_Salesperson_Dashboard_AED}    10 seconds
+    Capture Page Screenshot
+    Input Text    ${x_Report_Search_report}    Salesperson dashboard USD
+    Wait Until Element Is Visible    ${x_Report_Salesperson_Dashboard_USD}    10 seconds
+    Capture Page Screenshot

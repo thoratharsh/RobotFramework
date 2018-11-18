@@ -1,0 +1,18 @@
+*** Variables ***
+${d_Opportunity_Name}    Harrsha test Oppo
+${d_Opportunity_Quanitity}    10
+${d_Opportunity_Amount}    1000
+${d_Opportunity_Lead_Source}    Other
+${d_Opportunity_Stage}    RFQ
+${d_Opportunity_Business_Type}    New Equipment (NEB)
+${d_Opportunity_Market_Segment}    Hotel
+${d_Opportunity_Account_Name}    Harsha test Account
+${x_Opportunity_New_FLOrder}    //*[@value='New FL Order']    # New FL Order button on Opportunity detail page
+${d_Opportunity_Description}    Trying to edit the Opportunity
+${d_Opportunity_Major_Project_Opportunity_record_type}    012w0000000Jy6o    # Record type of Major Project Opportunity
+${d_Major_Oppo_Market_Segment}    Hotel
+${d_Major_Oppo_Name}    Major Oppo test
+${d_Major_oppo_Elevator_Quantity}    1000
+${d_Major_Oppo_Elevator_Autowalk_Quantity}    100
+${d_Major_Oppo_Elevator_Amount}    1000
+${d_Major_Oppo_Escalator_Automwalk_Amount}    100

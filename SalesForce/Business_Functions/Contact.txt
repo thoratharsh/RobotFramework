@@ -1,0 +1,174 @@
+*** Settings ***
+Resource          ../Page_Objects/x_Contact.txt
+Resource          ../Test_Data/Contact.txt
+Library           Selenium2Library
+Resource          ../Page_Objects/x_Opportunity.txt
+Resource          ../Test_Data/Opportunity.txt
+Resource          ../Test_Data/Query.txt
+Resource          ../Page_Objects/x_Query.txt
+Resource          ../Page_Objects/x_Cases.txt
+Resource          ../Test_Data/Cases.txt
+Resource          ../Page_Objects/x_Account_Contact_Relationship.txt
+Resource          ../Page_Objects/x_Task.txt
+Resource          ../Test_Data/Task.txt
+Resource          ../Test_Data/Event.txt
+Resource          ../Page_Objects/x_Event.txt
+Resource          ../Test_Data/Notes_And_Attachment.txt
+Resource          ../Page_Objects/x_Notes_Attachment.txt
+Resource          ../Page_Objects/x_leads.txt
+
+*** Keywords ***
+Create New Contact
+    Wait Until Element Is Visible    ${x_Contact_New_Contact_button}    15 seconds    New Contact button is not present
+    Click Button    ${x_Contact_New_Contact_button}
+    Wait Until Element Is Visible    ${x_Contact_First_Name}    15 seconds
+    Input Text    ${x_Contact_First_Name}    ${d_Contact_First_Name}
+    Input Text    ${x_Contact_Last_Name}    ${d_Contact_Last_Name}
+    Input Text    ${x_Contact_Account_Name}    ${d_Contact_Account_Name}
+    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Contact_Autocomplete}    15 seconds
+    Run Keyword If    ${result}    Click Element    ${x_Contact_Autocomplete}
+    Input Text    ${x_Contact_Phone}    ${d_Contact_Phone}
+    Input Text    ${x_Contact_Mobile}    ${d_Contact_Phone}
+    Input Text    ${x_Contact_Email}    ${d_Contact_Email}
+    Select From List By Label    ${x_Contact_function}    ${d_Contact_Function}
+    Select From List By Label    ${x_Contact_Country}    ${d_Contact_Country}
+    Click Button    ${x_Contact_save_button}
+    ${result2}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Contact_detail_page}    15 seconds
+    Run Keyword If    not ${result2}    Click Element    ${x_Contact_save_button}
+    Wait Until Element Is Visible    ${x_Contact_detail_page}    15 seconds
+    Capture Page Screenshot
+
+Click on Contact Tab
+    Wait Until Element Is Visible    ${x_Contact_Tab}    15 seconds
+    Click Element    ${x_Contact_Tab}
+
+Select or Create New Contact
+    ${t_Result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Contact_First_record}    15 seconds
+    Run Keyword If    ${t_Result}    Click Element    ${x_Contact_First_record}
+    ...    ELSE    Create New Contact
+    Capture Page Screenshot
+
+Create New Opportunity from Contact
+    Wait Until Element Is Visible    ${x_Contact_New_Opportunity}    15 seconds
+    Click Element    ${x_Contact_New_Opportunity}
+    Wait Until Element Is Visible    ${x_Opportunity_Opportunity_Name}    15 seconds
+    Input Text    ${x_Opportunity_Opportunity_Name}    ${d_Opportunity_Name}
+    Select From List By Value    ${x_Opportunity_Business_type}    ${d_Opportunity_Business_Type}
+    Input Text    ${x_Opportunity_Quanitity}    ${d_Opportunity_Quanitity}
+    Input Text    ${x_Opportunity_Amount}    ${d_Opportunity_Amount}
+    Click Element    ${x_Opportunity_price_due_Date}
+    Click Element    ${x_Opportunity_Close_Date}
+    Select From List By Label    ${x_Opportunity_Stage}    ${d_Opportunity_Stage}
+    Select From List By Label    ${x_Opportunity_Lead_Source}    ${d_Opportunity_Lead_Source}
+    Select From List By Label    ${x_Opportunity_Market_Segment}    ${d_Opportunity_Market_Segment}
+    Click Element    ${x_Opportunity_Save_button}
+    Element Should Be Visible    ${x_Opportunity_Detail}
+    Capture Page Screenshot
+
+Create New Query from Contact
+    Wait Until Element Is Visible    ${x_Contact_New_Query}    15 seconds
+    Click Element    ${x_Contact_New_Query}
+    Wait Until Element Is Visible    ${x_Query_Subject}
+    Select From List By Label    ${x_Query_Branch_Office}    ${d_Query_Branch_Office}
+    Select From List By Label    ${x_Query_Type}    ${d_Query_Type}
+    Select From List By Label    ${x_Query_Category}    ${d_Query_Query_Category}
+    Select From List By Label    ${x_Query_Query_Reason}    ${d_Query_Query_Reason}
+    Input Text    ${x_Query_Subject}    ${d_Query_Subject}
+    Input Text    ${x_Query_Description}    ${d_Query_Description}
+    Click Button    ${x_Query_Save_button}
+    Wait Until Element Is Visible    ${x_Query_Page_Type}
+    Capture Page Screenshot
+
+Create New Case from Contact
+    Wait Until Element Is Visible    ${x_Contact_New_Case_Button}    15 seconds
+    Click Element    ${x_Contact_New_Case_Button}
+    Wait Until Element Is Visible    ${x_Cases_Contact_Name}    15 seconds
+    Input Text    ${x_Cases_Contact_Name}    ${d_Cases_Contact_Name}
+    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_automcomplete}    15 seconds
+    Run Keyword If    ${result}    Click Element    ${x_automcomplete}
+    Select From List By Label    ${x_Cases_Case_Origin}    ${d_Cases_case_Origine}
+    Select From List By Label    ${x_Cases_Branch_Office}    ${d_Cases_Branch_Office}
+    Click Element    ${x_Cases_Opened_Date}
+    Select From List By Label    ${x_Cases_Type}    ${d_Cases_Type}
+    Select From List By Label    ${x_Cases_case_reason}    ${d_Cases_Case_Reason}
+    Input Text    ${x_Cases_Subject}    ${d_Cases_Subject}
+    Input Text    ${x_Cases_Description}    ${d_Cases_Description}
+    Click Button    ${x_Cases_Save_button}
+    Wait Until Element Is Visible    ${x_Cases_page_Type}    15 seconds
+    Capture Page Screenshot
+
+Add Account Contact Relationship to Contact
+    Wait Until Element Is Visible    ${x_Contact_Add_Relationship}    15 seconds
+    Click Element    ${x_Contact_Add_Relationship}
+    Input Text    ${x_Relationship_Account}    ${d_Relationship_Account}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_automcomplete}    15 seconds
+    Run Keyword If    ${t_result}    Click Element    ${x_automcomplete}
+    Select From List By Label    ${x_Relationship_Relationship_Function}    ${d_relationship_Function}
+    Click Element    ${x_Relationship_Save_button}
+    ${t_result2}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Relationship_Error}    15 seconds
+    Run Keyword If    ${t_result2}    Input Text    ${x_Relationship_Account}    TEST AMERICA
+    ${t_result3}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_automcomplete}    15 seconds
+    Run Keyword If    ${t_result3}    Click Element    ${x_automcomplete}
+    Run Keyword If    ${t_result2}    Click Element    ${x_Relationship_Save_button}
+    Wait Until Element Is Visible    ${x_Contact_detail_page}
+    Mouse Over    //*[@class='listTitle'][text()='Related Accounts']/span
+    Capture Page Screenshot
+
+Create New Task for Contact
+    Wait Until Element Is Visible    ${x_Contact_New_Task_Button}    15 seconds
+    Click Element    ${x_Contact_New_Task_Button}
+    Wait Until Element Is Visible    ${x_Task_Subject}    15 seconds
+    Input Text    ${x_Task_Subject}    ${d_Task_Subject}
+    Input Text    ${x_Task_Outcome}    ${d_Task_Description}
+    Input Text    ${x_Task_Comments}    ${d_Task_Comments}
+    Click Element    ${x_Task_Save_button}
+    Wait Until Element Is Visible    ${x_Contact_detail_page}    15 seconds
+    Wait Until Element Is Visible    ${x_Contact_Created_Task}    15 seconds
+    ${t_text}    Get Text    ${x_Contact_Created_Task}
+    Should Be Equal As Strings    ${t_text}    ${d_Task_Subject}
+    Click Element    ${x_Contact_Created_Task}
+    Capture Page Screenshot
+
+Create New Event on Contact
+    Wait Until Element Is Visible    ${x_Contact_new_Event}    15 seconds
+    Click Element    ${x_Contact_new_Event}
+    Wait Until Element Is Visible    ${x_Event_Subject}    15 seconds
+    Input Text    ${x_Event_Subject}    ${d_Event_Subject}
+    Select From List By Label    ${x_Event_Type}    ${d_Event_Type}
+    Click Element    ${x_Event_Save_button}
+    Wait Until Element Is Visible    ${x_Contact_detail_page}    15 seconds
+    Wait Until Element Is Visible    ${x_Contact_Created_Event}    15 seconds
+    ${t_text}    Get Text    ${x_Contact_Created_Event}
+    Should Be Equal As Strings    ${t_text}    ${d_Event_Subject}
+    Click Element    ${x_Contact_Created_Task}
+    Capture Page Screenshot
+
+Edit the created Contact
+    Wait Until Element Is Visible    ${x_Contact_Edit_button}    15 seconds
+    Click Button    ${x_Contact_Edit_button}
+    Wait Until Element Is Visible    ${x_Contact_First_Name}    15 seconds
+    Input Text    ${x_Contact_Email}    thoratharsh.ht@gmail.com
+    Input Text    ${x_Contact_Phone}    8275214890
+    Input Text    ${x_Contact_Mobile}    8275214890
+    Input Text    ${x_Contact_Description}    This is updated descrption of contact
+    Click Element    ${x_Contact_save_button}
+    Wait Until Element Is Visible    ${x_Contact_detail_page}
+    Capture Page Screenshot
+
+Add Notes and Attachment to Contact
+    Wait Until Element Is Visible    ${x_Contact_New_Note_Button}    15 seconds
+    Click Element    ${x_Contact_New_Note_Button}
+    Wait Until Element Is Visible    ${x_Note_Title}    10 seconds
+    Input Text    ${x_Note_Title}    ${d_Notes_Title}
+    Input Text    ${x_Notes_Body}    ${d_Notes_Body}
+    Click Element    ${x_Notes_Save_Button}
+    Wait Until Element Is Visible    ${x_Contact_detail_page}    10 seconds
+    Wait Until Element Is Visible    ${x_Contact_First_Note}    10 seconds
+    ${t_Text}    Get Text    ${x_Contact_First_Note}
+    Should Be Equal As Strings    ${t_Text}    ${d_Notes_Title}
+    Click Element    ${x_Contact_First_Note}
+    Capture Page Screenshot
+
+verify Anonymize field on lead and Contact detail page
+    Wait Until Element Is Visible    ${x_Lead_Anonymize}    20 seconds
+    Capture Page Screenshot

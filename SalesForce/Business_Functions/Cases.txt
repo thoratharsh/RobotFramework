@@ -1,0 +1,105 @@
+*** Settings ***
+Resource          ../Page_Objects/x_Cases.txt
+Resource          ../Test_Data/Cases.txt
+Library           Selenium2Library
+Resource          ../Test_Data/Complaint.txt
+Resource          ../Page_Objects/x_Compliment.txt
+Resource          ../Test_Data/Compliment.txt
+Resource          ../Page_Objects/x_Query.txt
+Resource          ../Test_Data/Query.txt
+
+*** Keywords ***
+Create Complaint
+    Wait Until Element Is Visible    ${x_Cases_New_Case_Button}    15 seconds
+    Click Button    ${x_Cases_New_Case_Button}
+    Select From List By Label    ${x_Cases_Record_type}    ${d_Complaint_record_type}
+    Click Button    ${x_Cases_Continue_button}
+    Wait Until Element Is Visible    ${x_Cases_Contact_Name}    15 seconds
+    Input Text    ${x_Cases_Contact_Name}    ${d_Complaint_Contact_Name}
+    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_automcomplete}    15 seconds
+    Run Keyword If    ${result}    Click Element    ${x_automcomplete}
+    Select From List By Label    ${x_Cases_Case_Origin}    ${d_Complaint_case_Origine}
+    Select From List By Label    ${x_Cases_Country}    ${d_Complaint_Country}
+    Select From List By Label    ${x_Cases_Branch_Office}    ${d_Complaint_Branch_Office}
+    Click Element    ${x_Cases_Opened_Date}
+    Select From List By Label    ${x_Cases_Type}    ${d_Complaint_Type}
+    Select From List By Label    ${x_Cases_case_reason}    ${d_Compaint_Case_Reason}
+    Input Text    ${x_Cases_Subject}    ${d_Complaint_Subject}
+    Input Text    ${x_Cases_Description}    ${d_Complaint_Description}
+    Click Button    ${x_Cases_Save_button}
+    Wait Until Element Is Visible    ${x_Cases_page_Type}    15 seconds
+    Capture Page Screenshot
+
+Click on Cases Tab
+    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Cases_tab}    5 seconds
+    Run Keyword If    not ${result}    Click Element    ${x_Cases_plus}
+    Click Element    ${x_Cases_tab}
+    Wait Until Element Is Visible    ${x_Cases_New_Case_Button}    15 seconds
+    Capture Page Screenshot
+
+Create New Compliment
+    Wait Until Element Is Visible    ${x_Cases_New_Case_Button}    15 seconds
+    Click Button    ${x_Cases_New_Case_Button}
+    Select From List By Label    ${x_Cases_Record_type}    ${d_Compliment_record_type}
+    Click Button    ${x_Cases_Continue_button}
+    Wait Until Element Is Visible    ${x_Cases_Contact_Name}    15 seconds
+    Input Text    ${x_Compliment_Person_Mentioned}    ${d_Compliment_Person_mentioned}
+    Input Text    ${x_Compliment_Contact_Name}    ${d_Compliment_Contact_Name}
+    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_automcomplete}    15 seconds
+    Run Keyword If    ${result}    Click Element    ${x_automcomplete}
+    Select From List By Label    ${x_Compliment_Country}    ${d_Compliment_Country}
+    Select From List By Label    ${x_Compliment_Branch_Office}    ${d_Compliment_Branch_Office}
+    Select From List By Label    ${x_Compliment_Type}    ${d_Compliment_Type}
+    Select From List By Label    ${x_Compliment_Reason}    ${d_Compliment_Case_Reason}
+    Input Text    ${x_Compliment_Subject}    ${d_Compliment_Subject}
+    Input Text    ${x_Compliment_Description}    ${d_Compliment_Description}
+    Click Button    ${x_Compliment_Save_button}
+    Wait Until Element Is Visible    ${x_Compliment_page_Type}    15 seconds
+    Capture Page Screenshot
+
+Create New Query
+    Wait Until Element Is Visible    ${x_Cases_New_Case_Button}    15 seconds
+    Click Button    ${x_Cases_New_Case_Button}
+    Select From List By Label    ${x_Cases_Record_type}    ${d_Query_Record_type}
+    Click Button    ${x_Cases_Continue_button}
+    Wait Until Element Is Visible    ${x_Query_Branch_Office}    15 seconds
+    Input Text    ${x_Query_Account_name}    ${d_Query_Account_Name}
+    ${result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_automcomplete}    15 seconds
+    Run Keyword If    ${result}    Click Element    ${x_automcomplete}
+    Select From List By Label    ${x_Query_Country}    ${d_Query_Country}
+    Select From List By Label    ${x_Query_Branch_Office}    ${d_Query_Branch_Office}
+    Select From List By Label    ${x_Query_Type}    ${d_Query_Type}
+    Select From List By Label    ${x_Query_Category}    ${d_Query_Query_Category}
+    Select From List By Label    ${x_Query_Query_Reason}    ${d_Query_Query_Reason}
+    Input Text    ${x_Query_Subject}    ${d_Query_Subject}
+    Input Text    ${x_Query_Description}    ${d_Query_Description}
+    Click Button    ${x_Query_Save_button}
+    Wait Until Element Is Visible    ${x_Query_Page_Type}
+    Capture Page Screenshot
+
+Verify Account Name and Assigned to in Each List View
+    Wait Until Element Is Visible    ${x_Cases_List_Views}    15 seconds
+    Wait Until Element Is Visible    ${x_List_View_Go}    15 seconds
+    Click Element    ${x_List_View_Go}
+    : FOR    ${list_view}    IN    @{d_List_View_Names}
+    \    Wait Until Element Is Visible    ${x_Cases_List_Views}    15 seconds
+    \    Wait Until Keyword Succeeds    1 min    3 seconds    Select From List By Label    ${x_Cases_List_Views}    ${list_view}
+    \    Wait Until Element Is Visible    ${x_Cases_List_View_Account_Name}    15 seconds
+    \    Wait Until Element Is Visible    ${x_Cases_List_View_Assigned_to}    15 seconds
+    \    Capture Page Screenshot
+
+Select or Create Case
+    Wait Until Element Is Visible    ${x_Cases_first_Case_in_list}    30 seconds
+    Click Element    ${x_Cases_first_Case_in_list}
+    Capture Page Screenshot
+
+Verify User is able to delete Cases
+    Wait Until Element Is Visible    ${x_Cases_page_Type}    30 seconds
+    Wait Until Element Is Visible    ${x_Cases_Delete_button}    30 seconds
+    Click Element    ${x_Cases_Delete_button}
+    Alert Should Be Present    Are you sure?    ACCEPT    30 seconds
+
+Verify user is not able to delete cases
+    Wait Until Element Is Visible    ${x_Cases_page_Type}    30 seconds
+    Element Should Not Be Visible    ${x_Cases_Delete_button}    30 seconds
+    Capture Page Screenshot

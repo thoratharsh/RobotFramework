@@ -1,0 +1,53 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../Page_Objects/x_Reports.txt
+
+*** Keywords ***
+Click on Reports Tab
+    Wait Until Element Is Visible    ${x_Reports_Tab}    15 seconds
+    Click Element    ${x_Reports_Tab}
+
+Verify Report type Opportunities with Account and Equipment is avaialable
+    Wait Until Element Is Visible    ${x_Report_New_Reports}
+    Click Element    ${x_Report_New_Reports}
+    Wait Until Element Is Visible    ${x_Report_Search_report_type}    10 seconds
+    Input Text    ${x_Report_Search_report_type}    Opportunities with accounts and equipments
+    Wait Until Element Is Visible    ${x_Report_Type_Account_with_Opportunities_and_Equipment}    10 seconds
+    Capture Page Screenshot
+
+Verify Report Opportunity with or without Survey is avaialable
+    Wait Until Element Is Visible    ${x_Report_New_Reports}
+    Click Element    ${x_Report_New_Reports}
+    Wait Until Element Is Visible    ${x_Report_Search_report_type}    10 seconds
+    Input Text    ${x_Report_Search_report_type}    Opportunity with or without Customer Surveys
+    Wait Until Element Is Visible    ${x_Report_Type_Opportunity_with_or_without_Customer_Survey}    10 seconds
+    Capture Page Screenshot
+    Input Text    ${x_Report_Search_report_type}    Opportunity with or without NPX Survey Records
+    Wait Until Element Is Visible    ${x_Report_type_Opportunity_with_or_without_NPX_Survey_Records}
+    Capture Page Screenshot
+
+Verify PRM Community user is able to create and edit report
+    Wait Until Element Is Visible    ${x_Report_New_Reports}    10 seconds
+    Capture Page Screenshot
+    Wait Until Element Is Visible    ${x_Report_Search_report}    10 seconds
+    Input Text    ${x_Report_Search_report}    My opportunities created by month
+    Wait Until Element Is Visible    ${x_Report_Action}    10 seconds
+    Click Element    ${x_Report_Action}
+    Wait Until Element Is Visible    ${x_Report_Action_Customize}    10 seconds
+    Click Element    ${x_Report_Action_Customize}
+    Wait Until Element Is Visible    ${x_Report_Run_Report}    10 seconds
+    Capture Page Screenshot
+
+Verify Case is created by Email
+    Wait Until Element Is Visible    ${x_Report_Search_report}    30 seconds
+    Input Text    ${x_Report_Search_report}    Email to case created Today
+    Wait Until Element Is Visible    ${x_report_Email_toCase_Create_today}    40 seconds
+    Click Element    ${x_report_Email_toCase_Create_today}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Report_email_to_case_record1}    50 seconds
+    Run Keyword If    not ${t_result}    Click Element    ${x_Report_Run_Report}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Report_email_to_case_record1}    50 seconds
+    Run Keyword If    not ${t_result}    Click Element    ${x_Report_Run_Report}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Report_email_to_case_record1}    50 seconds
+    Run Keyword If    not ${t_result}    Click Element    ${x_Report_Run_Report}
+    Run Keyword If    not ${t_result}    Fail
+    Capture Page Screenshot

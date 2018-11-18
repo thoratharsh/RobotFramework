@@ -1,0 +1,30 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../Page_Objects/x_Email_Alerts.txt
+Resource          ../Test_Data/Email_Alerts.txt
+Resource          ../Page_Objects/x_User.txt
+Resource          ../Page_Objects/x_login.txt
+
+*** Keywords ***
+Verify Email Alerts does not contains inactive users
+    : FOR    ${t_email_Alert}    IN    @{Email_Alerts_ids}
+    \    ${t_email_alert_url}    Catenate    SEPARATOR=    https://kone--full.cs87.my.salesforce.com/    ${t_email_Alert}
+    \    Go To    ${t_email_alert_url}
+    \    Wait Until Element Is Visible    ${x_Email_Alert_detail_Page}    20 seconds
+    \    Verify users are not inactive
+
+Verify users are not inactive
+    ${t_number_of_users}    Get Element Count    ${x_Email_Alerts_Users_link}
+    :FOR    ${t_number}    IN RANGE    1    ${t_number_of_users}+1
+    \    ${t_xpath_user}    Catenate    SEPARATOR=    //td[text()='Recipients']/following-sibling::td/a[contains(text(),'User')][    ${t_number}    ]
+    \    Wait Until Element Is Visible    ${t_xpath_user}    10 seconds
+    \    Wait Until Keyword Succeeds    30 seconds    4 seconds    Click Element    ${t_xpath_user}
+    \    Wait Until Element Is Visible    ${x_arrow}    15 seconds
+    \    Click Element    ${x_arrow}
+    \    Wait Until Element Is Visible    ${x_user_detail_button}    15 seconds
+    \    Click Element    ${x_user_detail_button}
+    \    Wait Until Element Is Visible    ${x_user_Active_Checked}    20 seconds
+    \    Go Back
+    \    Sleep    3 seconds
+    \    Go Back
+    \    Sleep    3 seconds

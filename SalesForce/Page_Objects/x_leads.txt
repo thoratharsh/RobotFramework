@@ -1,0 +1,73 @@
+*** Variables ***
+${x_Lead Tab}     //*[@id='Lead_Tab']/a
+${x_new_button}    //*[@name='new']    # New button shown on Leads home page
+${x_first_name}    //*[@id='name_firstlea2']    # First Name field on Leads edit page
+${x_last_name}    //*[@id='name_lastlea2']    # Last Name fields on Lead edit page
+${x_company}      //*[@id='lea3']    # Company Name field on Lead edit page
+${x_phone_number}    //*[@id='lea8']    # Phone number field on Lead edit page
+${x_Business_type}    //*[@id='00N20000000sJWC']    # Business Type field on Lead edit page
+${x_Product_service_interest}    //*[@id='00N20000000sJWW_unselected']//option[@value='0']    # Product /service interest field on Lead edit page
+${x_Add_button}    //*[@alt='Add']    # Add Button for Product service Interest
+${x_Save_button}    //*[@name='save']    # Save Button on Leads Edit page
+${x_Lead_detail_page}    //h1[@class='pageType'][text()='Lead']    # Lead Detail Page
+${x_Lead_Source}    //*[@id='lea5']    # Lead Sourec Field on Lead edit page
+${x_Street}       //*[@id='lea16street']    # Street field on Lead Edit page
+${x_Zip}          //*[@id='lea16zip']    # Zip Code field on Lead edit page
+${x_City}         //*[@id='lea16city']    # City field on Lead Edit page
+${x_State}        //*[@id='lea16state']    # State Field on Lead edit page
+${x_Convert_button}    //input[@value='Convert']    # Convert Button on Lead deatil page
+${x_Customer_Segment}    //*[@id='00N20000000sJWR']    # Customer Segment field on Lead Edit page
+${x_Lead_Convert_Account_Name}    //*[@id='accid']    # Account Name shown when user tries to convert a Lead Account
+${x_Lead_Convert_Subject}    //*[@id='tsk5_fu']    # Subject field on Lead Conversion
+${x_Leads_Country}    //*[@id='00N20000000sJWg']    # Country field on Lead page
+${x_Lead_First_record}    //*[@class='list']/tbody/tr[2]/th/a    # First Lead record on Lead detail page
+${x_Lead_Edit_button}    //*[@name='edit']    # Edit button on Leads detail page
+${x_Leads_Add_To_Campaign}    //*[@value='Add to Campaign']    # Add To Campaign button on Leads
+${x_Leads_Search_within}    //*[@id="campaignScope"]    # Search Within field on Window opened when user clicks on Add to Campaign button
+${x_Leads_Search_Campaign}    //*[@id='lksrch']    # Search Campaign field
+${x_Leads_Go}     //*[@name='go']    # Go button
+${x_Leads_first_Campaign}    //*[@class='list']/tbody/tr[2]/th/a    # First Campaign record in search
+${x_Leads_New_Note_Button}    //*[contains(@id,'RelatedNoteList')]//input[@name='newNote']    # New NOte button on Leads detail page
+${x_Leads_First_Note}    //*[contains(@id,'RelatedNoteList_body')]/table/tbody/tr[2]/td[2]/a    # First Note record on Lead detail page
+${x_leads_Search_Campaign_Frame}    //frame[@title='Search']    # Search Campaign frame
+${x_Lead_Result_Campaign_frame}    //frame[@title='Results']    # Result Campaign Frame
+${x_Lead_Campaign_member_Status}    //*[@id='Status']    # Campaign Member Status field
+${x_Lead_Campaign_Member_Save}    //*[@name='save']    # Save field on Campaign Member field
+${x_Lead_Campaign_member_detail_Page}    //h1[@class='pageType'][text()='Campaign Member']    # Campaign Member detail page
+${x_Lead_Send_An_Email}    //*[@name='email']    # Send an Email buton on Lead detail page
+${x_lead_Email_Subject}    //*[@id='p6']    # Subject field on Send an Email page
+${x_Lead_Body}    //*[@id='p7']    # Body field on Send An Email page
+${x_Lead_Activity_History_First_record}    //div[contains(@id,'RelatedHistoryList')]/table/tbody/tr[2]/th/a    # First Record in Activity Histiory related list
+${x_Lead_Email_Send}    //*[@name='send']    # Send button on email
+${x_Lead_Email}    //*[@id='lea11']    # Email field on Lead edit page
+${x_Leads_Advanced_People_Flow_Infotainment_Solutions}    //*[text()='Advanced People Flow']//ancestor::tr[1]//table/tbody/tr[2]/td[1]//option[text()='Infotainment solutions']    # ASdvanced People Flow field on Leads edit page
+${x_Leads_Advanced_People_Flow_Add}    //*[text()='Advanced People Flow']//ancestor::tr[1]//table/tbody/tr[2]/td[2]//a[@title='Add']    # Add Button on Avanced People Flow field
+${x_Leads_List_View}    //*[contains(@name,'fcf')]    # List View on Leads
+${x_Leads_List_View_Go}    //*[@value=' Go! ']    # Go Button on Leads List View
+${x_Leads_List_View_Name}    //*[@id='ext-gen22']/div[1]//table//div[@title='Name']    # Name field on List Viewa
+${x_Leads_List_View_Lead_Status}    //*[@id='ext-gen22']/div[1]//table//div[@title='Lead Status']    # Leads Status colomn on List Viw
+${x_Leads_List_View_Urgency}    //*[@id='ext-gen22']/div[1]//table//div[@title='Urgency']    # Urgency Filed on Lead List View
+${X_Leads_List_View_KFM_Tender_Status}    //*[@id='ext-gen22']/div[1]//table//div[@title='KFM Tender Status']    # KFM tender Status field on Leads List Vuiew
+${x_Leads_List_View_Company}    //*[@id='ext-gen17']//div[@title='Company']    # Company field on Lead List View
+${x_Leads_List_View_Equipment_Street_Address}    //*[@id='ext-gen17']//div[@title='Equipment Street Address']    # Equipment Street Address field on Leads zList View
+${x_Leads_List_View_Equipment_City}    //*[@id='ext-gen17']//div[@title='Equipment City']    # Equipment City fiedl on Leads List View
+${x_Leads_List_View_Equipment_ID}    //*[@id='ext-gen17']//div[@title='Equipment ID']    # Equipment ID Field on List View
+${x_Leads_List_View_Planner_Group}    //*[@id='ext-gen17']//div[@title='Planner Group']    # Planner group fiedl on Leads List View
+${x_Leads_List_View_Technician_Name}    //*[@id='ext-gen17']//div[@title='Technician Name']    # Technician Name fiedl on Leads List View
+${x_Leads_Attach_file}    //*[@name='attachFile']    # Attach file button on Leads detail page
+${x_Leads_Choose_File}    //*[@id="file"]    # Choose File button on Leads Page
+${x_Leads_Attach_Attach_File}    //*[@id="Attach"]    # Attach file button on Leads page
+${x_Leads_Attach_Done}    //*[@value=' Done ']    # Done button on Attach file
+${x_Leads_Notes_and_attachment_attach_record}    //*[contains(@id,'RelatedNoteList_title')]//ancestor::*[@class='bRelatedList'][1]//table[@class='list']/tbody/tr[2]/td[2]/a    # Notes and Attachment record on Leads Page
+${x_Leads_Find_Content}    //*[@value='Find Content']    # Find Content button on Leads page
+${x_Leads_Search_for_Content_page}    //h2[@class='pageDescription'][text()='Search for Content']    # Search for COntent Page
+${x_Lead_Anonymize}    //td[text()='Anonymize']    # Anonymize field on LEad detail page
+${x_Lead_Convert_Lead_Account_Look_Up}    //a[@title=' Lookup (New Window)']    # Account Look Up in Convert Lead page
+${x_Lead_Convert_Lead_Account_Name_Search}    //*[@id="lksrch"]    # Serach Account Name on Look Up window
+${x_Lead_Convert_Lead_First_Payer_Account}    //table[@class='list']/tbody/tr/td[text()='Payer']/ancestor::tr[1]/th/a    # First Payer Account shown in Search list
+${x_Lead_Convert_Lead_Error_Payer_Invoicing_Add}    //*[@class='errorMsg'][contains(text(),'Cannot convert lead for the following types of Accounts: Payer type and Invoicing_address')]    # Error shwon on Convert elad Screen for Payer and Invoicing address Account
+${x_Leads_Record_type}    //*[@id="p3"]    # Record type field on Lead
+${x_Lead_Continue}    //*[@value='Continue']    # Continue button
+${x_Lead_Convert_Lead_Result_Frame}    //*[@id="resultsFrame"]    # Frame Containing Results
+${x_Lead_Convert_Lead_Search_Frame}    //*[@id="searchFrame"]    # Search Frame on Convert lead Page
+${x_Lead_Convert_Lead_First_Invoicing_Address_Acount}    //table[@class='list']/tbody/tr/td[text()='Invoicing address']/ancestor::tr[1]/th/a    # First Invoiving address Account shown in List

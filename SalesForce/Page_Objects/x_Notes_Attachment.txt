@@ -1,0 +1,7 @@
+*** Variables ***
+${x_Notes_Choose File_Button}    //*[@id="file"]    # Attach file button
+${x_Notes_Attachfile}    //*[@id='Attach']    # Attach File
+${x_Notes_Done_Button}    //*[@title='Done']    # Done button on NOtes and attachment
+${x_Note_Title}    //*[@id='Title']    # Title field on Notes and Attachment
+${x_Notes_Body}    //*[@id='Body']    # Body field on Notes and attachment
+${x_Notes_Save_Button}    //*[@name='save']    # Save button on Notes and attachment

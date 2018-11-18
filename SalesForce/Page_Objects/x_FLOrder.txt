@@ -1,0 +1,13 @@
+*** Variables ***
+${x_FLOrder_Tab}    //*[@alt='FL Orders']    # FL Order Tab
+${x_FLOrder_Plus}    //*[@class='allTabsArrow']    # Plus Symbol
+${x_FLOrder_New_button}    //input[@name='new' or @title='New' or @value=' New ']    # New Button present on FL Order home page
+${x_FLOrder_Order}    //input[@id='Name' or @name='Name' ]    # Order field on FL Order Edit page
+${x_FLOrder_Opportunity}    //input[@id='CF00N20000001g9lZ' or @name='CF00N20000001g9lZ']    # Opportuntiy field on FL Order edit page
+${x_FLOrder_Order_Number}    //*[@id='00N20000002RgWM']    # Order Number field on FL Order Edit page
+${x_FLOrder_Save_button}    //input[ @value=' Save ' or @name='save' or @title='Save']    # Save button FL Order edit page
+${x_FLOrder_Edit}    //*[@name='edit']    # Edit button on FL Order edit page
+${x_FLOrder_First_Order_record}    //table[@class='list']/tbody/tr[2]/th[1]/a    # First5 Record shown on FL Order Home page
+${x_FLOrder_Page_Type}    //h1[@class='pageType'][text()='FL Order']    # Page Type field of FL Order detail pag
+${x_FLOrder_multiple}    //*[@title='Opportunity Select']    # Multple Matches
+${x_FL_Order_delete}    //*[@name='del']    # Delete button on FL Order

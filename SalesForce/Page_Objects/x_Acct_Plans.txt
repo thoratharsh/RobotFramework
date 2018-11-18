@@ -1,0 +1,13 @@
+*** Variables ***
+${x_AcctPlan_Acct_PlanName}    //*[contains(@id,'AcctPlanName')]    # Acct Plan Name field on Account detail page
+${x_AcctPlan_Country}    //*[contains(@id,'Country')]    # Country Field on Acct Plan edit page
+${x_AcctPlan_Acc_Managers_Line_manager}    //*[@class='lookupInput']/input[contains(@name,'AccountManagersLineManager')]    # Account Manager's Line Manager field on Acct Plan edit page
+${x_AcctPlan_Description_Of_Customer_Business}    //*[contains(@id,'DescriptionOfCustomersBusiness')]    # Description of Customer Business field on Acct Plan edit page
+${x_AcctPlan_customer_financial_position_and_growth_potential}    //*[contains(@id,'CustomerFinancialPositionAndGrowth')]    # Customer Financial Position and Growth Potential field on Acct Plan edit page
+${x_AcctPlan_Description_of_Current_relationship}    //*[contains(@id,'DescriptionOfCurrentRelationship')]    # Description of Current relationship field on Acct Plan edit page
+${x_AcctPlan_Strength}    //*[contains(@id,'SWOTStrengths')]    # Strength field on Acct Plan edit page
+${x_Acct_Plan_Wekness}    //*[contains(@id,'Weaknesses')]    # Weakness field on Acct Plan edit page
+${x_AcctPlan_Opportunities}    //*[contains(@id,'Opportunities')]    # Opportunites field on Acct Plan edit page
+${x_Acct_Plan_Threats}    //*[contains(@id,'Threats')]    # Threats field on Acct Plan edit page
+${x_AcctPlan_save_button}    //*[@value='Save']    # Save button on acct Plan edit page
+${x_AcctPlan_page_Type}    //h1[@class='pageType'][text()='Acct Plan']

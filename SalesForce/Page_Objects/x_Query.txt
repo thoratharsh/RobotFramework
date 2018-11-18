@@ -1,0 +1,14 @@
+*** Variables ***
+${x_Query_Contact_Name}    //*[@id='cas3']    # Contact Name field on Query Object
+${x_Query_Account_name}    //*[@id='cas4']    # Account Name field on Compliment page
+${x_automcomplete}    //*[@class='autoCompleteRow']    # Autocomplete
+${x_Query_Case_Origine}    //*[@id='cas11']    # Case Origine field on Query
+${x_Query_Branch_Office}    //*[@id='00N20000000tSnE']    # Branch Office field on Query page
+${x_Query_Type}    //*[@id='cas5']    # Case Reason field on Query edit page
+${x_Query_Category}    //*[@id='00N20000003bO0z']    # Query Category field on Case edit page
+${x_Query_Query_Reason}    //*[@id='00N20000003JIb7']    # Query Reason field on Case edit page
+${x_Query_Subject}    //*[@id='cas14']    # Subject field on Query page
+${x_Query_Description}    //*[@id='cas15']    # Description field on Query edit page
+${x_Query_Save_button}    //input[@name='save']    # Save button on Query page
+${x_Query_Page_Type}    //h1[@class='pageType'][text()='Case' or text()='Articles']    # Page Type
+${x_Query_Country}    //*[@id='00N20000000tSol']    # Country Field on Query

@@ -1,0 +1,10 @@
+*** Variables ***
+${x_User_Options}    //*[@id='globalHeaderNameMink']    # User options
+${x_User_Settings}    //*[@id='globalHeaderNameMink']/ancestor::div[1]/ul[1]/li[1]/a    # Use setting menu shown after clicking on User Options
+${x_User_Personal}    //*[@id='PersonalInfo_font']    # Personal link shown when user clicks on User settings
+${x_User_Language_Timezone}    //*[@id='LanguageAndTimeZone_font']/span    # Language and Timezone link shown when user clicks on personal menu
+${x_User_Language}    //*[contains(@id,'languageLocaleKey')]    # Language field shown in user settings
+${x_User_Save_Button}    //input[contains(@id,'save')]    # Save button on User page
+${x_User_Success_message}    //*[@class='messageText']    # Success message when language is changed
+${x_User_Employee_Number_Field}    //td[text()='Employee Number']    # Employee Number field on User detail page
+${x_user_Active_Checked}    //td[text()='Active']/following-sibling::td/img[@id='IsActive_chkbox'][@title='Checked']    # Active checkbox Checked

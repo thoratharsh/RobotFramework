@@ -1,0 +1,2 @@
+*** Variables ***
+@{d_Leads_ISR_List_Views}    00B1r0000088xiq    00B1r0000088xio    00B1r0000088xis    00B1r0000088xir    00B1r0000088xip

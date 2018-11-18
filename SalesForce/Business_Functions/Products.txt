@@ -1,0 +1,26 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../Page_Objects/x_Products.txt
+
+*** Keywords ***
+Click on Products Tab
+    Wait Until Element Is Visible    ${x_All_tabs}    30 seconds
+    Click Element    ${x_All_tabs}
+    Wait Until Element Is Visible    ${x_Products_Tab}    30 seconds
+    Click Element    ${x_Products_Tab}
+    Wait Until Element Is Visible    ${x_Products_Find_Product_seachbox}    30 seconds
+
+Verify Product Group field is available on Products
+    Wait Until Element Is Visible    ${x_Product_Detail_page}    30 seconds
+    Wait Until Element Is Visible    ${x_Product_detail_Product_Group}    30 seconds
+    Capture Page Screenshot
+
+Search and Select a Product
+    [Arguments]    ${Product_name}=Doors
+    Wait Until Element Is Visible    ${x_Products_Find_Product_seachbox}    30 seconds
+    Input Text    ${x_Products_Find_Product_seachbox}    ${Product_name}
+    Click Element    ${x_Products_Find_Products}
+    Wait Until Element Is Visible    ${x_Products_First_Searched_Product}    30 seconds
+    Click Element    ${x_Products_First_Searched_Product}
+    Wait Until Element Is Visible    ${x_Product_Detail_page}    30 seconds
+    Capture Page Screenshot

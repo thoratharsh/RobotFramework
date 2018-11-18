@@ -1,0 +1,6 @@
+*** Variables ***
+${x_Partner}      //*[@id='CF00Nw0000003cRhs']    # Partner field on partner page
+${x_Partner_Partner_Role}    //*[@id='00Nw0000003cRhr']    # Partner Role field on Partner Page
+${x_Partner_Opportunity}    //*[@id='CF00Nw0000003cRhp']    # Opportunity field on Partner Page
+${x_Partner_Partner_To}    //*[@id='CF00Nw0000003cRhS']    # Partner To field on Partner Page
+${x_Partner_Save_button}    //*[@name='save']    # Save button on Partner Page

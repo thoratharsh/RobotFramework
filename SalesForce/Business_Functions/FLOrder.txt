@@ -1,0 +1,46 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../Page_Objects/x_FLOrder.txt
+Resource          ../Test_Data/FLOrder.txt
+
+*** Keywords ***
+Click on FL Order Tab
+    [Documentation]    Click on FL Order Tab. FL Order home page will be shown
+    Wait Until Element Is Visible    ${x_FLOrder_Plus}    5 seconds
+    Click Element    ${x_FLOrder_Plus}
+    Wait Until Element Is Visible    ${x_FLOrder_Tab}    5 seconds
+    Click Element    ${x_FLOrder_Tab}
+
+Create New FL Order
+    [Documentation]    This Business Function is to craete new FL Orer in CRM
+    Wait Until Element Is Visible    ${x_FLOrder_New_button}    15 seconds
+    Click Element    ${x_FLOrder_New_button}
+    Wait Until Element Is Visible    ${x_FLOrder_Opportunity}    15 seconds
+    Input Text    ${x_FLOrder_Opportunity}    ${d_FLOrder_Opportunity}
+    Input Text    ${x_FLOrder_Order}    ${d_FLOrder_Order}
+    Click Element    ${x_FLOrder_Save_button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_FLOrder_multiple}    15 seconds
+    Run Keyword If    ${t_result}    Select From List By Index    ${x_FLOrder_multiple}    1
+    Run Keyword If    ${t_result}    Click Element    ${x_FLOrder_Save_button}
+    Wait Until Element Is Visible    ${x_FLOrder_Edit}    15 seconds
+    Capture Page Screenshot
+
+Select or Create FL Order
+    ${t_Result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_FLOrder_First_Order_record}    10 seconds
+    Run Keyword If    ${t_Result}    Click Element    ${x_FLOrder_First_Order_record}
+    ...    ELSE    Create New FL Order
+    Wait Until Element Is Visible    ${x_FLOrder_Page_Type}    15 seconds
+
+Edit the FL Order Record
+    Wait Until Element Is Visible    ${x_FLOrder_Edit}    15 seconds
+    Click Element    ${x_FLOrder_Edit}
+    Wait Until Element Is Visible    ${x_FLOrder_Order}    15 seconds
+    Input Text    ${x_FLOrder_Order}    ${d_FLOrder_Order2}
+    Click Element    ${x_FLOrder_Save_button}
+    Wait Until Element Is Visible    ${x_FLOrder_Page_Type}
+    Capture Page Screenshot
+
+Delete FL Order
+    Wait Until Element Is Visible    ${x_FL_Order_delete}    15 seconds
+    Click Element    ${x_FL_Order_delete}
+    Handle Alert    ACCEPT    15 seconds

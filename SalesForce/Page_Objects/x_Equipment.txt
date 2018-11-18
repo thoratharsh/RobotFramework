@@ -1,0 +1,25 @@
+*** Variables ***
+${x_Plus}         //*[@id='AllTab_Tab']/a    # Plus symbol on Home page
+${x_Equipment_Tab}    //*[@alt='Equipment' or @id='Asset_Tab']    # Equipment Tab
+${x_Equipment_First_Equipment}    //table[@class='list']/tbody/tr[2]/th/a    # First Equipment record on Equipment Home page
+${x_Equipment_Detail_page}    //h1[@class='pageType'][text()='Equipment']    # Equipment detail page
+${x_Equipment_first_Contarct_Line_Item}    //*[contains(@id,'RelatedContractLineItemList_body')]/table[1]/tbody/tr[2]/th/a    # First Contarct Luine Item record
+${x_Equipment_COntract_Line_charactiristics}    //*[@value='Characteristics' and @name='characteristics']    # Charactiristics button on Contract Line page
+${x_Equipment_FSM_Service_Contract_Characteristics_page}    //h1[@class='pageType'][text()='FSM Service Contract Characteristics']    # FSM Service Contract Characteristics page
+${x_Equipment_Yellow_Dialogue_box}    //*[@class='messageCell']    # Yellow Dialogue box on Equipment detail page
+${x_Equipment_Equipment_Name}    //td[text()='Equipment Name']    # field on Detail Page
+${x_Equipment_Equipment_Number}    //td[text()='Equipment Number']    # Equipment Number on detail page
+${x_Equipment_Valid_from}    //td[text()='Valid From']    # Valid From field on Equipment detail page
+${x_Equipment_Description}    //td[text()='Description']    # Description field on Equipment detail page
+${x_Equipment_Equipment_Type}    //td[text()='Equipment Type']    # Equipment Type field on Equipment detail page
+${x_Equipmwent_Asset_record_type}    //td[text()='Asset Record Type']    # Asset Record Type field on detail page
+${x_Equipment_Start_Up_Date}    //td[text()='Start Up Date']    # Start Up Date field on Equipment detail page
+${x_Equipment_Customer_Asset_Name}    //td[text()='Customer Asset Name']    # Customer Asset Name field on Equipment detail page
+${x_Equipment_Manufacturing_Country}    //td[text()='Manufacturing Country']    # Manufacturing Country field on Equipment detail page
+${X_Equipment_Manufacturer}    //td[text()='Manufacturer']    # Manufacturer Field on Equipment detail page
+${x_Equipment_Construction_year}    //*[text()='Construction Year']    # Construction Year field on Equipment detail page
+${x_Equipment_Manufacturer_Part_Number}    //*[text()='Manufacturer Part Number']    # Manufacturer Part NUmber field on Equipment detail page
+${x_Equipment_Construction_Month}    //*[text()='Construction Month']    # Construction Month Field on Equipment detail page
+${x_Equipment_Manufacturer_Serial_Number}    //*[text()='Manufacturer Serial Number']    # Manufacturer serial Number field on Equipment detaikl page
+${x_Equipment_Technical_Identification_number}    //*[text()='Technical Identification Number']    # Technical Identification Number field on Equipment detail page
+${x_Equipment_Actual_Avaialability}    //*[text()='Actual Availability %']    # Actual Avaialability field on Equipment detil page

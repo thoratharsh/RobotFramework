@@ -1,0 +1,10 @@
+*** Variables ***
+${d_Complaint_Contact_Name}    Harsha Test
+${d_Complaint_case_Origine}    E-mail
+${d_Complaint_Branch_Office}    Eastern Finland
+${d_Complaint_Type}    Doors
+${d_Compaint_Case_Reason}    Other
+${d_Complaint_Subject}    Elevator not working
+${d_Complaint_Description}    Elevator is not working in our apartment. Please fix it
+${d_Complaint_record_type}    Complaint
+${d_Complaint_Country}    Finland

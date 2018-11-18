@@ -1,0 +1,8 @@
+*** Variables ***
+${d_Contact_First_Name}    Harsha
+${d_Contact_Last_Name}    Test
+${d_Contact_Function}    End user
+${d_Contact_Phone}    9404407005
+${d_Contact_Account_Name}    Harsha Test
+${d_Contact_Email}    thoratahsrgh111@gmail.com
+${d_Contact_Country}    Finland

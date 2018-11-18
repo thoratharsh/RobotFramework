@@ -1,0 +1,163 @@
+*** Settings ***
+Resource          ../Test_Data/User.txt
+Resource          ../Page_Objects/x_User.txt
+Library           Selenium2Library
+Resource          ../Page_Objects/x_login.txt
+
+*** Keywords ***
+Change User Language to Chinese
+    [Documentation]    This Business Function change the user language to Chinese.
+    Wait Until Element Is Visible    ${x_User_Options}    10 seconds    User Options not shown
+    Click Element    ${x_User_Options}
+    Wait Until Element Is Visible    ${x_User_Settings}    10 seconds
+    Click Element    ${x_User_Settings}
+    Wait Until Element Is Visible    ${x_User_Personal}    10 seconds
+    Click Element    ${x_User_Personal}
+    Wait Until Element Is Visible    ${x_User_Language_Timezone}    10 seconds
+    Click Element    ${x_User_Language_Timezone}
+    Wait Until Element Is Visible    ${x_User_Language}    10 seconds
+    Select From List By Value    ${x_User_Language}    ${d_User_Language_Chinese}
+    Click Element    ${x_User_Save_Button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_User_Success_message}    10 seconds
+    Run Keyword If    not ${t_result}    Click Element    ${x_User_Save_Button}
+    Capture Page Screenshot
+
+Change User Language to English
+    [Documentation]    This Business Function change the user language to English
+    Wait Until Element Is Visible    ${x_User_Options}    10 seconds    User Options not shown
+    Click Element    ${x_User_Options}
+    Wait Until Element Is Visible    ${x_User_Settings}    10 seconds
+    Click Element    ${x_User_Settings}
+    Wait Until Element Is Visible    ${x_User_Personal}    10 seconds
+    Click Element    ${x_User_Personal}
+    Wait Until Element Is Visible    ${x_User_Language_Timezone}    10 seconds
+    Click Element    ${x_User_Language_Timezone}
+    Wait Until Element Is Visible    ${x_User_Language}    10 seconds
+    Select From List By Value    ${x_User_Language}    ${d_User_Language_English}
+    Click Element    ${x_User_Save_Button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_User_Success_message}    10 seconds
+    Run Keyword If    not ${t_result}    Click Element    ${x_User_Save_Button}
+    Capture Page Screenshot
+
+Change User Language to German
+    [Documentation]    This Business Function change the user language to German
+    Wait Until Element Is Visible    ${x_User_Options}    10 seconds    User Options not shown
+    Click Element    ${x_User_Options}
+    Wait Until Element Is Visible    ${x_User_Settings}    10 seconds
+    Click Element    ${x_User_Settings}
+    Wait Until Element Is Visible    ${x_User_Personal}    10 seconds
+    Click Element    ${x_User_Personal}
+    Wait Until Element Is Visible    ${x_User_Language_Timezone}    10 seconds
+    Click Element    ${x_User_Language_Timezone}
+    Wait Until Element Is Visible    ${x_User_Language}    10 seconds
+    Select From List By Value    ${x_User_Language}    ${d_User_Language_German}
+    Click Element    ${x_User_Save_Button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_User_Success_message}    10 seconds
+    Run Keyword If    not ${t_result}    Click Element    ${x_User_Save_Button}
+    Capture Page Screenshot
+
+Change User Language to French
+    [Documentation]    This Business Function change the user language to French
+    Wait Until Element Is Visible    ${x_User_Options}    10 seconds    User Options not shown
+    Click Element    ${x_User_Options}
+    Wait Until Element Is Visible    ${x_User_Settings}    10 seconds
+    Click Element    ${x_User_Settings}
+    Wait Until Element Is Visible    ${x_User_Personal}    10 seconds
+    Click Element    ${x_User_Personal}
+    Wait Until Element Is Visible    ${x_User_Language_Timezone}    10 seconds
+    Click Element    ${x_User_Language_Timezone}
+    Wait Until Element Is Visible    ${x_User_Language}    10 seconds
+    Select From List By Value    ${x_User_Language}    ${d_User_Language_French}
+    Click Element    ${x_User_Save_Button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_User_Success_message}    10 seconds
+    Run Keyword If    not ${t_result}    Click Element    ${x_User_Save_Button}
+    Capture Page Screenshot
+
+Change User Language to Finnish
+    [Documentation]    This Business Function change the user language to Finnish
+    Wait Until Element Is Visible    ${x_User_Options}    10 seconds    User Options not shown
+    Click Element    ${x_User_Options}
+    Wait Until Element Is Visible    ${x_User_Settings}    10 seconds
+    Click Element    ${x_User_Settings}
+    Wait Until Element Is Visible    ${x_User_Personal}    10 seconds
+    Click Element    ${x_User_Personal}
+    Wait Until Element Is Visible    ${x_User_Language_Timezone}    10 seconds
+    Click Element    ${x_User_Language_Timezone}
+    Wait Until Element Is Visible    ${x_User_Language}    10 seconds
+    Select From List By Value    ${x_User_Language}    ${d_User_Language_Finnish}
+    Click Element    ${x_User_Save_Button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_User_Success_message}    10 seconds
+    Run Keyword If    not ${t_result}    Click Element    ${x_User_Save_Button}
+    Capture Page Screenshot
+
+Change User Language to Italian
+    [Documentation]    This Business Function change the user language to Italian
+    Wait Until Element Is Visible    ${x_User_Options}    10 seconds    User Options not shown
+    Click Element    ${x_User_Options}
+    Wait Until Element Is Visible    ${x_User_Settings}    10 seconds
+    Click Element    ${x_User_Settings}
+    Wait Until Element Is Visible    ${x_User_Personal}    10 seconds
+    Click Element    ${x_User_Personal}
+    Wait Until Element Is Visible    ${x_User_Language_Timezone}    10 seconds
+    Click Element    ${x_User_Language_Timezone}
+    Wait Until Element Is Visible    ${x_User_Language}    10 seconds
+    Select From List By Value    ${x_User_Language}    ${d_User_Language_Italian}
+    Click Element    ${x_User_Save_Button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_User_Success_message}    10 seconds
+    Run Keyword If    not ${t_result}    Click Element    ${x_User_Save_Button}
+    Capture Page Screenshot
+
+Change User Language to Spanish
+    [Documentation]    This Business Function change the user language to Spanish
+    Wait Until Element Is Visible    ${x_User_Options}    10 seconds    User Options not shown
+    Click Element    ${x_User_Options}
+    Wait Until Element Is Visible    ${x_User_Settings}    10 seconds
+    Click Element    ${x_User_Settings}
+    Wait Until Element Is Visible    ${x_User_Personal}    10 seconds
+    Click Element    ${x_User_Personal}
+    Wait Until Element Is Visible    ${x_User_Language_Timezone}    10 seconds
+    Click Element    ${x_User_Language_Timezone}
+    Wait Until Element Is Visible    ${x_User_Language}    10 seconds
+    Select From List By Value    ${x_User_Language}    ${d_User_Language_Spanish}
+    Click Element    ${x_User_Save_Button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_User_Success_message}    10 seconds
+    Run Keyword If    not ${t_result}    Click Element    ${x_User_Save_Button}
+    Capture Page Screenshot
+
+Change User Language to Swedish
+    [Documentation]    This Business Function change the user language to Swedish
+    Wait Until Element Is Visible    ${x_User_Options}    10 seconds    User Options not shown
+    Click Element    ${x_User_Options}
+    Wait Until Element Is Visible    ${x_User_Settings}    10 seconds
+    Click Element    ${x_User_Settings}
+    Wait Until Element Is Visible    ${x_User_Personal}    10 seconds
+    Click Element    ${x_User_Personal}
+    Wait Until Element Is Visible    ${x_User_Language_Timezone}    10 seconds
+    Click Element    ${x_User_Language_Timezone}
+    Wait Until Element Is Visible    ${x_User_Language}    10 seconds
+    Select From List By Value    ${x_User_Language}    ${d_User_Language_Swedish}
+    Click Element    ${x_User_Save_Button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_User_Success_message}    10 seconds
+    Run Keyword If    not ${t_result}    Click Element    ${x_User_Save_Button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_User_Success_message}    10 seconds
+    Run Keyword If    not ${t_result}    Click Element    ${x_User_Save_Button}
+    Capture Page Screenshot
+
+Verify China KC3 agent is able to see the Employee Number field
+    [Arguments]    ${p_User}
+    Wait Until Element Is Visible    ${x_search}    30 seconds
+    Input Text    ${x_search}    ${p_User}
+    Wait Until Element Is Visible    ${x_search_button}    15 seconds
+    Click Button    ${x_search_button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_username_link}    15 seconds
+    Run Keyword If    not ${t_result}    Click Button    ${x_search_button}
+    ${t_result2}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_username_link}    15 seconds
+    Run Keyword If    not ${t_result2}    Click Button    ${x_search_button}
+    Wait Until Element Is Visible    ${x_username_link}    15 seconds
+    Click Element    ${x_username_link}
+    Wait Until Element Is Visible    ${x_arrow}    15 seconds
+    Click Element    ${x_arrow}
+    Wait Until Element Is Visible    ${x_user_detail_button}    15 seconds
+    Click Element    ${x_user_detail_button}
+    Wait Until Element Is Visible    ${x_User_Employee_Number_Field}    30 seconds
+    Capture Page Screenshot

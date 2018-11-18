@@ -1,0 +1,45 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../Page_Objects/x_Outlook.txt
+Resource          ../Test_Data/Cases.txt
+
+*** Keywords ***
+Login to Outlook
+    Open Browser    https://outlook.office.com/owa/    chrome
+    Maximize Browser Window
+    Wait Until Element Is Visible    ${x_Outlook_Email}    30 seconds
+    Input Text    ${x_Outlook_Email}    harshavardhan.thorat@kone.com
+    Wait Until Element Is Visible    ${x_Outlook_Next}    10 seconds
+    Click Element    ${x_Outlook_Next}
+    Wait Until Element Is Visible    ${x_outlook_Password}    30 seconds
+    Input Text    ${x_outlook_Password}    BeingHappy@1
+    Wait Until Element Is Visible    ${x_Outlook_Sign_in}    20 seconds
+    Click Element    ${x_Outlook_Sign_in}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_outlook_Dont_Show_this_Again}    5 seconds
+    Run Keyword If    ${t_result}    Click Element    ${x_outlook_Dont_Show_this_Again}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Outlook_Staty_signed_in_no}    5 seconds
+    Run Keyword If    ${t_result}    Click Element    ${x_Outlook_Staty_signed_in_no}
+
+Send new Email with Queue address in To field
+    Wait Until Element Is Visible    ${x_New_Email}    20 seconds
+    Click Element    ${x_New_Email}
+    Wait Until Element Is Visible    ${x_Outlook_Subject}    10 seconds
+    Input Text    ${x_Outlook_Subject}    Harsha Test email to case
+    Wait Until Element Is Visible    ${x_To_Field}    10 seconds
+    Input Text    ${x_To_Field}    ${d_Case_Email_to_case_Addresss}
+    Click Element    ${x_Outlook_Send}
+    Capture Page Screenshot
+    Sleep    5 seconds
+
+Send new Email with Queue address in CC field
+    Wait Until Element Is Visible    ${x_New_Email}    20 seconds
+    Click Element    ${x_New_Email}
+    Wait Until Element Is Visible    ${x_Outlook_Subject}    10 seconds
+    Input Text    ${x_Outlook_Subject}    Harsha Test email to case
+    Wait Until Element Is Visible    ${x_To_Field}    10 seconds
+    Input Text    ${x_To_Field}    saksham.sahani@kone.com
+    Wait Until Element Is Visible    ${x_Outlook_CC}    10 seconds
+    Input Text    ${x_Outlook_CC}    ${d_Case_Email_to_case_Addresss}
+    Click Element    ${x_Outlook_Send}
+    Capture Page Screenshot
+    Sleep    5 seconds

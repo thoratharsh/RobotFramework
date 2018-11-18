@@ -1,0 +1,79 @@
+*** Settings ***
+Resource          ../Test_Data/Partner.txt
+
+*** Variables ***
+${x_Opportunity_Opportunity_Name}    //*[@id='opp3' or @name='opp3']    # Opportunity Name field on Opportunity edit page
+${x_Opportunity_Business_type}    //*[@id='00N20000000sJrZ' or @name='00N20000000sJrZ']    # Business Type field on Opportunity edit page
+${x_Opportunity_Opportunity_category}    //*[@id='00N20000000scK0' or @name='00N20000000scK0']    # Opportunity Category fiedl on Oppoeruinirt edit page
+${x_Opportunity_Quanitity}    //*[@id='TotalOpportunityQuantity' or @name='TotalOpportunityQuantity']    # Quantity Field on Opportunity edit page
+${x_Opportunity_Amount}    //*[@id='opp7' or @name='opp7']    # Amount filed on Opportunity edit page
+${x_Opportunity_Market_Segment}    //*[@id='00N20000000sJrU' or @name='00N20000000sJrU']    # Market Segment field on Opportunity edit page
+${x_Opportunity_Lead_Source}    //*[@id='opp6' or @name='opp6']    # Lead Source field on Opportunity edit page
+${x_Opportunity_Close_Date}    //*[@id='opp9' or @name='opp9']/ancestor::span/span/a    # Close Date field on Opportunity edit page
+${x_Opportunity_Stage}    //*[@id='opp11' and @name='opp11']    # Stage field on Opportunity edit page
+${x_Opportunity_price_due_Date}    //*[@id='00N20000000sSJc' or @name='00N20000000sSJc']/ancestor::span/span/a    # Price Due Date field on Opportunity edit page
+${x_Opportunity_Start_Onsite_Date}    //*[@id='00N20000000sJsN' or @name='00N20000000sJsN']/ancestor::span/span/a    # Start Onsite Date field on Opportunity edit page
+${x_Opportunity_Save_button}    //*[@name='save' or @value=' Save ']    # Save button on Opportunity edit page
+${x_Opportunity_Autosuggestion}    //*[@class='autoCompleteRow']    # Autosuggestion on Opportunty edit page
+${x_Opportunity_Detail}    //h1[@class='pageType'][text()='Opportunity']    # Opportunity detail page
+${x_Opportunity_tab}    //*[@id='Opportunity_Tab']/a    # Opportunities Tab
+${x_Opportunity_New_button}    //input[@name='new' or @value=' New ']    # New Button on Opportunites Home page
+${x_Opportunity_Record_Type}    //*[@id='p3']    # Record Type fo Opportunity
+${x_Opportunity_Continue}    //*[@name='save' and @type='submit']    # Continue Button
+${x_Opportunity_Edit_button}    //*[@name='edit']    # Edit Button on Opportunity detail page
+${x_Opportunity_Account_Name}    //*[@id='opp4' or @name='opp4']    # Account Name Field on Opportunity detail page
+${d_Opportunity_Record_Type}    012200000004MPR
+${x_Opportunity_First_Opportunity_record}    //*[@class='list']/tbody/tr[2]/th/a    # First Opportunity Record
+${x_Opportunity_description}    //*[@id='opp14']    # Description Field on Opportunity edit page
+${x_Opportunity_New_Competitor}    //*[@value='New Competitor']    # New Competitor button on Opportunity detail page
+${x_Opportunity_First_Created_Competitor}    //*[contains(@id,'00N20000000sImT')]/table/tbody/tr[2]/th/a    # Created Competitor record
+${x_Opportunity_New_Role}    //*[@name='newRole']    # New Role button on Opportunity
+${x_Opportunity_Add_Partner_Button}    //*[@name='new_partner']    # Add Partner Button on Opportunity
+${x_Opportunity_Created_Partner_Record}    //*[contains(@id,'00Nw0000003cRhp')]/div[1]//table/tbody/tr[2]/th/a    # Created Partner Record on Opportunity
+${x_Opportunity_Add_Team}    //*[contains(@class,'opportunityTeamMember')]//input[@name='add']    # Add Team on Opportunity
+${x_Opportunity_Opp_Team_members}    //div[contains(@id,'RelatedOpportunitySalesTeam')]/table/tbody/tr/td[1]    # Opportunity Team Members on Opportunity detail \ page
+${x_Opportunity_New_Note_button}    //*[contains(@id,'RelatedNoteList')]//input[@name='newNote']    # New Note button on Opportunity
+${x_Opportunity_First_Note}    //*[contains(@id,'RelatedNoteList_body')]/table/tbody/tr[2]/td[2]/a    # First Note on Opportunity
+${x_Opportunity_Add_FL_Contract_Button}    //*[@value='Add FL Contract']    # Add FL Contract Button on Opportunity detail page
+${x_Opportunity_Add_FL_Sales_Order_button}    //*[@value='Add FL Sales Order']    # Add FL Sales Order Button on Opportunity
+${x_Opportunity_Add_Many_Contracts_button}    //a[text()='Add many Contracts']    # Add Many Contracts button on Opportunity
+${x_Major_Oppo_Amount}    //*[@class='detailList']/tbody/tr[2]//input    # Amouint field on Major Project Opportuunity
+${x_major_Oppo_Market_Segment}    //*[@class='detailList']/tbody/tr[4]//select    # Market Segment field on Major Project Opportunity
+${x_Major_Oppo_MP_Support}    //*[@class='detailList']/tbody/tr[6]//input    # Does Project require MP Support checkbox field on Major Project Opportubnity
+${x_Major_Oppo_Continue}    //*[@value='Continue']    # Continue Button on Major Project Opportuntiy
+${x_Major_Oppo_Elevator_Quantity}    //*[@name='00Nw0000008Sz6c' or @id='00Nw0000008Sz6c']    # Elevator Quantity Field on Major Project Opportunity
+${x_Major_Oppo_Elevator_Autowalk_Quantity}    //*[@name='00Nw0000008Sz6h' or @id='00Nw0000008Sz6h']    # Elevator Automwalk Quanti8ty field on Major Project Opportunity
+${x_Major_Oppo_Elevator_Amount}    //*[@name='00Nw0000008Sz6b' or @id='00Nw0000008Sz6b']    # Elevatpr Amount Field on Major Project Opportunity
+${x_Major_Oppo_Elevator_Autowalk_Amount}    //*[@name='00Nw0000008Sz6d' and @id='00Nw0000008Sz6d']    # Elevator Autowalk Amount field on Major Project Opportunity
+${x_Major_Oppo_Advanced_People_Flow}    //*[@id='00Nw0000008Sz6L_unselected']//option[1]    # Advanced People Flow field on Major Project Opportunty
+${x_Major_Oppo_Advanced_people_Flow_Add}    //*[@id='00Nw0000008Sz6L_unselected']//ancestor::tr[1]/td[2]/a[1]/img    # Add button for Advanced People Flow
+${x_Major_Oppo_Site_Country}    //*[@id='00N20000000sJsD' or @name='00N20000000sJsD']    # Site Contry field on Major Project Opportunity
+${x_Major_Oppo_Require_MP_Support}    //*[@id='00N1r0000099anZ' or @name='00N1r0000099anZ']    # Required MP Support of Deemed Support
+${x_Major_Oppo_RFQ_Received_Date}    //*[@id='00Nw0000008Sz70' or @name='00Nw0000008Sz70']/ancestor::span[1]//a    # RFQ Received Date field on Opportunity
+${x_Opportuntiy_Contact_Role_First_record}    //*[contains(@id,'RelatedContactRoleList_body')]/table/tbody/tr[2]/th/a    # First Record of Contact Role on Opportunity
+${x_Opportunity_Project_Complexity}    //*[@id='00Nw0000009EkOt' or @name='00Nw0000009EkOt']    # Projecty Complexity field on Opportunity
+${x_Opportuntiy_New_FL_Tender}    //*[@name='new_fl_tender' or @value='New FL Tender']    # New FL Tender button on Opportunity
+${x_Opportunity_FL_Tender_Error}    //*[@class='messageText'][contains(text(),'Please define the Project Complexity before creating tenders')]    # Error shown whiel Creation of New FL tender
+${x_Opportunity_Quick_Access_Menu}    //*[@alt='Expand Quick Access Menu']    # Quick Access Menu on Opportuinity
+${x_Opportunity_Quick_Access_Menu_View_Fields}    //*[@id="devSlide"]//a[text()='View Fields']    # View Fields on Quick Access Menu
+${x_Opportunity_View_Fields_Advanceed_People_Flow}    //*[text()='Advanced People Flow']    # Advanced People Flow field on View Fields
+${x_Opportunity_View_Fields_APF_Quantity}    //*[text()='APF Quantity']    # APF Quantity Field on View Fields
+${x_Opportunity_View_Fields_APF_Amount}    //*[text()='APF Amount']    # APF Amount on View Fieelds
+${x_Opportuntiy_Attach_file_button}    //*[@name='attachFile']    # Attach file button on Opportunity
+${x_Opportunity_Choose_File}    //*[@id="file"]    # Choose File on Opportubnity
+${x_Opportunity_attach_attach_File}    //*[@name='Attach']    # Attach File button on attachment page
+${x_Opportunity_Atach_Done}    //*[@value=' Done ']    # Done button on Attach file
+${x_Opportunity_Notes_attachment_attach_record}    //*[contains(@id,'RelatedNoteList_title')]//ancestor::*[@class='bRelatedList'][1]//table[@class='list']/tbody/tr[2]/td[2]/a    # Attachemnt on Opportunity
+${x_Opportunity_Major_Oppo_Modernization_Planning_Services}    //*[text()='Modernization Planning Services']/ancestor::tr[1]/td[2]//table    # Modernization Planning services field on Major Opportunity
+${x_Major_Oppo_Planning_Services_Offer}    //*[text()='Planning Services Offer Price']/ancestor::tr[1]//input    # Planning Services Offer field on Major Opportunity
+${x_Major_Oppo_Sales_Person_Chine}    //*[text()='Sales Person (China)']/ancestor::td[1]/following-sibling::td//input    # Sales Person Chine field on Major Project Opportubnity
+${x_Opportunity_First_Contact_Role_record}    //div[contains(@id,'RelatedContactRoleList')]/table/tbody/tr[2]/th[1]/a    # Contact Role record on Opportubnity
+${x_Opportunity_New_FL_Tender}    //*[@name='new_fl_tender']    # New FL tender button on Opporty
+${x_Opportunity_FL_Tender_related_list_record}    //*[@title='FL Tender']/ancestor::div[2]/div[2]/table/tbody/tr[2]/th/a    # FL Tender record in Opportunity page
+${x_Opportunity_detail_Target_Price}    //div[contains(@id,'00N20000001sA41')]    # Target Price field on Opportunity
+${x_Opportunity_Branch_Office}    //*[@id="00N20000002CwJM"]    # Branch Office field on Opportunity
+${x_Opportunity_lightning_Activity_section}    //span[@class='title'][text()='Activity']    # Activity Section on Opportunity page in Lighning uI
+${x_Opportunity_Lightning_Activity_Email}    //span[@class='title'][text()='Email']    # Email sub section in activity sub section
+${x_Opportunity_Lightning_Activity_Email_To}    //span[text()='To']/ancestor::div[1]/div[1]/div[1]//input    # To field on Email sub section in Activity related list in Lightninig
+${x_Opportunity_Lightning_email_Send_button}    //span[@dir='ltr'][text()='Send']    # Send Button on Email related list
+${x_Opportunity_Lightning_Activity_Email_Subject}    //span[text()='Subject']/ancestor::div[1]//input    # Sibject field in Email in Lightning UI

@@ -1,0 +1,15 @@
+*** Variables ***
+${d_Account_Name}    Harsha test Account
+${d_Account_Street_House_Number}    Row House number 10    # Street House NUmber fieldn on Account edit page
+${d_Account_Zip_Postal_Code}    12345
+${d_Account_City}    Finland
+${d_Account_Customer_Segment}    Architect    # Customer Segment
+${d_Account_Name3}    Harsha3
+${d_Account_Name_4}    Harsha4
+${d_Account_Street2}    M H Road2
+${d_Account_Street3}    M H Road3
+${d_Account_Street4}    M H Road4
+${d_Account_Street5}    M H Road5
+${d_Account_PO_BOx}    P O Box Finland
+${d_Account_PO_Box_City}    Finland
+${d_Account_PO_Box_Postal_Code}    12345

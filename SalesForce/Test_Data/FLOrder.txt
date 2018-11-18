@@ -1,0 +1,5 @@
+*** Variables ***
+${d_FLOrder_Order}    Order1
+${d_FLOrder_Opportunity}    harsha Test oppo
+${d_FLOrder_Order_Number}    12
+${d_FLOrder_Order2}    Order 121212

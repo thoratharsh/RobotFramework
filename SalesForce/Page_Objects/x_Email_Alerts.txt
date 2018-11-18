@@ -1,0 +1,3 @@
+*** Variables ***
+${x_Email_Alerts_Users_link}    //td[text()='Recipients']/following-sibling::td/a[contains(text(),'User')]    # Users link in Reciepint field
+${x_Email_Alert_detail_Page}    //h1[@class='pageType'][text()='Email Alert ']    # Detail Page of email alerts

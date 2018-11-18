@@ -1,0 +1,19 @@
+*** Variables ***
+${x_FLTender_Plus}    //*[@alt='All Tabs' or @class='allTabsArrow']    # Plus symbol
+${x_FLTender_Tab}    //*[@alt='FL Tenders' or text()='FL Tenders']    # FL Tender Tab
+${x_FLTender_New_button}    //*[@name='new']    # New button on FL tender
+${x_FLTender_Record_Type}    //*[@id='p3']    # Continue Button
+${x_FLTender_Continue}    //*[@name='save'][@type='submit']    # Continue Button on FL tender
+${x_FLTender_Opportunity}    //*[@class='detailList']/tbody/tr[1]/td/div/span/input    # Opportunity field on FL tender edit page
+${x_FLTender_Description}    //*[@id='00N20000001g9lt']    # Description field on FL Tender edit page
+${x_FLTender_Save}    //*[@value='Save' or @name='save']    # Save button on FL Tender
+${x_FLTender_PageType}    //*[@class='pageType'][text()='FL Tender']    # FL tender Page type
+${x_FLTender_First_Record}    //table[@class='list']/tbody/tr[2]/th/a    # First record shown when user clicks on FL tender Tab
+${x_FL_Tender_Edit}    //*[@name='edit']    # Edit button present on FL tender detail page
+${x_FLTender_multiple}    //*[@title='Opportunity Select']    # Multple Searches
+${x_FL_tender_Select_version1}    //*[@class='list']/tbody/tr[1]/td[1]//input[@class='activationCheck']    # Select Version 1.0
+${x_FL_Tender_Select_Version2}    //*[@class='list']/tbody/tr[2]/td[1]//input[@class='activationCheck']    # Select FL tender version 2.0
+${x_FL_Tender_Set_As_Active}    //*[@value='Set as Active']    # Set as Active Button
+${x_FL_Tender_Delete}    //*[@name='del']    # Delete button on FL Tender
+${x_Fl_Tender_Active_Version}    //td[@id='bodyCell']//form/span/span/span[2]//*[@class='list']/tbody/tr/td//img[@alt='Checked']/ancestor::tr[1]/td[2]/a[2]    # Active Version on FL tender
+${x_FL_Tender_Product_Offering_Record}    //h3[text()='Product Offering']/ancestor::div[2]/div[2]/table/tbody/tr[2]/th/a    # Record in Product Offering related list on FL tender page

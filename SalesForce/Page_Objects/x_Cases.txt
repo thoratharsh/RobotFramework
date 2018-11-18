@@ -1,0 +1,24 @@
+*** Variables ***
+${x_automcomplete}    //*[@class='autoCompleteRow']    # Autocomplete
+${x_Cases_Contact_Name}    //*[@id='cas3']    # Contact Name field on Cases
+${x_Cases_Case_Origin}    //*[@id='cas11']    # Case Origin field on Cases edit page
+${x_Cases_Branch_Office}    //*[@id='00N20000000tSnE']    # Branch Office filed on Cases page
+${x_Cases_Type}    //*[@id='cas5']    # Type field on Cases page
+${x_Cases_Opened_Date}    //*[@id='00N20000000tPWZ']/ancestor::span/span/a    # Opened Date field on Cases page
+${x_Cases_case_reason}    //*[@id='cas6']    # Case Origine field on Cases page
+${x_Cases_Subject}    //*[@id='cas14']    # Subject field on Cases edit page
+${x_Cases_Description}    //*[@id='cas15']    # Description field on Cases edit page
+${x_Cases_Save_button}    //input[@name='save']    # Save button on Csaes edit page
+${x_Cases_page_Type}    //h1[@class='pageType'][text()='Case' or text()='Articles']    # Page Type
+${x_Cases_plus}    //*[@alt='All Tabs']    # + symbol on home page
+${x_Cases_tab}    //*[@id='Case_Tab'or @alt='Cases']    # Cases Tab
+${x_Cases_New_Case_Button}    //*[@name='new']    # New Case button on Cases home page
+${x_Cases_Record_type}    //*[@id='p3']    # Cases Record type shown when user clicks on New Case button
+${x_Cases_Continue_button}    //*[@value='Continue']    # Continue button
+${x_Cases_Country}    //*[@id='00N20000000tSol']    # Country Field on Cases
+${x_Cases_List_Views}    //*[@name='fcf']    # List View on Cases Tab
+${x_Cases_List_View_Account_Name}    //*[@id='ext-gen16']//tr/td[5]/div[text()='Account Name']    # Account Name colomn in List Views
+${x_Cases_List_View_Assigned_to}    //*[@id='ext-gen16']//tr/td/div[text()='Assigned To']    # Assigned to Field on List View
+${x_List_View_Go}    //*[@name='go']    # Go Button on List View
+${x_Cases_Delete_button}    //*[@value='Delete']    # Delete button on Cases
+${x_Cases_first_Case_in_list}    //*[@class='list']/tbody/tr/th/a    # First Case in List

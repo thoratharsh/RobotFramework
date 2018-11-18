@@ -1,0 +1,84 @@
+*** Settings ***
+Resource          ../Page_Objects/x_Campaign.txt
+Library           Selenium2Library
+
+*** Keywords ***
+Select or create a Campaign Record
+    [Documentation]    This Business Functions select Campaign record from List. If Campaign Member ios not available then New Campaign record is created successfully
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_first_campaign_record}    7 seconds
+    Run Keyword If    ${t_result}    Click Element    ${x_first_campaign_record}
+    ...    ELSE    Create Campaign
+
+Create Campaign
+    Click Element    ${x_new_campaign}
+    Input Text    ${x_campaign_name}    test campaign
+    Select From List by Value    ${x_type}    Advertising
+    Click Element    ${x_save_button}
+    Wait Until Element Is Visible    ${x_Campaign_detail_Page}    10 seconds
+    Capture Page Screenshot
+
+Delete Selected Campaign Record
+    Click Element    ${x_delete_button}
+    Handle Alert    ACCEPT
+
+Edit the Campaign
+    Click Element    ${x_edit_button}
+    Input Text    ${x_description}    We are editing this campaign for test
+    Click Element    ${x_save_button}
+    Wait Until Element Is Visible    ${x_Campaign_detail_Page}    10 seconds
+    Capture Page Screenshot
+
+Click on Campaign Tab
+    [Documentation]    Click on Campaign Tab to see all Campaign Records
+    Wait Until Element is Enabled    ${x_home_tab}    timeout=15 seconds
+    Click Element    ${x_plus_symbol}
+    Click Element    ${x_campaign_tab2}
+
+Add Campaign Members to Campaign by Searching
+    [Documentation]    Add Campaign Membes to Campaign by Manually searching the Leads
+    Wait Until Element Is Visible    ${x_Campaign_Manage_Members_button}    10 seconds
+    Click Element    ${x_Campaign_Manage_Members_button}
+    Wait Until Element Is Visible    ${x_Campaign_Add_member_Search}    10 seconds
+    Click Element    ${x_Campaign_Add_member_Search}
+    Wait Until Element Is Visible    ${x_Campaign_Field_filter}    10 seconds
+    Select From List By Label    ${x_Campaign_Field_filter}    First Name
+    Input Text    ${x_Campaign_Field_Filter_Value}    Harsha
+    Click Element    ${x_Campaign_go_button}
+    Sleep    5 seconds
+    Wait Until Element Is Visible    ${x_Campaign_Select_All_Leads}    10 seconds
+    Click Element    ${x_Campaign_Select_All_Leads}
+    Wait Until Element Is Visible    ${x_Campaign_Add_with_Status}    10 seconds
+    Click Element    ${x_Campaign_Add_with_Status}
+    Wait Until Element Is Visible    ${x_Campaign_Add_with_Status_Sent}    10 seconds
+    Click Element    ${x_Campaign_Add_with_Status_Sent}
+    Wait Until Element Is Visible    ${x_Campaign_Add_Campaign_Member_Success}    15 seconds
+    Capture Page Screenshot
+    Wait Until Element Is Visible    ${x_Campaign_Back_to_Campaign}    5 seconds
+    Click Element    ${x_Campaign_Back_to_Campaign}
+    Wait Until Element Is Visible    ${x_Campaign_detail_Page}    10 seconds
+
+Verify User does not able to add campaign member
+    Wait Until Element Is Visible    ${x_Campaign_detail_Page}    10 seconds
+    Element Should Not Be Visible    ${x_Campaign_Manage_Members_button}
+    Capture Page Screenshot
+
+Edit the Campaign Members by edit Member-Search
+    Wait Until Element Is Visible    ${x_Campaign_detail_Page}    10 seconds
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Campaign_Member_record}    5 seconds
+    Run Keyword If    not ${t_result}    Add Campaign Members to Campaign by Searching
+    Wait Until Element Is Visible    ${x_Campaign_Manage_Members_button}    10 seconds
+    Click Element    ${x_Campaign_Manage_Members_button}
+    Wait Until Element Is Visible    ${x_Campaign_Edit_Member_Search}    10 seconds
+    Click Element    ${x_Campaign_Edit_Member_Search}
+    Wait Until Element Is Visible    ${x_Campaign_Campaign_Member_edit}    10 seconds
+    ${t_Status_before_update}    Get Text    ${x_Campaign_Member_Status}
+    Click Element    ${x_Campaign_Campaign_Member_edit}
+    ${t_match}    Run Keyword And Return Status    Should Be Equal As Strings    ${t_Status_before_update}    Sent
+    Wait Until Element Is Visible    ${x_Campaign_Member_Status_edit_page}    10 seconds
+    Run Keyword If    ${t_match}    Select From List By Label    ${x_Campaign_Member_Status_edit_page}    Responded
+    ...    ELSE    Select From List By Label    ${x_Campaign_Member_Status_edit_page}    Sent
+    Click Element    ${x_Campaign_Member_Save}
+    Wait Until Element Is Visible    ${x_Campaign_Member_Status}    10 seconds
+    ${t_Status_after_update}    Get Text    ${x_Campaign_Member_Status}
+    Should Not Be Equal As Strings    ${t_Status_after_update}    ${t_Status_before_update}
+    Capture Page Screenshot

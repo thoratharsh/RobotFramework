@@ -1,0 +1,32 @@
+*** Settings ***
+Documentation     This is Resource contains all the locators related to *Campaign* object
+
+*** Variables ***
+${x_first_campaign_record}    //*[@class='list']/tbody/tr[2]/th[1]/a    # First Campaign Record shown after clicking on Campaign Tab
+${x_new_campaign}    //input[@name='new']    # New button on campaign Home page
+${x_campaign_name}    //*[@id='cpn1']    # Campaign Name field on Campaign Edit page
+${x_type}         //*[@id='cpn2']    # Type field on Campaign Edit page
+${x_save_button}    //*[@name='save']    # Save button shown on Campaign Edit page
+${x_delete_button}    //input[@value='Delete']    # Delete button on Campaign Detail page
+${x_edit_button}    //*[@name='edit']    # Edit button on Campaign Detail page
+${x_description}    //*[@id="cpn4"]    # Description field on campaign edit page
+${x_home_tab}     //*[@id="home_Tab"]    # Home tab shown when user logs in
+${x_plus_symbol}    //*[@id='AllTab_Tab']/a/img    # *+* Symbiol shown on Home page
+${x_campaign_tab2}    //*[@alt='Campaigns']    # Campaign Tab shown when user clicks on +_ symbol
+${x_Campaign_detail_Page}    //h1[@class='pageType'][text()='Campaign']    # Campaign Detail page
+${x_Campaign_Manage_Members_button}    //*[@id="managerlButton"]    # Manage Memebrs button on Campaign detail page
+${x_Campaign_Add_member_Search}    //*[@id="managerlMenu"]/a[1]    # Add Member Search button on Campaign detail page
+${x_Campaign_Field_filter}    //*[@id="l_col0"]    # Field filter on while adding campaign memeber
+${x_Campaign_Field_Filter_Value}    //*[@id='l_fval0']    # Field filter value
+${x_Campaign_go_button}    //*[@name='go']    # Go Button on add Campaign Member page
+${x_Campaign_Select_All_Leads}    //*[@id="allBox"]    # Checkbox to select all Leads shown while adding campaign Members
+${x_Campaign_Add_with_Status}    //*[@id='addButton']    # Add with Status button on Add Campaign Member page
+${x_Campaign_Add_Campaign_Member_Success}    //*[contains(text(),'You have successfully added')]    # Success message shown when Campaign Memebrs are added successfully
+${x_Campaign_Add_with_Status_Sent}    //*[@id='addMenu']/a[1]    # Add with Campaign Status sent
+${x_Campaign_Edit_Member_Search}    //*[@id="managerlMenu"]/a[3]    # Edit Campaign Member Search
+${x_Campaign_Campaign_Member_edit}    //*[contains(@class,'row-first')]//span[contains(text(),'Edit')]    # Campaign Member Edit button
+${x_Campaign_Member_Status}    //*[contains(@class,'row-first')]//div[contains(@id,'STATUS')]    # Status of Campaign Member
+${x_Campaign_Member_Status_edit_page}    //*[@id='Status']    # Campaign Member status field on edit page
+${x_Campaign_Member_Save}    //*[@name='save']    # Save button on Campaign Member edit page
+${x_Campaign_Member_record}    //div[contains(@id,'RelatedCampaignMemberList')]/table/tbody/tr[2]/th/a    # Campaign Member record on Campaign detail page
+${x_Campaign_Back_to_Campaign}    //*[@class='ptBreadcrumb']/a    # Back to Campaign link present on Campaign Member page

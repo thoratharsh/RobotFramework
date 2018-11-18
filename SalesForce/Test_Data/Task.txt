@@ -1,0 +1,4 @@
+*** Variables ***
+${d_Task_Subject}    TC053
+${d_Task_Description}    This task is created for validation of TC54
+${d_Task_Comments}    Tets case should pass

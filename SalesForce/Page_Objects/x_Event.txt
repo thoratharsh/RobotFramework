@@ -1,0 +1,4 @@
+*** Variables ***
+${x_Event_Subject}    //*[@id='evt5']    # Subject field on Event Edit page
+${x_Event_Type}    //*[@id='evt10']    # Type field on Event page
+${x_Event_Save_button}    //*[@name='save']    # Save buitton on Event edit page

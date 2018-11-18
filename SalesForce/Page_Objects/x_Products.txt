@@ -1,0 +1,8 @@
+*** Variables ***
+${x_Products_Tab}    //*[@alt='Products']    # Products Tab
+${x_All_tabs}     //*[@alt='All Tabs']    # + Symbol on home page
+${x_Products_Find_Product_seachbox}    //*[@id="srch_Input"]    # Search box for Products
+${x_Products_Find_Products}    //*[@value='Find Product']    # Find Products button on Product Home opage
+${x_Products_First_Searched_Product}    //table[@class='list']/tbody/tr[2]/th/a    # First Product shown on Search
+${x_Product_Detail_page}    //h1[@class='pageType'][text()='Product']    # Product detail page
+${x_Product_detail_Product_Group}    //*[@class='detailList']/tbody/tr/td[text()='Product group']    # Product Group field on Product detail page

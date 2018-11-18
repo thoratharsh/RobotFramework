@@ -1,0 +1,12 @@
+*** Variables ***
+${x_Contact Role_Primary_Checkbox}    //*[@id='primary0']    # Primary Checkbox on Contact Role page
+${x_Contact_Role_Contact1}    //*[@id="contact0"]    # First Contact on Contact Role
+${x_Contact_Role_Role1}    //*[@id='role0']    # Role 1 on Contact \ Role
+${x_Contact_Role_Contact2}    //*[@id='contact1']    # Contact 2 on Contact Role
+${x_Contact_role_Role2}    //*[@id='role1']    # Role2
+${x_Contact_Role_save_button}    //*[@name='save']    # Save button on Contact Roles
+${x_Contact_Roles_Records}    //*[contains(@id,'RelatedContactRoleList')]//table/tbody/tr/td[1]/a[text()='Edit']    # Number of Contact Roles_Records
+${x_Contact_Role_Autocomplete1}    //*[@id='contact0_autoCompleteRowId_0']    # Autocomplete
+${x_Contact_role_Autocomplete2}    //*[@id='contact1_autoCompleteRowId_0']    # Autocomplete2
+${x_Contac_Role_error_Message}    //*[@class='errorMsg']    # EWrror shown for multple matching records
+${x_Contact_role_multple_Matching_contacts}    //*[@class='lookupInput']//select    # Multple Matching Contact Roles

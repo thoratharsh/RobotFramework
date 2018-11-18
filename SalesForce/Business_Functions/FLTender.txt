@@ -1,0 +1,61 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../Test_Data/FL_Tender.txt
+Resource          ../Page_Objects/x_FLTender.txt
+
+*** Keywords ***
+Create New FL Tender
+    Wait Until Element Is Visible    ${x_FLTender_New_button}    15 seconds    Error while creating FL Order
+    Click Button    ${x_FLTender_New_button}
+    Select From List By Value    ${x_FLTender_Record_Type}    ${d_FLTender_Record_Type}
+    Click Button    ${x_FLTender_Continue}
+    Wait Until Element Is Visible    ${x_FLTender_Opportunity}    15 seconds    Error while creating FL Order
+    Input Text    ${x_FLTender_Opportunity}    ${d_FLTender_Opportunity}
+    Click Button    ${x_FLTender_Save}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_FLTender_multiple}    15 seconds
+    Run Keyword If    ${t_result}    Select From List By Index    ${x_FLTender_multiple}    1
+    Run Keyword If    ${t_result}    Click Button    ${x_FLTender_Save}
+    Wait Until Element Is Visible    ${x_FLTender_PageType}    15 seconds
+    Capture Page Screenshot
+
+Click on FL Tender Tab
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_FLTender_Tab}    15 seconds
+    Run Keyword If    not ${t_result}    Click Element    ${x_FLTender_Plus}
+    Click Element    ${x_FLTender_Tab}
+    Capture Page Screenshot
+
+Select or Create New FL Tender
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_FLTender_First_Record}    10 seconds
+    Run Keyword If    ${t_result}    Click Element    ${x_FLTender_First_Record}
+    ...    ELSE    Create New FL Tender
+
+Edit FL Tender
+    Wait Until Element Is Visible    ${x_FL_Tender_Edit}    15 seconds
+    Click Button    ${x_FL_Tender_Edit}
+    Input Text    ${x_FLTender_Description}    ${d_FLTender_Description}
+    Click Button    ${x_FLTender_Save}
+    Wait Until Element Is Visible    ${x_FLTender_PageType}
+    Capture Page Screenshot
+
+Change FL Tender Version
+    Wait Until Element Is Visible    ${x_FLTender_PageType}    10 seconds
+    Wait Until Element Is Visible    ${x_FL_tender_Select_version1}    10 seconds
+    ${t_Is_Ver_2_Present}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_FL_Tender_Select_Version2}    5 seconds
+    ${t_is_1_selected}    Run Keyword And Return Status    Checkbox Should Be Selected    ${x_FL_tender_Select_version1}
+    Run Keyword If    ${t_Is_Ver_2_Present} and ${t_is_1_selected}    Select Checkbox    ${x_FL_Tender_Select_Version2}
+    Run Keyword If    not ${t_is_1_selected}    Select Checkbox    ${x_FL_tender_Select_version1}
+    Click Element    ${x_FL_Tender_Set_As_Active}
+    Sleep    3 seconds
+    ${t_is_version_1}    Run Keyword And Return Status    Checkbox Should Be Selected    ${x_FL_tender_Select_version1}
+    ${t_is_version_2}    Run Keyword And Return Status    Checkbox Should Be Selected    ${x_FL_Tender_Select_Version2}
+    Run Keyword If    ${t_is_version_1} or ${t_is_version_2}    Pass Execution    Execution Passed
+
+Delete the FL Tender
+    Wait Until Element Is Visible    ${x_FL_Tender_Delete}    15 seconds
+    Click Button    ${x_FL_Tender_Delete}
+    Handle Alert    ACCEPT
+    Sleep    3 seconds
+
+Verify User is not able to Delete the FL Tender
+    Wait Until Element Is Not Visible    ${x_FL_Tender_Delete}    15 seconds
+    Capture Page Screenshot

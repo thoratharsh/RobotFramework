@@ -1,0 +1,5 @@
+*** Variables ***
+${x_Task_Subject}    //*[@id='tsk5']    # Subject field on Task edit page
+${x_Task_Comments}    //*[@id='tsk6']    # Comments field on Task edit page
+${x_Task_Outcome}    //*[@id='00Nw0000008kfIG']    # Outcome field on Task edit page
+${x_Task_Save_button}    //*[@name='save']    # Save button on Task edit page

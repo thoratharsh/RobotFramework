@@ -1,0 +1,104 @@
+*** Settings ***
+Resource          ../Test_Data/login.txt
+Resource          ../Page_Objects/x_login.txt
+Library           Selenium2Library
+Resource          ../Page_Objects/x_Contact.txt
+
+*** Keywords ***
+Login to Salesforce
+    [Arguments]    ${browser}=chrome
+    Open Browser    ${url}    ${browser}
+    Maximize Browser Window
+    Wait Until Element Is Visible    ${x_username}    15 seconds
+    Input Text    ${x_username}    ${d_username}
+    Input Text    ${x_password}    ${d_password}
+    Click Element    ${x_login_button}
+
+Login to Salesforce with user
+    [Arguments]    ${p_User}=Tomi Hokkanen
+    Wait Until Element Is Visible    ${x_search}    30 seconds
+    Input Text    ${x_search}    ${p_User}
+    Wait Until Element Is Visible    ${x_search_button}    15 seconds
+    Click Button    ${x_search_button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_username_link}    15 seconds
+    Run Keyword If    not ${t_result}    Click Button    ${x_search_button}
+    ${t_result2}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_username_link}    15 seconds
+    Run Keyword If    not ${t_result2}    Click Button    ${x_search_button}
+    Wait Until Element Is Visible    ${x_username_link}    15 seconds
+    Click Element    ${x_username_link}
+    Wait Until Element Is Visible    ${x_arrow}    15 seconds
+    Click Element    ${x_arrow}
+    Wait Until Element Is Visible    ${x_user_detail_button}    15 seconds
+    Click Element    ${x_user_detail_button}
+    Wait Until Element Is Visible    ${x_login_button_user_detail}    15 seconds
+    Click Element    ${x_login_button_user_detail}
+    Capture Page Screenshot
+
+Close Browser
+    Close All Browsers
+
+Add Create FL Order permission set to user and Login
+    [Arguments]    ${p_User}=Tomi Hokkanen
+    Wait Until Element Is Visible    ${x_search}    30 seconds
+    Input Text    ${x_search}    ${p_User}
+    Wait Until Element Is Visible    ${x_search_button}    15 seconds
+    Click Button    ${x_search_button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_username_link}    15 seconds
+    Run Keyword If    not ${t_result}    Click Button    ${x_search_button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_username_link}    15 seconds
+    Run Keyword If    not ${t_result}    Click Button    ${x_search_button}
+    Wait Until Element Is Visible    ${x_username_link}    15 seconds
+    Click Element    ${x_username_link}
+    Wait Until Element Is Visible    ${x_arrow}    15 seconds
+    Click Element    ${x_arrow}
+    Wait Until Element Is Visible    ${x_user_detail_button}    15 seconds
+    Click Element    ${x_user_detail_button}
+    Wait Until Element Is Visible    ${x_User_detail_Page}    15 seconds
+    Wait Until Element Is Visible    ${x_Permission_Edit_Assignments}    15 seconds
+    Click Element    ${x_Permission_Edit_Assignments}
+    ${t_check_permission}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Permission_Enabled_Permission_Set_Edit FL Order}    10 seconds
+    Run Keyword If    ${t_check_permission}    Click Element    ${x_Permission_Save_Button}
+    Run Keyword If    ${t_check_permission}    Wait Until Element Is Visible    ${x_login_button_user_detail}    10 seconds
+    Run Keyword If    ${t_check_permission}    Click Element    ${x_login_button_user_detail}
+    Run Keyword If    not ${t_check_permission}    Click Element    ${x_Permission_Available_permission_Set_Edit_FL_Order}
+    Run Keyword If    not ${t_check_permission}    Click Element    ${x_Permission_Add_Permission_set}
+    Run Keyword If    not ${t_check_permission}    Click Element    ${x_Permission_Save_Button}
+    Run Keyword If    not ${t_check_permission}    Wait Until Element Is Visible    ${x_login_button_user_detail}    15 seconds
+    Run Keyword If    not ${t_check_permission}    Click Element    ${x_login_button_user_detail}
+    Capture Page Screenshot
+
+Log out and remove FL Order permission set
+    Wait Until Element Is Visible    ${x_User_Menu}    10 seconds
+    Click Element    ${x_User_Menu}
+    Wait Until Element Is Enabled    ${x_Logout_button}    10 seconds
+    Click Element    ${x_Logout_button}
+    Wait Until Element Is Visible    ${x_login_button_user_detail}    15 seconds
+    Wait Until Element Is Visible    ${x_Permission_Edit_Assignments}    15 seconds
+    Click Element    ${x_Permission_Edit_Assignments}
+    ${t_check_permission}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Permission_Enabled_Permission_Set_Edit FL Order}    10 seconds
+    Run Keyword If    ${t_check_permission}    Click Element    ${x_Permission_Enabled_Permission_Set_Edit FL Order}
+    Run Keyword If    ${t_check_permission}    Click Element    ${x_Permission_Remove_Permission_Set_button}
+    Run Keyword If    ${t_check_permission}    Click Element    ${x_Permission_Save_Button}
+    Wait Until Element Is Visible    ${x_User_detail_Page}    15 seconds
+    Close All Browsers
+
+Login to Salesforce as Community User
+    [Arguments]    ${p_User}
+    Wait Until Element Is Visible    ${x_search}    40 seconds
+    Input Text    ${x_search}    ${p_User}
+    Wait Until Element Is Visible    ${x_search_button}    20 seconds
+    Click Element    ${x_search_button}
+    Wait Until Element Is Visible    ${x_Login_Searched_Contact}    20 seconds
+    Click Element    ${x_Login_Searched_Contact}
+    Wait Until Element Is Visible    ${x_Contact_Manage_External_user}    20 seconds
+    Click Element    ${x_Contact_Manage_External_user}
+    Wait Until Element Is Visible    ${x_Contact_Login_to_Community_as_User}    20 seconds
+    Click Element    ${x_Contact_Login_to_Community_as_User}
+    Wait Until Element Is Visible    ${x_Home_tab}    20 seconds
+    Capture Page Screenshot
+
+Switch to Lightning UI
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Login_Switch_To_Lightning}    20 seconds
+    Run Keyword If    ${t_result}    Click Element    ${x_Login_Switch_To_Lightning}
+    Wait Until Element Is Visible    ${x_Login_Lighning_Logo}    30 seconds
+    Capture Page Screenshot

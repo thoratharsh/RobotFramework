@@ -1,0 +1,12 @@
+*** Variables ***
+${d_Cases_Contact_Name}    Harsha Test
+${d_Cases_case_Origine}    E-mail
+${d_Cases_Branch_Office}    Eastern Finland
+${d_Cases_Type}    Doors
+${d_Cases_Case_Reason}    Other
+${d_Cases_Subject}    Need to install new Elevator
+${d_Cases_Description}    Need to install new elevators in our apartment. Could you please install it. Please let us know if you need anything
+@{d_List_View_Names}    DE: Care Team Service Nord 1    DE: Care Team Service Nord 2    DE: Care Team Service Ost 1    DE: Care Team Service Ost 2    DE: Care Team Service Süd 1    DE: Care Team Service Süd 2    DE: Care Team Service Süd 3
+...               DE: Care Team Service Süd 4    DE: Care Team Service West 1    DE: Care Team Service West 2    DE: Care Team PSR KAM-Desk    DE: Care Team PSR Nord    DE: Care Team PSR Ost    DE: Care Team PSR Süd
+...               DE: Care Team PSR West    DE: Care Team PSR Rolltreppe    DE: Care Team Türen PSR    DE: Care Team Türen Service    DE: Care Team ZüS    # Those are lsit of views avaialable for Cases
+${d_Case_Email_to_case_Addresss}    nord-service1@b-1hyodo1epc2hc9xcle655avj01327zfro3lij51t6bcz09826p.8e-hwnuay.cs87.case.sandbox.salesforce.com    # Email address to send Email

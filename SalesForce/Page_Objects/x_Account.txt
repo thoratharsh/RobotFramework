@@ -1,0 +1,40 @@
+*** Variables ***
+${x_Account_Tab}    //*[@id='Account_Tab']/a    # Account Tab
+${x_New_button}    //input[@name='new']    # New button
+${x_Account_record_Type}    //*[@id='p3']    # Account Record Type
+${x_Continue_button}    //input[@value='Continue']    # Continue Button
+${x_Account_Name}    //*[text()='Account Name']//ancestor::table/tbody/tr[3]/td[1]//input    # Account Name on Account edit page
+${x_Street_House_number}    //*[text()='Street/House number']//ancestor::table/tbody/tr[3]/td[1]//input    # Street House Number on Account edit page
+${x_Zip_Postal_Code}    //*[text()='Street/House number']//ancestor::table/tbody/tr[6]/td[1]//input    # Zip Postal Code on Account edit page
+${x_Account_City}    //*[text()='Street/House number']//ancestor::table/tbody/tr[7]/td[1]//input    # City Field on Account Edit Page
+${x_Account_Customer_Segment}    //*[text()='Customer Behavior']//ancestor::table[1]/tbody/tr[1]/td[1]//select    # Customer Segment field on Account edit page
+${x_Account_Save_button}    //input[@value='Save']    # Save Button on Account edit page
+${x_Account_Detail_page}    //h2[text()='Account Detail']    # Account detail page
+${x_Account_New_Contact}    //input[@value='New Contact']    # New Contact button on Account detail page
+${x_Account_New_Opportunity}    //input[@value=' New ']    # New Opportunity Button on Account detail page
+${x_Account_add_Partner}    //*[@name='new_partner']    # New Partner button on ACCOUNT
+${x_Account_First_Account}    //table[@class='list']/tbody/tr[2]/th/a    # First Account record
+${x_Account_New_Cases}    //*[@value='New Case']    # New Case button on Account
+${x_Account_New_Complaint}    //input[@name='new_complaint']    # New Complaint Button on Account detail page
+${x_Account_New_Query}    //input[@name='new_query']    # New Query buton Account detail page
+${x_Account_New_Acct_Plan}    //*[@value='New Acct Plan']    # New Acct Plan button on Account detail page
+${x_Account_New_NPX_Survey}    //*[@title='New NPX Survey Record']
+${x_Account_Name3}    //*[text()='Name3']//ancestor::tr[1]/td[1]/input    # Naem 3 field on EDit Account
+${x_Account_Name4}    //*[text()='Name4']//ancestor::tr[1]/td[1]/input    # Name 4 field on Edit Account page
+${x_Account_Street2}    //*[text()='Street 2']//ancestor::tr[1]/td[1]/input    # Street 2 field on Edit Account Page
+${x_Account_Street3}    //*[text()='Street 3']//ancestor::tr[1]/td[1]/input    # Street 3 Field on Account edit page
+${x_Account_Street4}    //*[text()='Street 4']//ancestor::tr[1]/td[1]/input    # Street 4 field on Account edit p0age
+${x_Account_Street5}    //*[text()='Street 5']//ancestor::tr[1]/td[1]/input    # Street 4 field on Account edit page
+${x_Account_PO_Box}    //*[text()='PO box']//ancestor::tr[1]/td[2]/input    # PO Box field on Account edit page
+${x_Account_PO_Box_Postal_Code}    //*[text()='PO Box Postal Code']//ancestor::tr[1]/td[2]/input    # Po Box Postal Code edit page on Acco8unt edit Page
+${x_Account_PO_Box_City}    //*[text()='PO Box City']//ancestor::tr[1]/td[2]/input    # PO Box City Field on Account Edit Page
+${x_Account_Country}    //*[text()='Country']//ancestor::tr[1]/td//select    # Country field on account edit page
+${x_Account_edit_page}    //h1[@class='pageType'][text()='Account Edit']    # Account edit page
+${x_Account_View_EGG_10}    //select[@id='fcf']/option[text()='EGG: 10. Meine Kernkunden 1']    # EGG 10: View
+${x_Account_View_Egg_12}    //select[@id='fcf']/option[text()='EGG: 12. Meine Kernkunden 2']    # Egg 12 view
+${x_Account_View_EGG_14}    //select[@id='fcf']/option[text()='EGG: 14. Meine Kernkunden 2 - Proaktiv']    # EGG 14 view on Account
+${x_Account_View_eGG_16}    //select[@id='fcf']/option[text()='EGG: 16. Meine Kernkunden 2 - Vernünftig']    # Egg 16 view
+${x_Account_View_Egg_18}    //select[@id='fcf']/option[text()='EGG: 18. Meine Kernkunden 2 - Abwarten']    # Egg 18 view on Account
+${x_Accounts_New_AMP_button}    //*[@name='new_amp']    # New AMP button on Accounts page
+${x_Accounts_AMP_Portal_login}    //*[@id="username"]    # AMP portal login usrer name
+${x_Accounts_Asset_Management_Plans_No_records_to_Dsiplay}    //h3[text()='Asset Management Plans']/ancestor::div[2]/div[2]/table/tbody/tr/th[text()='No records to display']    # No records to dispaly messgae in Asset Management Plan

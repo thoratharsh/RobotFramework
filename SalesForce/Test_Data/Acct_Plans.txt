@@ -1,0 +1,11 @@
+*** Variables ***
+${d_AcctPlan_Name}    SFDC Test Plan
+${d_AcctPlan_Account_Managers_Line_Manager}    Abhi Chauhan
+${d_AcctPlan_Country}    India
+${d_AcctPlan_Description_Of_Customer_Business}    This is Description of Customers Business
+${d_AcctPlan_Customer_Financial_Position_and_Growth_Potential}    We are in steady state and with large growth potential
+${d_AcctPlan_Description_Of_Current_Relationship}    We have very good relationship with customers and all the customers are happy with our service.
+${d_AcctPlan_Strength}    High quality service with minimum cost
+${d_AcctPlan_Weakness}    No weakness
+${d_AcctPlan_Opportunities}    There are plenty of opportunity ot grow the business.We need to chnage the strategy to acquire market.
+${d_AcctPlan_Threats}    Threats from Competitors

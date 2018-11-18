@@ -1,0 +1,12 @@
+*** Variables ***
+${x_New_Email}    //*[@role='toolbar']//button/span[text()='New']    # New Email button
+${x_Outlook_Send}    //button[@title='Send']    # Send button
+${x_To_Field}     //input[@autoid='_fp_5'][@aria-label='To']    # To Field on Outlook
+${x_Outlook_CC}    //input[@autoid='_fp_5'][@aria-label='Cc']    # CC field on Outlook
+${x_Outlook_Subject}    //input[@autoid='_mcp_c']    # Subject field in New Email
+${x_Outlook_Email}    //*[@name='loginfmt']    # Email Address of Outlook Log in
+${x_Outlook_Next}    //*[@id="idSIButton9"]    # Next button on Outlook
+${x_outlook_Password}    //*[@id="passwordInput"]    # Password field on Outlook
+${x_Outlook_Sign_in}    //*[@id="submitButton"]    # Sign In buttton on Outlook
+${x_outlook_Dont_Show_this_Again}    //*[@id="KmsiCheckboxField"]    # Dont show this again checkbox
+${x_Outlook_Staty_signed_in_no}    //*[@id="idBtn_Back"]    # Staye signed in No button

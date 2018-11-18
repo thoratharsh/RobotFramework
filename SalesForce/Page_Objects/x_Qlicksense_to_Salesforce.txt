@@ -1,0 +1,2 @@
+*** Variables ***
+${x_Qlicksense_to_Salesforce_tab}    //img[@title='Qlicksense To salesforce']    # Qlicksense to salesforce tab

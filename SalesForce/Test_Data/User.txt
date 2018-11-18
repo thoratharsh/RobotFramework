@@ -1,0 +1,9 @@
+*** Variables ***
+${d_User_Language_Chinese}    27
+${d_User_Language_German}    5
+${d_User_Language_French}    14
+${d_User_Language_Finnish}    66
+${d_User_Language_Italian}    50
+${d_User_Language_Spanish}    45
+${d_User_Language_Swedish}    58
+${d_User_Language_English}    1

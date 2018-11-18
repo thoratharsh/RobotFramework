@@ -1,0 +1,6 @@
+*** Variables ***
+${x_Oppo_Team_User1}    //*[@id='User_1']    # User 1 on Opportunity Team
+${x_Oppo_Team_User2}    //*[@id='User_2']    # User 2 On opportunity Team
+${x_Oppo_Team_Role1}    //*[@id='TeamMemberRole_1']    # Role 1 on Opportunity Team
+${x_Oppo_Team_Role2}    //*[@id='TeamMemberRole_2']    # Role 1 on Opportunity Team
+${x_Oppo_Team_Save}    //*[@name='save']    # Save button on Opportunity Team

@@ -1,0 +1,49 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../Page_Objects/x_Equipment.txt
+Library           ../Library/MyLibrary.py
+
+*** Keywords ***
+Click on Equipment Tab
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Equipment_Tab}    7 seconds
+    Run Keyword If    ${t_result}    Click Element    ${x_Equipment_Tab}
+    Run Keyword If    not ${t_result}    Click Element    ${x_Plus}
+    Run Keyword If    not ${t_result}    Click Element    ${x_Equipment_Tab}
+
+Verify FSM Service Contract Characteristics Detail page
+    Wait Until Element Is Visible    ${x_Equipment_Detail_page}    15 seconds
+    Wait Until Element Is Visible    ${x_Equipment_first_Contarct_Line_Item}    15 seconds
+    Click Element    ${x_Equipment_first_Contarct_Line_Item}
+    Wait Until Element Is Visible    ${x_Equipment_COntract_Line_charactiristics}    15 seconds
+    Click Element    ${x_Equipment_COntract_Line_charactiristics}
+    Sleep    3 seconds
+    @{t_windows}    Get Window Handles
+    Switch To Other Window    @{t_windows}[1]
+    Wait Until Element Is Visible    ${x_Equipment_FSM_Service_Contract_Characteristics_page}    15 seconds
+    Capture Page Screenshot
+
+Select a Equipment
+    Wait Until Element Is Visible    ${x_Equipment_First_Equipment}    15 seconds
+    Click Element    ${x_Equipment_First_Equipment}
+    Wait Until Element Is Visible    ${x_Equipment_Detail_page}    15 seconds
+
+Verify All Detail of Equipment
+    Wait Until Element Is Visible    ${x_Equipment_Detail_page}    15 seconds
+    Element Should Be Visible    ${x_Equipment_Equipment_Name}
+    Element Should Be Visible    ${x_Equipment_Equipment_Number}
+    Element Should Be Visible    ${x_Equipment_Valid_from}
+    Element Should Be Visible    ${x_Equipment_Description}
+    Element Should Be Visible    ${x_Equipment_Equipment_Type}
+    Element Should Be Visible    ${x_Equipmwent_Asset_record_type}
+    Element Should Be Visible    ${x_Equipment_Start_Up_Date}
+    Element Should Be Visible    ${x_Equipment_Customer_Asset_Name}
+    Element Should Be Visible    ${x_Equipment_Manufacturing_Country}
+    Element Should Be Visible    ${X_Equipment_Manufacturer}
+    Element Should Be Visible    ${x_Equipment_Construction_year}
+    Element Should Be Visible    ${x_Equipment_Manufacturer_Part_Number}
+    Element Should Be Visible    ${x_Equipment_Construction_Month}
+    Element Should Be Visible    ${x_Equipment_Manufacturer_Serial_Number}
+    Element Should Be Visible    ${x_Equipment_Technical_Identification_number}
+    Element Should Be Visible    ${x_Equipment_Actual_Avaialability}
+    Element Should Be Visible    ${x_Equipment_Yellow_Dialogue_box}
+    Capture Page Screenshot

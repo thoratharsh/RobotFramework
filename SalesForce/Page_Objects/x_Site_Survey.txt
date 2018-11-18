@@ -1,0 +1,9 @@
+*** Variables ***
+${x_Site_Survey_tab}    //*[@alt='Site Surveys']    # Site Survey Tab
+${x_All_tabs}     //img[@alt='All Tabs']    # All Tabs + sign
+${x_Site_Survey_First_Record}    //table[@class='list']/tbody/tr[2]/th/a    # First record in List
+${x_Site_Survey_New_Linked_AMP}    //*[@value='New Linked AMP']    # New Linked _AMP Button on Sit Survey
+${x_Linked_AMP_Name}    //*[@id="Name"]    # Nam efield on Linked AMP edit page
+${x_Linked_AMP_Asset_Management_Plan}    //*[@id="CF00N8E000001Oq3U"]    # Asset management Plan field on Linked AMP page
+${x_AMP_Save_button}    //*[@name='save']    # Save Button on AMP
+${x_Site_Survey_Added_AMP}    //h3[text()='Linked AMP']/ancestor::div[2]//table/tbody/tr[2]/th/a    # Added AMP on Site survey Page

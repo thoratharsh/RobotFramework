@@ -1,0 +1,233 @@
+*** Settings ***
+Resource          ../Page_Objects/x_leads.txt    # Locators of Leads objects
+Library           Selenium2Library
+Resource          ../Page_Objects/x_Notes_Attachment.txt
+Resource          ../Test_Data/Notes_And_Attachment.txt
+Library           ../Library/MyLibrary.py
+Resource          ../Test_Data/Leads.txt
+
+*** Variables ***
+
+*** Keywords ***
+Click on Lead Tab
+    Wait Until Element Is Visible    ${x_Lead Tab}    20 seconds
+    Click Element    ${x_Lead Tab}
+
+Create New Lead
+    Wait Until Element Is Visible    ${x_new_button}    10 seconds
+    Click Element    ${x_new_button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Leads_Record_type}    5 seconds
+    Run Keyword If    ${t_result}    Select From List By Label    ${x_Leads_Record_type}    Deal Registration (Lead)
+    Run Keyword If    ${t_result}    Click Element    ${x_Lead_Continue}
+    Wait Until Element Is Visible    ${x_first_name}    10 seconds
+    Input Text    ${x_first_name}    Harsha Test
+    Input Text    ${x_last_name}    Lead
+    Input Text    ${x_company}    Infosys
+    Input Text    ${x_phone_number}    9404407111
+    Select From List by Value    ${x_Business_type}    New Equipment (NEB)
+    Click Element    ${x_Product_service_interest}
+    Click Element    ${x_Add_button}
+    Select From List By Label    ${x_Lead_Source}    Other
+    Select From List By Label    ${x_Customer_Segment}    Architect
+    Input Text    ${x_Street}    M H Road
+    Select From List By Label    ${x_Leads_Country}    Finland
+    Input Text    ${x_City}    Finland
+    Input Text    ${x_Zip}    12345
+    Input Text    ${x_State}    FN
+    Click Element    ${x_Save_button}
+    Wait Until Element Is Visible    ${x_Lead_Edit_button}    20 seconds
+    Capture Page Screenshot
+
+Convert Lead to Account
+    Click Button    ${x_Convert_button}
+    Select From List By Value    ${x_Lead_Convert_Account_Name}    000000000000000
+    Input Text    ${x_Lead_Convert_Subject}    Lead Conversion
+    Click Button    ${x_Convert_button}
+    Wait Until Element Is Visible    ${x_Account_Detail_page}    15 seconds
+    Element Should Be Visible    ${x_Account_Detail_page}    Account detail page shown
+    Capture Page Screenshot
+
+Select or Create New Lead
+    ${t_Result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Lead_First_record}    15 seconds
+    Run Keyword If    ${t_Result}    Click Element    ${x_Lead_First_record}
+    ...    ELSE    Create New Lead
+
+Update Lead Information
+    Wait Until Element Is Visible    ${x_Lead_Edit_button}    10 seconds
+    Click Button    ${x_Lead_Edit_button}
+    Wait Until Element Is Visible    ${x_last_name}    10 seconds
+    Input Text    ${x_last_name}    Lead 21
+    Input Text    ${x_company}    Infosys
+    Input Text    ${x_phone_number}    9421216112
+    Click Element    ${x_Save_button}
+    Wait Until Element Is Visible    ${x_Lead_detail_page}    10 seconds
+    Capture Page Screenshot
+
+Add Lead To Campaign
+    Wait Until Element Is Visible    ${x_Lead_detail_page}    10 seconds
+    Wait Until Element Is Visible    ${x_Leads_Add_To_Campaign}    10 seconds
+    Click Element    ${x_Leads_Add_To_Campaign}
+    Sleep    5 seconds
+    @{window_handles}    Get Window Handles
+    Sleep    5 seconds
+    Switch To Other Window    @{window_handles}[1]
+    Select Frame    ${x_leads_Search_Campaign_Frame}
+    Wait Until Element Is Visible    ${x_Leads_Search_within}    10 seconds
+    Select From List By Label    ${x_Leads_Search_within}    All Active Campaigns
+    Input Text    ${x_Leads_Search_Campaign}    *Test*
+    Click Element    ${x_Leads_Go}
+    Switch To Other Window    @{window_handles}[1]
+    Wait Until Element Is Visible    ${x_Lead_Result_Campaign_frame}    15 seconds
+    Select Frame    ${x_Lead_Result_Campaign_frame}
+    Wait Until Element Is Visible    ${x_Leads_first_Campaign}    10 seconds
+    Click Element    ${x_Leads_first_Campaign}
+    Sleep    5 seconds
+    Switch To Other Window    @{window_handles}[0]
+    Wait Until Element Is Visible    ${x_Lead_Campaign_member_Status}    15 seconds
+    Click Element    ${x_Lead_Campaign_Member_Save}
+    Wait Until Element Is Visible    ${x_Lead_Campaign_member_detail_Page}    15 seconds
+
+Add New Note to Lead
+    Wait Until Element Is Visible    ${x_Leads_New_Note_Button}    15 seconds
+    Click Element    ${x_Leads_New_Note_Button}
+    Wait Until Element Is Visible    ${x_Note_Title}    10 seconds
+    Input Text    ${x_Note_Title}    ${d_Notes_Title}
+    Input Text    ${x_Notes_Body}    ${d_Notes_Body}
+    Click Element    ${x_Notes_Save_Button}
+    Wait Until Element Is Visible    ${x_Lead_detail_page}    10 seconds
+    Wait Until Element Is Visible    ${x_Leads_First_Note}    10 seconds
+    ${t_Text}    Get Text    ${x_Leads_First_Note}
+    Should Be Equal As Strings    ${t_Text}    ${d_Notes_Title}
+    Click Element    ${x_Leads_First_Note}
+    Capture Page Screenshot
+
+Send An Email from Lead
+    Wait Until Element Is Visible    ${x_Lead_Edit_button}    10 seconds
+    Click Button    ${x_Lead_Edit_button}
+    Wait Until Element Is Visible    ${x_last_name}    10 seconds
+    Input Text    ${x_Lead_Email}    harshavardhan.t@infosys.com
+    Click Element    ${x_Save_button}
+    Wait Until Element Is Visible    ${x_Lead_Send_An_Email}    15 seconds
+    Click Element    ${x_Lead_Send_An_Email}
+    Wait Until Element Is Visible    ${x_lead_Email_Subject}    15 seconds
+    Input Text    ${x_lead_Email_Subject}    Automation test
+    Input Text    ${x_Lead_Body}    Hi, \ This is test mail.Please Ignore. \ Thansk and regards, Automation Team
+    Click Element    ${x_Lead_Email_Send}
+    Wait Until Element Is Visible    ${x_Lead_detail_page}    15 seconds
+    Wait Until Element Is Visible    ${x_Lead_Activity_History_First_record}    15 seconds
+    Click Element    ${x_Lead_Activity_History_First_record}
+    Capture Page Screenshot
+
+Create New Lead with Newly Added Fields
+    Click Element    ${x_new_button}
+    Wait Until Element is Enabled    ${x_first_name}    timeout=15 seconds
+    Input Text    ${x_first_name}    Harsha Test100
+    Input Text    ${x_last_name}    Lead
+    Input Text    ${x_company}    Infosys
+    Input Text    ${x_phone_number}    9404407109
+    Select From List by Value    ${x_Business_type}    New Equipment (NEB)
+    Click Element    ${x_Product_service_interest}
+    Click Element    ${x_Add_button}
+    Select From List By Label    ${x_Lead_Source}    Other
+    Select From List By Label    ${x_Customer_Segment}    Architect
+    Input Text    ${x_Street}    M H Road
+    Select From List By Label    ${x_Leads_Country}    Finland
+    Input Text    ${x_City}    Finland
+    Input Text    ${x_Zip}    12345
+    Input Text    ${x_State}    FN
+    Click Element    ${x_Leads_Advanced_People_Flow_Infotainment_Solutions}
+    Click Element    ${x_Leads_Advanced_People_Flow_Add}
+    Click Element    ${x_Save_button}
+    Page Should Contain Element    ${x_Lead_detail_page}
+    Capture Page Screenshot
+
+Verify all ISR List views on leads
+    Wait Until Element Is Visible    ${x_Leads_List_View_Go}    10 seconds
+    Click Element    ${x_Leads_List_View_Go}
+    Wait Until Element Is Visible    ${x_Leads_List_View}    10 seconds
+    : FOR    ${list_view}    IN    @{d_Leads_ISR_List_Views}
+    \    Select From List By Value    ${x_Leads_List_View}    ${list_view}
+    \    Sleep    3 seconds
+    \    Wait Until Element Is Visible    ${x_Leads_List_View_Name}    10 seconds
+    \    Element Should Be Visible    ${x_Leads_List_View_Lead_Status}
+    \    Element Should Be Visible    ${x_Leads_List_View_Urgency}
+    \    Element Should Be Visible    ${X_Leads_List_View_KFM_Tender_Status}
+    \    Element Should Be Visible    ${x_Leads_List_View_Company}
+    \    Element Should Be Visible    ${x_Leads_List_View_Equipment_Street_Address}
+    \    Element Should Be Visible    ${x_Leads_List_View_Equipment_City}
+    \    Scroll Element Into View    ${x_Leads_List_View_Equipment_ID}
+    \    Scroll Element Into View    ${x_Leads_List_View_Planner_Group}
+    \    Element Should Be Visible    ${x_Leads_List_View_Equipment_ID}
+    \    Element Should Be Visible    ${x_Leads_List_View_Planner_Group}
+    \    Scroll Element Into View    ${x_Leads_List_View_Technician_Name}
+    \    Wait Until Element Is Visible    ${x_Leads_List_View_Technician_Name}    10 seconds
+    \    Capture Page Screenshot
+
+Attach file on Lead
+    Wait Until Element Is Visible    ${x_Leads_Attach_file}    20 seconds
+    Click Element    ${x_Leads_Attach_file}
+    Wait Until Element Is Visible    ${x_Leads_Choose_File}    20 seconds
+    Input Text    ${x_Leads_Choose_File}    ${CURDIR}/Login.txt
+    Wait Until Element Is Visible    ${x_Leads_Attach_Attach_File}    20 seconds
+    Click Element    ${x_Leads_Attach_Attach_File}
+    Wait Until Element Is Visible    ${x_Leads_Attach_Done}    20 seconds
+    Click Element    ${x_Leads_Attach_Done}
+    Wait Until Element Is Visible    ${x_Leads_Notes_and_attachment_attach_record}    20 seconds
+    Scroll Element Into View    ${x_Leads_Notes_and_attachment_attach_record}
+    Capture Page Screenshot
+
+Verify User can search Content
+    Wait Until Element Is Visible    ${x_Leads_Find_Content}    20 seconds
+    Click Element    ${x_Leads_Find_Content}
+    Wait Until Element Is Visible    ${x_Leads_Search_for_Content_page}    20 seconds
+    Capture Page Screenshot
+
+Verify user is not able to Convert Lead Linked to Payer Account
+    Wait Until Element Is Visible    ${x_Convert_button}
+    Click Button    ${x_Convert_button}
+    Wait Until Element Is Visible    ${x_Lead_Convert_Lead_Account_Look_Up}    20 seconds
+    Click Element    ${x_Lead_Convert_Lead_Account_Look_Up}
+    @{t_windows}    Get Window Handles
+    Switch To Other Window    @{t_windows}[1]
+    Wait Until Element Is Visible    ${x_Lead_Convert_Lead_Search_Frame}    10 seconds
+    Select Frame    ${x_Lead_Convert_Lead_Search_Frame}
+    Wait Until Element Is Visible    ${x_Lead_Convert_Lead_Account_Name_Search}    10 seconds
+    Input Text    ${x_Lead_Convert_Lead_Account_Name_Search}    payer
+    Press Key    ${x_Lead_Convert_Lead_Account_Name_Search}    \\13
+    Unselect Frame
+    Wait Until Element Is Visible    ${x_Lead_Convert_Lead_Result_Frame}    10 seconds
+    Select Frame    ${x_Lead_Convert_Lead_Result_Frame}
+    Wait Until Element Is Visible    ${x_Lead_Convert_Lead_First_Payer_Account}    20 seconds
+    Sleep    3 seconds
+    Click Element    ${x_Lead_Convert_Lead_First_Payer_Account}
+    Sleep    3 seconds
+    Switch To Other Window    @{t_windows}[0]
+    Input Text    ${x_Lead_Convert_Subject}    Lead Conversion
+    Click Button    ${x_Convert_button}
+    Wait Until Element Is Visible    ${x_Lead_Convert_Lead_Error_Payer_Invoicing_Add}    20 seconds
+    Capture Page Screenshot
+
+Verify user is not able to Convert Lead Linked to Invoiving Address Account
+    Wait Until Element Is Visible    ${x_Convert_button}
+    Click Button    ${x_Convert_button}
+    Wait Until Element Is Visible    ${x_Lead_Convert_Lead_Account_Look_Up}    20 seconds
+    Click Element    ${x_Lead_Convert_Lead_Account_Look_Up}
+    @{t_windows}    Get Window Handles
+    Switch To Other Window    @{t_windows}[1]
+    Wait Until Element Is Visible    ${x_Lead_Convert_Lead_Search_Frame}    10 seconds
+    Select Frame    ${x_Lead_Convert_Lead_Search_Frame}
+    Wait Until Element Is Visible    ${x_Lead_Convert_Lead_Account_Name_Search}    10 seconds
+    Input Text    ${x_Lead_Convert_Lead_Account_Name_Search}    invoicing
+    Press Key    ${x_Lead_Convert_Lead_Account_Name_Search}    \\13
+    Unselect Frame
+    Wait Until Element Is Visible    ${x_Lead_Convert_Lead_Result_Frame}    10 seconds
+    Select Frame    ${x_Lead_Convert_Lead_Result_Frame}
+    Wait Until Element Is Visible    ${x_Lead_Convert_Lead_First_Invoicing_Address_Acount}    20 seconds
+    Sleep    3 seconds
+    Click Element    ${x_Lead_Convert_Lead_First_Invoicing_Address_Acount}
+    Sleep    3 seconds
+    Switch To Other Window    @{t_windows}[0]
+    Input Text    ${x_Lead_Convert_Subject}    Lead Conversion
+    Click Button    ${x_Convert_button}
+    Wait Until Element Is Visible    ${x_Lead_Convert_Lead_Error_Payer_Invoicing_Add}    20 seconds
+    Capture Page Screenshot

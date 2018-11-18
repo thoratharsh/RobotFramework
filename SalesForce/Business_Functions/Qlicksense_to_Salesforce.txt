@@ -1,0 +1,12 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../Page_Objects/x_Qlicksense_to_Salesforce.txt
+Resource          ../Page_Objects/x_Home.txt
+
+*** Keywords ***
+verify Qlicksense Integration to Salesforce
+    Wait Until Element Is Visible    ${x_Home_All_Tabs}    10 seconds
+    Click Element    ${x_Home_All_Tabs}
+    Wait Until Element Is Visible    ${x_Qlicksense_to_Salesforce_tab}    10 seconds
+    Click Element    ${x_Qlicksense_to_Salesforce_tab}
+    Capture Page Screenshot

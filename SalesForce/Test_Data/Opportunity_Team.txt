@@ -1,0 +1,5 @@
+*** Variables ***
+${d_Oppo_Team_User1}    Meri Aaltonen
+${d_Oppo_Team_User2}    Duncan Anthony    # User 2
+${d_Oppo_Team_Role1}    Account Manager
+${d_Oppo_Team_Role2}    Sales Manager

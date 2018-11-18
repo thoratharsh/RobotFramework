@@ -1,0 +1,11 @@
+*** Variables ***
+${d_Query_Account_Name}    Harsha Test
+${d_Query_Case_Origin}    E-mail
+${d_Query_Branch_Office}    Eastern Finland
+${d_Query_Type}    Doors
+${d_Query_Query_Category}    Delivery
+${d_Query_Query_Reason}    Warranty query
+${d_Query_Subject}    how to use escalator
+${d_Query_Description}    How to use escalator?I am having problem while using escalator.Could you please provide a manual
+${d_Query_Record_type}    Query
+${d_Query_Country}    Finland

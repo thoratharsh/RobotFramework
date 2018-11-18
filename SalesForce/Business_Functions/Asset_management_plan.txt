@@ -1,0 +1,22 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../Page_Objects/x_AMP.txt
+
+*** Keywords ***
+Click on Asset Management Plan
+    Wait Until Element Is Visible    ${x_All_tabs}    20 seconds
+    Click Element    ${x_All_tabs}
+    Wait Until Element Is Visible    ${x_AMP_Tabs}    20 seconds
+    Click Element    ${x_AMP_Tabs}
+    Capture Page Screenshot
+
+Select a AMP record
+    Wait Until Element Is Visible    ${x_AMP_First_Record}    10 seconds
+    Click Element    ${x_AMP_First_Record}
+    Capture Page Screenshot
+
+Verify Status and KEN Value in Related Oportunity
+    Wait Until Element Is Visible    ${x_AMP_Opportunity_Frame}    10 seconds
+    Select Frame    ${x_AMP_Opportunity_Frame}
+    Wait Until Element Is Visible    ${x_AMP_Related_Oportunity_KEN}    10 seconds
+    Capture Page Screenshot

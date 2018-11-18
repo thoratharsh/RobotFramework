@@ -1,0 +1,2 @@
+*** Variables ***
+${x_Chatter_tab}    //*[@id="Chatter_Tab"]/a    # Chatter Tab

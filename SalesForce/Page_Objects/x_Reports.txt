@@ -1,0 +1,16 @@
+*** Variables ***
+${x_Reports_Tab}    //*[@id='report_Tab']/a    # Reports tab
+${x_Report_New_Reports}    //*[@value='New Report...']    # New Report button
+${x_Report_Search_report_type}    //*[@id='quickFindInput']    # Search Report Type text box
+${x_Report_Type_Account_with_Opportunities_and_Equipment}    //*[text()='Opportunities with accounts and equipments']    # Report type account with Opportuniteis and Equipments
+${x_Report_Type_Opportunity_with_or_without_Customer_Survey}    //*[text()='Opportunity with or without Customer Surveys']    # Report type Opportunity with or wiothout Customer Survey
+${x_Report_type_Opportunity_with_or_without_NPX_Survey_Records}    //*[text()='Opportunity with or without NPX Survey Records']    # Report Type Opportunity with or without NPX Survey Record
+${x_Report_Search_report}    //*[@title='Quick search']    # textbox to search report and Dashboards
+${x_Report_Salesperson_Dashboard_EUR}    //*[@class='listBody']//span[text()='Salesperson dashboard EUR']    # Salesperson Dashboard EUR dashboard
+${x_Report_Salesperson_Dashboard_USD}    //*[@class='listBody']//span[text()='Salesperson dashboard USD']    # Salesperson Dashboard USD dashboard
+${x_Report_Salesperson_Dashboard_AED}    //*[@class='listBody']//span[text()='Salesperson dashboard AED']    # Salesperson Dashboard AED dashboard
+${x_Report_Action}    //img[@title='Action']    # Action for each report
+${x_Report_Action_Customize}    //span[text()='Customize']    # Customize button on Report action
+${x_Report_Run_Report}    //button[text()='Run Report']    # Run report button on Report edit page
+${x_report_Email_toCase_Create_today}    //span[text()='Email to case created Today']    # Email to case created today report
+${x_Report_email_to_case_record1}    //*[@id="fchArea"]/table/tbody/tr[2]/td[2]    # First record in email to case report

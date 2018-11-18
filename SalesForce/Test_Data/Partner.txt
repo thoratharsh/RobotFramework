@@ -1,0 +1,5 @@
+*** Variables ***
+${d_Partner_Partner}    Uni Marburg
+${d_Partner_Partner_Role}    Developer
+${d_Partner_Opportunity}    X1LIS TRINITY LANE 10 YR
+${d_Partner_Partner_To}    TRINITY LANE CONDOS

@@ -1,0 +1,3 @@
+*** Variables ***
+${d_Notes_Title}    Automation testing
+${d_Notes_Body}    Automation testing is an Automatic technique where the tester writes scripts by own and uses suitable software to test the software. It is basically an automation process of a manual process. Like regression testing, Automation testing also used to test the application from load, performance and stress point of view

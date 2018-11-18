@@ -1,0 +1,4 @@
+*** Variables ***
+${d_FLTender_Record_Type}    012w0000000V15k
+${d_FLTender_Opportunity}    harsha Test oppo
+${d_FLTender_Description}    this is description of FL tender

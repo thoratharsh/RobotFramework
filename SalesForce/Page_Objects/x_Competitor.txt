@@ -1,0 +1,5 @@
+*** Variables ***
+${x_Competitor_Competitor}    //*[@id='00N20000000tPNS']    # Competitor field on Competitor edit page
+${x_Competitor_Price}    //*[@id='00N20000000sJ4T']    # Price Field on Competitor edit page
+${x_Competitor_Save_button}    //*[@name='save']    # Save button on Competitor edit page
+${x_Competitor_Page_Type}    //h1[@class='pageType'][text()='Competitor']    # Page Type

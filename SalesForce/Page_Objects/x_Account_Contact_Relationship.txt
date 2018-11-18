@@ -1,0 +1,5 @@
+*** Variables ***
+${x_Relationship_Account}    //*[@id='Account']    # Account Field from Account COntact relationship
+${x_Relationship_Relationship_Function}    //*[@id='00Nw00000096fbM']    # Relationship Function field from Account Contact Relationship Page
+${x_Relationship_Save_button}    //*[@name='save']    # Save button on Account Contact relationship
+${x_Relationship_Error}    //*[@class='errorMsg'][contains(text(),'already has a relationship')]

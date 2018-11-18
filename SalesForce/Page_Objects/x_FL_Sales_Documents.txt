@@ -1,0 +1,8 @@
+*** Variables ***
+${x_FL_Sales_Search_Contarct_Number}    //*[@id="page1:form1:txtSearch"]    # Search Contract Number field in Add FL Sales Documents
+${x_FL_Sales_Go_Button}    //*[@id='page1:form1:btnSearch']    # Go Button on Add FL Sales Document5s
+${x_FL_Sales_Select_Contract}    //*[@id="page1:form1"]/select    # Select Contract picklist
+${x_FL_Sales_Add_button}    //*[@value='Add']    # Add Button on FL Sales Documents section
+${x_FL_Sales_Documents_Frame}    //*[@id="066w0000001FoOU"]    # FL Sales Documents Frame
+${x_FL_Sales_Documents}    //*[@id="j_id0:form1"]//a[contains(@href,'https://kone--full.cs87.my.salesforce.com')]    # records
+${x_FL_Sales_Select_Contract_Option}    //*[@id="page1:form1"]/select/option[1]    # Picklist values in Select Contract present in FL Sales Documents frame

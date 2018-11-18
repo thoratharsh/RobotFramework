@@ -1,0 +1,7 @@
+*** Variables ***
+${x_All_tabs}     //img[@alt='All Tabs']    # All Tabs + sign
+${x_AMP_Tabs}     //img[@alt='Asset Management Plans']    # AMP Tab
+${x_AMP_First_Record}    //table[@class='list']/tbody/tr[2]/th/a    # First record in List
+${x_AMP_Opportunity_Frame}    //*[@id="066w0000001WhNn"]    # Frame COntaining Opportunity link
+${x_AMP_Related_Oportunity_KEN}    //table[@class='list']/thead/tr/th/div[text()='KEN']    # KEN Field on related Opportunites Seaction
+${x_AMP_Related_Oportunity_Status}    //table[@class='list']/thead/tr/th/div[text()='Status']    # Status field on Related Opportunity section

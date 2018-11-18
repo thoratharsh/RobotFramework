@@ -1,0 +1,5 @@
+*** Variables ***
+${d_Contact_Role_Contact1}    Harsha Test
+${d_Contact_role_Role1}    Decision Maker
+${d_Contact_Role_Contact2}    Harsha Test Lead
+${d_Contact_Role_Role2}    End User

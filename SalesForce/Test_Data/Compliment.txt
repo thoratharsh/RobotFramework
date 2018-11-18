@@ -1,0 +1,11 @@
+*** Variables ***
+${d_Compliment_Contact_Name}    Harsha Test
+${d_Compliment_case_Origine}    E-mail
+${d_Compliment_Branch_Office}    Eastern Finland
+${d_Compliment_Type}    Doors
+${d_Compliment_Case_Reason}    Exceeded expectations
+${d_Compliment_Subject}    Compliment for good work
+${d_Compliment_Description}    you are doing good work .Keep it up.
+${d_Compliment_record_type}    Compliment
+${d_Compliment_Person_mentioned}    Pinaki,Preeti,Rati,Mohit,Sakham
+${d_Compliment_Country}    Finland    # Country field on Compliment

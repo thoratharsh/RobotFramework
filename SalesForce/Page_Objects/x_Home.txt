@@ -1,0 +1,4 @@
+*** Variables ***
+${x_Home_Create_New}    //*[@id="createNewButton"]    # Quick create button on Homepage
+${x_Home_Create_New_Account}    //*[@id="createNew"]/div/a[text()='Account']    # Quick Create Account button on Home page
+${x_Home_All_Tabs}    //*[@alt='All Tabs']    # All Tabs

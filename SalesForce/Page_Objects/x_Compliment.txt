@@ -1,0 +1,13 @@
+*** Variables ***
+${x_Compliment_Contact_Name}    //*[@id='cas3']    # Contact Name field on Cases
+${x_Compliment_Person_Mentioned}    //*[@id='00Nw0000008kJet']    # Person Mentioned field present on Compliment page
+${x_Compliment_Account_name}    //*[@id='cas4']    # Account Name field on Compliment page
+${x_Compliment_Reason}    //*[@id='00Nw0000008kJes']    # Compliment reason field on Compliment page
+${x_automcomplete}    //*[@class='autoCompleteRow']    # Autocomplete
+${x_Compliment_Type}    //*[@id='cas5']    # Type field on Compliment page
+${x_Compliment_Subject}    //*[@id='cas14']    # Subject field on Cases edit page
+${x_Compliment_Description}    //*[@id='cas15']    # Description field on Cases edit page
+${x_Compliment_Branch_Office}    //*[@id='00N20000000tSnE']    # Branch Office field on Complaint Page
+${x_Compliment_Save_button}    //input[@name='save']    # Save button on Compliment edit page
+${x_Compliment_page_Type}    //h1[@class='pageType'][text()='Case' or text()='Articles']    # Page Type
+${x_Compliment_Country}    //*[@id='00N20000000tSol']    # Country field on Compliment

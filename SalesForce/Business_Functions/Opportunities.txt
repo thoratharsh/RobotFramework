@@ -1,0 +1,323 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../Page_Objects/x_Opportunity.txt
+Resource          ../Test_Data/Opportunity.txt
+Resource          ../Page_Objects/x_FLOrder.txt
+Resource          ../Test_Data/FLOrder.txt
+Resource          ../Page_Objects/x_Competitor.txt
+Resource          ../Test_Data/Competitor.txt
+Resource          ../Test_Data/Contact_Role.txt
+Resource          ../Page_Objects/x_Contact_Roles.txt
+Resource          ../Page_Objects/x_Partner.txt
+Resource          ../Page_Objects/x_Opportunity_Team.txt
+Resource          ../Test_Data/Opportunity_Team.txt
+Resource          ../Test_Data/Notes_And_Attachment.txt
+Resource          ../Page_Objects/x_Notes_Attachment.txt
+Resource          ../Page_Objects/x_FL_Sales_Documents.txt
+Library           ../Library/MyLibrary.py
+Resource          ../Page_Objects/x_FLTender.txt
+Library           String
+
+*** Keywords ***
+Click on Opportunities Tab
+    [Documentation]    This BUsiness Functions Clicks on Opportunities Tab. Opportunites Home page willl be shown and recent Opportunities record will be shown
+    Wait Until Element Is Visible    ${x_Opportunity_tab}    15 seconds
+    Click Element    ${x_Opportunity_tab}
+    Wait Until Element Is Visible    ${x_Opportunity_New_button}    15 seconds
+
+Create New Opportunity
+    [Documentation]    This Business Function will create New Opportunity by Clicking on New button
+    Wait Until Element Is Visible    ${x_Opportunity_New_button}    15 seconds
+    Click Element    ${x_Opportunity_New_button}
+    Select From List By Value    ${x_Opportunity_Record_Type}    ${d_Opportunity_Record_Type}
+    Click Element    ${x_Opportunity_Continue}
+    Wait Until Element Is Visible    ${x_Opportunity_Opportunity_Name}    15 seconds
+    Input Text    ${x_Opportunity_Opportunity_Name}    ${d_Opportunity_Name}
+    Input Text    ${x_Opportunity_Account_Name}    ${d_Opportunity_Account_Name}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Opportunity_Autosuggestion}    15 seconds
+    Run Keyword If    ${t_result}    Click Element    ${x_Opportunity_Autosuggestion}
+    Select From List By Value    ${x_Opportunity_Business_type}    ${d_Opportunity_Business_Type}
+    Input Text    ${x_Opportunity_Quanitity}    ${d_Opportunity_Quanitity}
+    Input Text    ${x_Opportunity_Amount}    ${d_Opportunity_Amount}
+    Click Element    ${x_Opportunity_price_due_Date}
+    Click Element    ${x_Opportunity_Close_Date}
+    Select From List By Value    ${x_Opportunity_Stage}    ${d_Opportunity_Stage}
+    Select From List By Value    ${x_Opportunity_Lead_Source}    ${d_Opportunity_Lead_Source}
+    Select From List By Value    ${x_Opportunity_Market_Segment}    ${d_Opportunity_Market_Segment}
+    ${t_result}    Run Keyword And Return Status    Element Should Be Enabled    ${x_Opportunity_Branch_Office}
+    Run Keyword If    ${t_result}    Select From List By Index    ${x_Opportunity_Branch_Office}    1
+    Click Element    ${x_Opportunity_Save_button}
+    Element Should Be Visible    ${x_Opportunity_Edit_button}
+    Capture Page Screenshot
+
+Create FL Order on Opportunity
+    Wait Until Element Is Visible    ${x_Opportunity_New_FLOrder}    15 seconds
+    Click Element    ${x_Opportunity_New_FLOrder}
+    Wait Until Element Is Visible    ${x_FLOrder_Opportunity}    15 seconds
+    Input Text    ${x_FLOrder_Order}    ${d_FLOrder_Order}
+    Click Element    ${x_FLOrder_Save_button}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_FLOrder_multiple}    15 seconds
+    Run Keyword If    ${t_result}    Select From List By Index    ${x_FLOrder_multiple}    1
+    Run Keyword If    ${t_result}    Click Element    ${x_FLOrder_Save_button}
+    Wait Until Element Is Visible    ${x_FLOrder_Page_Type}    10 seconds
+    Capture Page Screenshot
+
+Select or Create New Opportunity
+    ${t_Result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Opportunity_First_Opportunity_record}    15 seconds
+    Run Keyword If    ${t_Result}    Click Element    ${x_Opportunity_First_Opportunity_record}
+    ...    ELSE    Create New Opportunity
+
+Update the Opportunity
+    Wait Until Element Is Visible    ${x_Opportunity_Edit_button}    15 seconds
+    Click Element    ${x_Opportunity_Edit_button}
+    Wait Until Element Is Visible    ${x_Opportunity_Opportunity_Name}    15 seconds
+    Input Text    ${x_Opportunity_description}    ${d_Opportunity_Description}
+    Click Element    ${x_Opportunity_Save_button}
+    Wait Until Element Is Visible    ${x_Opportunity_Detail}
+    Capture Page Screenshot
+
+Create a Competitor to Opportunity
+    Wait Until Element Is Visible    ${x_Opportunity_New_Competitor}    15 seconds
+    Click Element    ${x_Opportunity_New_Competitor}
+    Wait Until Element Is Visible    ${x_Competitor_Competitor}    15 seconds
+    Select From List By Label    ${x_Competitor_Competitor}    ${d_Competitor_Competitor}
+    Input Text    ${x_Competitor_Price}    ${d_Competitor_Price}
+    Click Element    ${x_Competitor_Save_button}
+    Wait Until Element Is Visible    ${x_Competitor_Page_Type}
+    Capture Page Screenshot
+
+Add Contact Roles to Opportunity
+    Wait Until Element Is Visible    ${x_Opportunity_New_Role}    15 seconds
+    Click Element    ${x_Opportunity_New_Role}
+    Wait Until Element Is Visible    ${x_Contact Role_Primary_Checkbox}    15 seconds
+    Click Element    ${x_Contact Role_Primary_Checkbox}
+    Input Text    ${x_Contact_Role_Contact1}    ${d_Contact_Role_Contact1}
+    ${t_Result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Contact_Role_Autocomplete1}    5 seconds
+    Run Keyword If    ${t_Result}    Click Element    ${x_Contact_Role_Autocomplete1}
+    Select From List By Label    ${x_Contact_Role_Role1}    ${d_Contact_role_Role1}
+    Input Text    ${x_Contact_Role_Contact2}    ${d_Contact_Role_Contact2}
+    ${t_Result2}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Contact_role_Autocomplete2}    5 seconds
+    Run Keyword If    ${t_Result2}    Click Element    ${x_Contact_role_Autocomplete2}
+    Select From List By Label    ${x_Contact_role_Role2}    ${d_Contact_Role_Role2}
+    Click Button    ${x_Contact_Role_save_button}
+    ${t_error}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Contac_Role_error_Message}    6 seconds
+    Run Keyword If    ${t_error}    Select From List By Index    ${x_Contact_role_multple_Matching_contacts}    1
+    Wait Until Element Is Visible    ${x_Opportunity_Detail}
+    Wait Until Element Is Visible    ${x_Contact_Roles_Records}    15 seconds
+    Xpath Should Match X Times    ${x_Contact_Roles_Records}    2
+    Capture Page Screenshot
+
+Add New Partner to Opportunity
+    Wait Until Element Is Visible    ${x_Opportunity_Add_Partner_Button}    15 seconds
+    Click Element    ${x_Opportunity_Add_Partner_Button}
+    Wait Until Element Is Visible    ${x_Partner}    10 seconds
+    Input Text    ${x_Partner}    ${d_Partner_Partner}
+    Select From List By Label    ${x_Partner_Partner_Role}    ${d_Partner_Partner_Role}
+    Click Element    ${x_Partner_Save_button}
+    Wait Until Element Is Visible    ${x_Opportunity_Detail}    10 seconds
+    Wait Until Element Is Visible    ${x_Opportunity_Created_Partner_Record}    10 seconds
+    Click Element    ${x_Opportunity_Created_Partner_Record}
+    Capture Page Screenshot
+
+Add Opportunity Team to Opportunity
+    Wait Until Element Is Visible    ${x_Opportunity_Add_Team}    15 seconds
+    Click Element    ${x_Opportunity_Add_Team}
+    Wait Until Element Is Visible    ${x_Oppo_Team_User1}    10 seconds
+    Input Text    ${x_Oppo_Team_User1}    ${d_Oppo_Team_User1}
+    Select From List By Label    ${x_Oppo_Team_Role1}    ${d_Oppo_Team_Role1}
+    Input Text    ${x_Oppo_Team_User2}    ${d_Oppo_Team_User2}
+    Select From List By Label    ${x_Oppo_Team_Role2}    ${d_Oppo_Team_Role2}
+    Click Element    ${x_Oppo_Team_Save}
+    Wait Until Element Is Visible    ${x_Opportunity_Detail}    15 seconds
+    Wait Until Element Is Visible    ${x_Opportunity_Opp_Team_members}    10 seconds
+    Xpath Should Match X Times    ${x_Opportunity_Opp_Team_members}    2
+
+Add New Note to Opportunity
+    Wait Until Element Is Visible    ${x_Opportunity_New_Note_button}    15 seconds
+    Click Element    ${x_Opportunity_New_Note_button}
+    Wait Until Element Is Visible    ${x_Note_Title}    10 seconds
+    Input Text    ${x_Note_Title}    ${d_Notes_Title}
+    Input Text    ${x_Notes_Body}    ${d_Notes_Body}
+    Click Element    ${x_Notes_Save_Button}
+    Wait Until Element Is Visible    ${x_Opportunity_Detail}    10 seconds
+    Wait Until Element Is Visible    ${x_Opportunity_First_Note}    10 seconds
+    ${t_Text}    Get Text    ${x_Opportunity_First_Note}
+    Should Be Equal As Strings    ${t_Text}    ${d_Notes_Title}
+    Click Element    ${x_Opportunity_First_Note}
+    Capture Page Screenshot
+
+Add FL Sales Document to Opportunity
+    Wait Until Element Is Visible    ${x_Opportunity_Detail}    10 seconds
+    Wait Until Element Is Enabled    ${x_FL_Sales_Documents_Frame}    10 seconds
+    Select Frame    ${x_FL_Sales_Documents_Frame}
+    Wait Until Element Is Visible    ${x_Opportunity_Add_FL_Sales_Order_button}    15 seconds
+    Wait Until Element Is Visible    ${x_Opportunity_Add_Many_Contracts_button}    15 seconds
+    Wait Until Element Is Visible    ${x_Opportunity_Add_FL_Contract_Button}    10 seconds
+    Click Element    ${x_Opportunity_Add_FL_Contract_Button}
+    ${t_Result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_FL_Sales_Search_Contarct_Number}    10 seconds
+    Run Keyword If    not ${t_Result}    Click Element    ${x_Opportunity_Add_FL_Contract_Button}
+    Wait Until Element Is Visible    ${x_FL_Sales_Search_Contarct_Number}    10 seconds
+    Scroll Element Into View    ${x_FL_Sales_Search_Contarct_Number}
+    Input Text    ${x_FL_Sales_Search_Contarct_Number}    12
+    Click Button    ${x_FL_Sales_Go_Button}
+    ${t_Result2}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Opportunity_Add_FL_Contract_Button}    7 seconds
+    ${t_Contract_Option}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_FL_Sales_Select_Contract_Option}    15 seconds
+    Run Keyword If    ${t_Contract_Option}    Click Button    ${x_FL_Sales_Go_Button}
+    ${t_Contract_Number}    Get Text    ${x_FL_Sales_Select_Contract_Option}
+    ${t_xpath_added_Contract}=    Catenate    SEPARATOR=    //a[text()='    ${t_Contract_Number}    ']
+    Wait Until Element Is Visible    ${x_FL_Sales_Select_Contract}    15 seconds
+    ${t_Result3}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Opportunity_Add_FL_Contract_Button}    10 seconds
+    Select From List By Index    ${x_FL_Sales_Select_Contract}    0
+    Click Element    ${x_FL_Sales_Add_button}
+    Wait Until Element Is Enabled    ${x_FL_Sales_Documents_Frame}    10 seconds
+    Select Frame    ${x_FL_Sales_Documents_Frame}
+    Wait Until Element Is Visible    ${t_xpath_added_Contract}    20 seconds
+    Scroll Element Into View    ${t_xpath_added_Contract}
+    Capture Page Screenshot
+
+Create Major Project Opportunity
+    Wait Until Element Is Visible    ${x_Opportunity_New_button}    15 seconds
+    Click Element    ${x_Opportunity_New_button}
+    Select From List By Value    ${x_Opportunity_Record_Type}    ${d_Opportunity_Major_Project_Opportunity_record_type}
+    Click Element    ${x_Opportunity_Continue}
+    Wait Until Element Is Visible    ${x_Major_Oppo_Amount}    20 seconds
+    Input Text    ${x_Major_Oppo_Amount}    1000
+    Select From List By Value    ${x_major_Oppo_Market_Segment}    ${d_Opportunity_Market_Segment}
+    Select Checkbox    ${x_Major_Oppo_MP_Support}
+    Click Element    ${x_Major_Oppo_Continue}
+    Wait Until Element Is Visible    ${x_Opportunity_Business_type}    20 seconds
+    Select From List By Value    ${x_Opportunity_Business_type}    ${d_Opportunity_Business_Type}
+    Input Text    ${x_Opportunity_Opportunity_Name}    ${d_Major_Oppo_Name}
+    Input Text    ${x_Opportunity_Account_Name}    ${d_Opportunity_Account_Name}
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Opportunity_Autosuggestion}    10 seconds
+    Run Keyword If    ${t_result}    Click Element    ${x_Opportunity_Autosuggestion}
+    Select From List By Value    ${x_Opportunity_Lead_Source}    ${d_Opportunity_Lead_Source}
+    Click Element    ${x_Major_Oppo_Require_MP_Support}
+    Click Element    ${x_Major_Oppo_RFQ_Received_Date}
+    Click Element    ${x_Opportunity_price_due_Date}
+    Click Element    ${x_Opportunity_Close_Date}
+    Select From List By Value    ${x_Opportunity_Stage}    ${d_Opportunity_Stage}
+    Input Text    ${x_Major_Oppo_Elevator_Quantity}    ${d_Major_oppo_Elevator_Quantity}
+    Input Text    ${x_Major_Oppo_Elevator_Autowalk_Quantity}    ${d_Major_Oppo_Elevator_Autowalk_Quantity}
+    Input Text    ${x_Major_Oppo_Elevator_Amount}    ${d_Major_Oppo_Elevator_Amount}
+    Input Text    ${x_Major_Oppo_Elevator_Autowalk_Amount}    ${d_Major_Oppo_Elevator_Amount}
+    Click Element    ${x_Major_Oppo_Advanced_People_Flow}
+    Click Element    ${x_Major_Oppo_Advanced_people_Flow_Add}
+    Select From List By Value    ${x_Major_Oppo_Site_Country}    Finland
+    Click Element    ${x_Opportunity_Save_button}
+    Wait Until Element Is Visible    ${x_Opportunity_Edit_button}    20 seconds
+    Capture Page Screenshot
+
+Verify Project Complexity is mandatory to create FL Tender
+    Wait Until Element Is Visible    ${x_Opportunity_Edit_button}    15 seconds
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Opportuntiy_Contact_Role_First_record}    5 seconds
+    Run Keyword If    not ${t_result}    Add Contact Roles to Opportunity
+    Wait Until Element Is Visible    ${x_Opportunity_Edit_button}    15 seconds
+    Click Element    ${x_Opportunity_Edit_button}
+    Select From List By Label    ${x_Opportunity_Project_Complexity}    --None--
+    Click Element    ${x_Opportunity_Save_button}
+    Wait Until Element Is Visible    ${x_Opportunity_Detail}    15 seconds
+    Wait Until Element Is Visible    ${x_Opportuntiy_New_FL_Tender}    15 seconds
+    Click Element    ${x_Opportuntiy_New_FL_Tender}
+    Wait Until Element Is Visible    ${x_Opportunity_FL_Tender_Error}
+    Capture Page Screenshot
+
+Verify Newly Added Fields on Opportunity
+    Wait Until Element Is Visible    ${x_Opportunity_Quick_Access_Menu}    30 seconds
+    Click Element    ${x_Opportunity_Quick_Access_Menu}
+    Wait Until Element Is Visible    ${x_Opportunity_Quick_Access_Menu_View_Fields}    30 seconds
+    Click Element    ${x_Opportunity_Quick_Access_Menu_View_Fields}
+    Sleep    3 seconds
+    @{windows}    Get Window Handles
+    Switch To Other Window    @{windows}[1]
+    Wait Until Element Is Visible    ${x_Opportunity_View_Fields_Advanceed_People_Flow}    30 seconds
+    Wait Until Element Is Visible    ${x_Opportunity_View_Fields_APF_Quantity}    30 seconds
+    Wait Until Element Is Visible    ${x_Opportunity_View_Fields_APF_Amount}    30 seconds
+    Capture Page Screenshot
+
+Attach file to Opportunity
+    Wait Until Element Is Visible    ${x_Opportuntiy_Attach_file_button}    20 seconds
+    Click Element    ${x_Opportuntiy_Attach_file_button}
+    Wait Until Element Is Visible    ${x_Opportunity_Choose_File}    20 seconds
+    Input Text    ${x_Opportunity_Choose_File}    ${CURDIR}/Login.txt
+    Wait Until Element Is Visible    ${x_Opportunity_attach_attach_File}    20 seconds
+    Click Element    ${x_Opportunity_attach_attach_File}
+    Wait Until Element Is Visible    ${x_Opportunity_Atach_Done}    20 seconds
+    Click Element    ${x_Opportunity_Atach_Done}
+    Wait Until Element Is Visible    ${x_Opportunity_Notes_attachment_attach_record}    20 seconds
+    Scroll Element Into View    ${x_Opportunity_Notes_attachment_attach_record}
+    Capture Page Screenshot
+
+Verify Modernization Planning Services field on Opportunity
+    [Documentation]    Verify Modernization Planning services Offer field on avaialable in Opportunities
+    Wait Until Element Is Visible    ${x_Opportunity_New_button}    15 seconds
+    Click Element    ${x_Opportunity_New_button}
+    Select From List By Value    ${x_Opportunity_Record_Type}    ${d_Opportunity_Major_Project_Opportunity_record_type}
+    Click Element    ${x_Opportunity_Continue}
+    Wait Until Element Is Visible    ${x_Major_Oppo_Amount}    20 seconds
+    Input Text    ${x_Major_Oppo_Amount}    1000
+    Select From List By Value    ${x_major_Oppo_Market_Segment}    ${d_Opportunity_Market_Segment}
+    Select Checkbox    ${x_Major_Oppo_MP_Support}
+    Click Element    ${x_Major_Oppo_Continue}
+    Wait Until Element Is Visible    ${x_Opportunity_Business_type}    20 seconds
+    Wait Until Element Is Visible    ${x_Major_Oppo_Planning_Services_Offer}    30 seconds
+    Wait Until Element Is Visible    ${x_Opportunity_Major_Oppo_Modernization_Planning_Services}    30 seconds
+    Capture Page Screenshot
+
+Verify Sales Person Chine field on Major Project opportunity
+    Wait Until Element Is Visible    ${x_Opportunity_New_button}    15 seconds
+    Click Element    ${x_Opportunity_New_button}
+    Select From List By Value    ${x_Opportunity_Record_Type}    ${d_Opportunity_Major_Project_Opportunity_record_type}
+    Click Element    ${x_Opportunity_Continue}
+    Wait Until Element Is Visible    ${x_Major_Oppo_Amount}    20 seconds
+    Input Text    ${x_Major_Oppo_Amount}    1000
+    Select From List By Value    ${x_major_Oppo_Market_Segment}    ${d_Opportunity_Market_Segment}
+    Select Checkbox    ${x_Major_Oppo_MP_Support}
+    Click Element    ${x_Major_Oppo_Continue}
+    Wait Until Element Is Visible    ${x_Opportunity_Business_type}    20 seconds
+    Wait Until Element Is Visible    ${x_Major_Oppo_Sales_Person_Chine}    30 seconds
+    Capture Page Screenshot
+
+Verify Error message while creating FL tender
+    Wait Until Element Is Visible    ${x_Opportunity_Detail}    30 seconds
+    ${t_result}    Run Keyword And Return Status    Wait Until Element Is Visible    ${x_Opportunity_First_Contact_Role_record}    5 seconds
+    Run Keyword If    not ${t_result}    Add Contact Roles to Opportunity
+    Wait Until Element Is Visible    ${x_Opportunity_New_FL_Tender}    10 seconds
+    Click Element    ${x_Opportunity_New_FL_Tender}
+    Wait Until Element Is Visible    ${x_Opportunity_FL_Tender_Error}    20 seconds
+    Capture Page Screenshot
+
+Verify Target Price in each scenarios
+    comment    Opportunity ahing active FL tender having product offering
+    Sleep    2 Seconds
+    Go To    https://kone--full.cs87.my.salesforce.com/006w000000kBXXf
+    Wait Until Element Is Visible    ${x_Opportunity_detail_Target_Price}    10 seconds
+    ${t_Target_Price}    Get Text    ${x_Opportunity_detail_Target_Price}
+    Should Not Be Equal As Strings    ${t_Target_Price}    ${EMPTY}
+    Wait Until Element Is Visible    ${x_Opportunity_FL_Tender_related_list_record}    10 seconds
+    Click Element    ${x_Opportunity_FL_Tender_related_list_record}
+    Wait Until Element Is Visible    ${x_Fl_Tender_Active_Version}    20 seconds
+    Click Element    ${x_Fl_Tender_Active_Version}
+    Wait Until Element Is Visible    ${x_FL_Tender_Product_Offering_Record}    10 seconds
+    Capture Page Screenshot
+    Click on Opportunities Tab
+    Create New Opportunity
+    Wait Until Element Is Visible    ${x_Opportunity_detail_Target_Price}    10 seconds
+    ${t_Target_Price}    Get Text    ${x_Opportunity_detail_Target_Price}
+    @{t_target_price_1}    Split String    ${t_Target_Price}    ${SPACE}
+    Should Be Equal As Strings    @{t_target_price_1}    ${EMPTY}
+    Capture Page Screenshot
+
+Verify User can send Email through Lightning
+    Wait Until Element Is Visible    ${x_Opportunity_lightning_Activity_section}    30 seconds
+    Wait Until Keyword Succeeds    1 min    5 seconds    Click Element    ${x_Opportunity_lightning_Activity_section}
+    Wait Until Element Is Visible    ${x_Opportunity_Lightning_Activity_Email}    30 seconds
+    Wait Until Keyword Succeeds    1 min    5 seconds    Click Element    ${x_Opportunity_Lightning_Activity_Email}
+    Capture Page Screenshot
+    Wait Until Element Is Visible    ${x_Opportunity_Lightning_Activity_Email_To}    30 seconds
+    Input Text    ${x_Opportunity_Lightning_Activity_Email_To}    thoratharsh.ht@gmail.com
+    Wait Until Element Is Visible    ${x_Opportunity_Lightning_Activity_Email_Subject}    30 seconds
+    Input Text    ${x_Opportunity_Lightning_Activity_Email_Subject}    Test Email
+    Wait Until Element Is Visible    ${x_Opportunity_Lightning_email_Send_button}
+    Wait Until Keyword Succeeds    1 min    5 seconds    Click Element    ${x_Opportunity_Lightning_email_Send_button}
+    Capture Page Screenshot

@@ -1,0 +1,34 @@
+*** Settings ***
+Resource          ../Test_Data/Account_Contact_relationship.txt
+
+*** Variables ***
+${x_Contact_First_Name}    //*[@id='name_firstcon2']    # First Name on Contact edit page
+${x_Contact_Last_Name}    //*[@id='name_lastcon2']    # Last Name field on Contact edit page
+${x_Contact_function}    //*[@id='00N20000003bny6']    # Function Field on Contact edit page
+${x_Contact_Phone}    //*[@id='con10']    # Phone field on Contact edit page
+${x_Contact_save_button}    //*[@name='save']    # Save button on Contact edit Page
+${x_Contact_detail_page}    //h1[@class='pageType'][text()='Contact']
+${x_Contact_New_Contact_button}    //*[@name='new']    # New Contact button on Contact home page
+${x_Contact_Tab}    //*[@title='Contacts Tab']    # Contact Tab
+${x_Contact_Account_Name}    //*[@id='con4']    # Account Name field on Contact edit page
+${x_Contact_Autocomplete}    //*[@class='autoCompleteRow']
+${x_Contact_Mobile}    //*[@id='con12']    # Mobile field
+${x_Contact_Email}    //*[@id='con15']
+${x_Contact_Country}    //*[@id='00N20000000sgif']    # Country field on COntact edit page
+${x_Contact_New_Opportunity}    //input[@value=' New ']    # New Opportunity button on Contact detail page
+${x_Contact_First_record}    //table[@class='list']/tbody/tr[2]/th/a    # First record on Contact home page
+${x_Contact_New_Query}    //input[@name='new_query']    # New Query Button on Contact detail page
+${x_Contact_New_Case_Button}    //*[@value='New Case']    # New Case button on Contact detail page
+${x_Contact_Add_Relationship}    //*[@value='Add Relationship']    # Add Relationship button contact detail page
+${x_Contact_New_Task_Button}    //*[@value='New Task']    # New Task button on Contac detail page
+${x_Contact_new_Event}    //*[@value='New Event']    # New Event Button on Contact detail page
+${x_Contact_Created_Event}    //*[contains(@id,'RelatedActivityList')]/table/tbody/tr[2]/th/a    # This is link of created Task on Contact page
+${x_Contact_Created_Task}    //*[contains(@id,'RelatedActivityList')]/table/tbody/tr/th/a[text()='TC053']
+${x_Contact_Edit_button}    //*[@name="edit"]    # Edit button on Contact record
+${x_Contact_Description}    //*[@id='con20']    # Description Filed on Contact detail page
+${x_Contact_Attach_File_Button}    //*[@name='attachFile']    # Attach File button on COntact detail page
+${x_Contact_New_Note_Button}    //*[contains(@id,'RelatedNoteList')]//input[@name='newNote']    # New NOt button on NOtes and Attachment section
+${x_Contact_First_Note}    //*[contains(@id,'RelatedNoteList')]/table/tbody/tr[2]/td[2]/a    # First Record of NOtes and attachment
+${x_Contact_Manage_External_user}    //*[@id="workWithPortalLabel"]    # Manage External user button on Contact detail page
+${x_Contact_Login_to_Community_as_User}    //*[@id='workWithPortalMenu']/a[@name='networklogin']    # Login to Community as User button contact detail page
+${x_Contact_Anonymize}    //td[text()='Anonymize']    # Anonymize fiedl on Contact detail page
