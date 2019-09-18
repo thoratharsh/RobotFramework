@@ -22,3 +22,5 @@
 
 [Selenium2Library Installtion](https://github.com/robotframework/Selenium2Library)
 
+## Important links
+[Here](https://www.blazemeter.com/blog/robot-framework-the-ultimate-guide-to-running-your-tests/) is good article for robot framework setp
